@@ -15,6 +15,8 @@ public class PlayerInputController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private PhysicsCheck PhysicsCheck;
+
     [HideInInspector] public Vector2 MoveDirection;
 
     [HideInInspector] public Vector2 DushDirection;
@@ -31,6 +33,7 @@ public class PlayerInputController : MonoBehaviour
 
     public float JumpLimitFactor;
 
+    /*[HideInInspector]*/ public bool isJumpAble;
 
     [Header("冲刺参数")]
     public float DushSpeed;//由于实现不同，此速度不宜太快
@@ -47,7 +50,6 @@ public class PlayerInputController : MonoBehaviour
 
     [HideInInspector] public bool isMoveAble;
 
-    [HideInInspector] public bool isJumpAble;
     // Start is called before the first frame update
 
     private void Awake()
@@ -57,6 +59,7 @@ public class PlayerInputController : MonoBehaviour
         PlayerInput = new PlayerInput();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        PhysicsCheck = transform.Find("IsOnGroundChecker").GetComponent<PhysicsCheck>();
 
         PlayerInput.GamePlay.Jump.started += Jump;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
@@ -77,6 +80,7 @@ public class PlayerInputController : MonoBehaviour
     void Update()
     {
         GetMoveDirection();
+        GetisJumpAble();
     }
 
     private void FixedUpdate()
@@ -139,15 +143,22 @@ public class PlayerInputController : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
-
-        Debug.Log("JUMP!");
+        if(isJumpAble)
+            Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
     }
 
     private void LeaveButton(InputAction.CallbackContext context)
     {
         if(Rigidbody2D.velocity.y >= JumpLimitFactor)
             Rigidbody2D.AddForce(JumpForcedown * Vector2.down, ForceMode2D.Impulse);
+    }
+
+    private void GetisJumpAble()
+    {
+        if(PhysicsCheck.isOnGround)
+            isJumpAble = true;
+        else
+            isJumpAble = false;
     }
 
     private void DushTap(InputAction.CallbackContext context)
