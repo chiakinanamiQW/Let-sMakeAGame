@@ -12,14 +12,7 @@ public class GameEventSystem : MonoBehaviour
 
     private void Awake()
     {
-<<<<<<< HEAD
-        instance = this;
-==
-        
-
-        
-     
->>>>>>> Chiakinanami
+        instance = this;             
     }
 
     public event Action OnPlayerDead;
