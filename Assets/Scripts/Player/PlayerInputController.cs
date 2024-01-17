@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,7 @@ public class PlayerInputController : MonoBehaviour
 {
     public PlayerInput PlayerInput;
 
-    public Rigidbody2D Rigidbody2D;
+    private Rigidbody2D Rigidbody2D;
 
     private SpriteRenderer spriteRenderer;
 
@@ -20,15 +21,24 @@ public class PlayerInputController : MonoBehaviour
 
     private Vector2 inputDirection;
 
+    [Header("移动参数")]
     public float Speed;
 
+    [Header("跳跃参数")]
     public float JumpForce;
 
-    public float JumpFactor;
+    public float JumpForcedown;
 
-    public float DushSpeed;
+    public float JumpLimitFactor;
+
+
+    [Header("冲刺参数")]
+    public float DushSpeed;//由于实现不同，此速度不宜太快
+
     [HideInInspector] public float DushTapTime;
+
     public float DushTime;
+
     public float DushCD;
 
     [HideInInspector] public bool isDushAble;
@@ -42,7 +52,6 @@ public class PlayerInputController : MonoBehaviour
 
     private void Awake()
     {
-        
         isMoveAble = true;
         isDushAble = true;
         PlayerInput = new PlayerInput();
@@ -50,9 +59,10 @@ public class PlayerInputController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         PlayerInput.GamePlay.Jump.started += Jump;
+        PlayerInput.GamePlay.Jump.canceled += LeaveButton;
         PlayerInput.GamePlay.Dush.started += DushTap;
-        
     }
+
 
     private void OnEnable()
     {
@@ -63,11 +73,6 @@ public class PlayerInputController : MonoBehaviour
     {
         PlayerInput.Disable();
     }
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -78,7 +83,6 @@ public class PlayerInputController : MonoBehaviour
     {
         DushControll();
         Dush();
-
 
         if (isMoveAble) 
         {
@@ -135,8 +139,15 @@ public class PlayerInputController : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        Rigidbody2D.AddForce(JumpFactor*JumpForce * transform.up, ForceMode2D.Impulse);
+        Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+
         Debug.Log("JUMP!");
+    }
+
+    private void LeaveButton(InputAction.CallbackContext context)
+    {
+        if(Rigidbody2D.velocity.y >= JumpLimitFactor)
+            Rigidbody2D.AddForce(JumpForcedown * Vector2.down, ForceMode2D.Impulse);
     }
 
     private void DushTap(InputAction.CallbackContext context)

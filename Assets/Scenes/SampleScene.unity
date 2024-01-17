@@ -444,11 +444,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbab124e88332be4a80747497ba32fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody2D: {fileID: 0}
   MoveDirection: {x: 0, y: 0}
+  DushDirection: {x: 0, y: 0}
   Speed: 100
-  JumpForce: 5
-  JumpFactor: 1
+  JumpForce: 10
+  JumpForcedown: 4
+  JumpLimitFactor: 4.5
+  DushSpeed: 10
+  DushTapTime: 0
+  DushTime: 0.5
+  DushCD: 2
+  isDushAble: 0
+  isDush: 0
   isMoveAble: 0
   isJumpAble: 0
 --- !u!50 &1417210833
@@ -466,7 +473,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
