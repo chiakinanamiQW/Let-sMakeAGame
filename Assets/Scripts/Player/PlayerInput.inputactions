@@ -25,19 +25,19 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0ccd3e9a-a3b3-4d4a-bbbd-74b4ef358c2a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "WASD",
                     "id": "7b8d7faf-4f4a-4fc7-b851-d6a12eb6794a",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -102,7 +102,7 @@
                 },
                 {
                     "name": "",
-                    "id": "3b95ebf5-9e9f-4364-93e9-dfb8eaa77f16",
+                    "id": "b2a9ff46-7e78-4aa1-bdd1-79324bda9e0e",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
