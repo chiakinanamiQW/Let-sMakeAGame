@@ -277,6 +277,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141737537}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &240133124
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +426,8 @@ BoxCollider2D:
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 >>>>>>> WuLing
+=======
+>>>>>>> Stashed changes
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +990,7 @@ GameObject:
   - component: {fileID: 1902606483}
   - component: {fileID: 1902606482}
   - component: {fileID: 1902606481}
+  - component: {fileID: 1902606485}
   m_Layer: 5
   m_Name: Conversation
   m_TagString: Untagged
@@ -1080,6 +1084,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1902606485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902606480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ae98f34f96ea9459de43e80683c3e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextLabel: {fileID: 141737539}
+  Face: {fileID: 1948005367}
+  TextFile: {fileID: 4900000, guid: fc321d46f25521e43b84ae95e9bab43c, type: 3}
+  face1: {fileID: 0}
+  face2: {fileID: 0}
+  Index: 10
+  TextSpeed: 0.1
 --- !u!1 &1948005365
 =======
   m_GameObject: {fileID: 656132017}
@@ -1461,8 +1484,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   - {fileID: 240133125}
+=======
+>>>>>>> Stashed changes
   - {fileID: 1505174887}
   - {fileID: 1902606484}
   - {fileID: 2118861220}
