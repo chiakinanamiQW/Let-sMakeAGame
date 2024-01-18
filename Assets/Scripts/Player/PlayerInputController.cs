@@ -19,7 +19,7 @@ public class PlayerInputController : MonoBehaviour
 
     [HideInInspector] public Vector2 MoveDirection;
 
-    [HideInInspector] public Vector2 DushDirection;
+    /*[HideInInspector]*/ public Vector2 DushDirection;
 
     private Vector2 inputDirection;
 
@@ -33,16 +33,22 @@ public class PlayerInputController : MonoBehaviour
 
     public float JumpLimitFactor;
 
-    /*[HideInInspector]*/ public bool isJumpAble;
+    [HideInInspector] public bool isJumpAble;
 
     [Header("冲刺参数")]
-    public float DushSpeed;//由于实现不同，此速度不宜太快
+    public float DushAcceleration;
 
     [HideInInspector] public float DushTapTime;
 
     public float DushTime;
 
     public float DushCD;
+
+    [HideInInspector] public float speed = 0;
+
+    [HideInInspector] public float timeSpend = 0;
+
+    private float j = 1;
 
     [HideInInspector] public bool isDushAble;
 
@@ -66,6 +72,10 @@ public class PlayerInputController : MonoBehaviour
         PlayerInput.GamePlay.Dush.started += DushTap;
     }
 
+    private void Start()
+    {
+        Rigidbody2D.drag = 0f;
+    }
 
     private void OnEnable()
     {
@@ -191,7 +201,50 @@ public class PlayerInputController : MonoBehaviour
     {
         if(isDush)
         {
-            Rigidbody2D.position += DushDirection * DushSpeed*Time.deltaTime;
+            j++;
+            MoveDisable();
+            Debug.Log("Dush");
+            speed += DushAcceleration * (timeSpend += Time.deltaTime);
+
+            Rigidbody2D.position += DushDirection.normalized * speed * Time.deltaTime;
+            if(DushDirection.x < 0)
+            {
+                Rigidbody2D.AddForce(Vector2.left * 100 * speed, ForceMode2D.Force);
+            }
+            else if(DushDirection.x > 0) 
+            {
+                Rigidbody2D.AddForce(Vector2.right * 100 * speed, ForceMode2D.Force);
+            }
+
+            if (DushDirection.y > 0)
+                Rigidbody2D.AddForce(Vector2.up * 20 * speed, ForceMode2D.Force);
+            else if (DushDirection.y < 0)
+                Rigidbody2D.AddForce(Vector2.down * 20 * speed, ForceMode2D.Force);
         }
+        if (!isDush&&j!=1)
+        {
+            Rigidbody2D.velocity = Vector2.zero;
+            MoveEnable();
+            speed = 0;
+            timeSpend = 0;
+            j = 1;
+        }
+    }
+
+    public void MoveDisable()
+    {
+        PlayerInput.GamePlay.Move.Disable();
+    }
+    public void MoveEnable()
+    {
+        PlayerInput.GamePlay.Move.Enable();
+    }
+    public void ControllDisable()
+    {
+        PlayerInput.GamePlay.Disable();
+    }
+    public void ControllEnable()
+    {
+        PlayerInput.GamePlay.Enable();
     }
 }
