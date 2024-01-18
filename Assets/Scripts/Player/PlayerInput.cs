@@ -53,6 +53,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Skill"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab390833-5c39-46ca-af00-5592640767af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddc65cd6-0ba0-46b1-b869-d75b9050a4f5"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -149,6 +169,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Dush = m_GamePlay.FindAction("Dush", throwIfNotFound: true);
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
+        m_GamePlay_Skill = m_GamePlay.FindAction("Skill", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -213,6 +234,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Move;
     private readonly InputAction m_GamePlay_Dush;
     private readonly InputAction m_GamePlay_Jump;
+    private readonly InputAction m_GamePlay_Skill;
     public struct GamePlayActions
     {
         private @PlayerInput m_Wrapper;
@@ -220,6 +242,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
         public InputAction @Dush => m_Wrapper.m_GamePlay_Dush;
         public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
+        public InputAction @Skill => m_Wrapper.m_GamePlay_Skill;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -238,6 +261,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @Skill.started += instance.OnSkill;
+            @Skill.performed += instance.OnSkill;
+            @Skill.canceled += instance.OnSkill;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -251,6 +277,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @Skill.started -= instance.OnSkill;
+            @Skill.performed -= instance.OnSkill;
+            @Skill.canceled -= instance.OnSkill;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -282,5 +311,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnDush(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnSkill(InputAction.CallbackContext context);
     }
 }
