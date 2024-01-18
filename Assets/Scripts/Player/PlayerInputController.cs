@@ -9,6 +9,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputController : MonoBehaviour
 {
+    public static PlayerInputController Instance;
+
     public PlayerInput PlayerInput;
 
     private Rigidbody2D Rigidbody2D;
@@ -60,6 +62,8 @@ public class PlayerInputController : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
         isMoveAble = true;
         isDushAble = true;
         PlayerInput = new PlayerInput();
@@ -70,6 +74,9 @@ public class PlayerInputController : MonoBehaviour
         PlayerInput.GamePlay.Jump.started += Jump;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
         PlayerInput.GamePlay.Dush.started += DushTap;
+
+        PlayerInput.GamePlay.Skill1.started += GameEventSystem.instance.Skill1Use;
+        PlayerInput.GamePlay.Skill2.started += GameEventSystem.instance.Skill2Use;
     }
 
     private void Start()
@@ -157,6 +164,12 @@ public class PlayerInputController : MonoBehaviour
             Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
     }
 
+    private void Jump()
+    {
+        if (isJumpAble)
+            Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+    }
+
     private void LeaveButton(InputAction.CallbackContext context)
     {
         if(Rigidbody2D.velocity.y >= JumpLimitFactor)
@@ -175,6 +188,17 @@ public class PlayerInputController : MonoBehaviour
     {
         GetDushDirection();
         if(isDushAble) 
+        {
+            isDush = true;
+            DushTapTime = Time.time;
+            isDushAble = false;
+        }
+
+    }
+    public void DushTap()
+    {
+        GetDushDirection();
+        if (isDushAble)
         {
             isDush = true;
             DushTapTime = Time.time;
