@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhysicsCheck : MonoBehaviour
 {
     public bool isOnGround;
+    public Canvas canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,10 @@ public class PhysicsCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+     if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            canvas.gameObject.SetActive(true);
+        }   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

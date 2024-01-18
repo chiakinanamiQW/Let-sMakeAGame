@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
-
+    public Canvas c;
     public Slider Volume;
     private void Awake()
     {
@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+   
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
@@ -49,4 +50,5 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+    
 }
