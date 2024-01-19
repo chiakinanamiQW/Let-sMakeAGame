@@ -103,6 +103,8 @@ public class PlayerInputController : MonoBehaviour
     {
         GetMoveDirection();
         GetisJumpAble();
+        Debug.Log(PhysicsCheck.CanJumpTwice);
+        Debug.Log(PhysicsCheck.jumpTimes);
     }
 
     private void FixedUpdate()
@@ -183,10 +185,15 @@ public class PlayerInputController : MonoBehaviour
 
     private void GetisJumpAble()
     {
-        if(PhysicsCheck.isOnGround)
+        if(PhysicsCheck.jumpTimes>0)
             isJumpAble = true;
         else
             isJumpAble = false;
+    }
+    public void JumpTwice()
+    {
+        if (PhysicsCheck.isOnGround)
+            PhysicsCheck.CanJumpTwice = true;
     }
 
     private void DushTap(InputAction.CallbackContext context)

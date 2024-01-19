@@ -18,7 +18,6 @@ public class GameEventSystem : MonoBehaviour
 
     public event Action<Transform> OnPlayerTakeDamage;
     public event Action OnPlayerDead;
-
     public event Action OnSkill1Use;
     public event Action OnSkill1;
     public event Action OnSkill2Use;

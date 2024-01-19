@@ -566,6 +566,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 90540560657278577, guid: feba2e1659cae3a4593b8042cf49af95, type: 3}
+      propertyPath: DushCD
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 90540560657278577, guid: feba2e1659cae3a4593b8042cf49af95, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 90540560657278577, guid: feba2e1659cae3a4593b8042cf49af95, type: 3}
+      propertyPath: DushAcceleration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2975176277201445525, guid: feba2e1659cae3a4593b8042cf49af95, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.30434024
@@ -613,7 +625,7 @@ PrefabInstance:
     - target: {fileID: 5438710551165148365, guid: feba2e1659cae3a4593b8042cf49af95, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 896719165}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1505,6 +1517,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8224889065269441897, guid: eab189f8c75894540a0e4e5f8ab217cd, type: 3}
   m_PrefabInstance: {fileID: 303164982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1897138855
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2557847177734944080, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_Name
+      value: platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201019712126037994, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91bfcb009cba0ee49bc2fd41c8b93493, type: 3}
 --- !u!1 &2044207568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1715,7 @@ SceneRoots:
   - {fileID: 684361848}
   - {fileID: 1136998479}
   - {fileID: 1708696706}
+  - {fileID: 1897138855}
   - {fileID: 654147453}
   - {fileID: 1054088969}
   - {fileID: 928235280}
