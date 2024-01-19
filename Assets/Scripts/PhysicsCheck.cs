@@ -24,7 +24,7 @@ public class PhysicsCheck : MonoBehaviour
         {
             canvas.gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Space)&&isJump)
+        if (Input.GetKeyDown(KeyCode.J)&&isJump)
         {
             jumpTimes--;
             isJump = false;
@@ -47,6 +47,11 @@ public class PhysicsCheck : MonoBehaviour
                 jumpTimes = 1;
             }
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground" && CanJumpTwice)
+            jumpTimes = 2;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

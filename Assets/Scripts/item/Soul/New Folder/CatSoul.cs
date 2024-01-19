@@ -6,7 +6,10 @@ public class CatSoul : Soul
 {
     protected override void Skill()
     {
+        Debug.Log(1);
         SkillCenter.instance.CatDush();
+        
         base.Skill();
     }
+    
 }

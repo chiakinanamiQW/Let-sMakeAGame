@@ -21,5 +21,6 @@ public class SkillCenter : MonoBehaviour
     {
         PlayerInputController.Instance.JumpTwice();
     }
+
     
 }
