@@ -24,10 +24,13 @@ public class PlayerInputController : MonoBehaviour
 
     /*[HideInInspector]*/ public Vector2 DushDirection;
 
-    private Vector2 inputDirection;
+    public Vector2 inputDirection;
 
     [Header("移动参数")]
     public float Speed;
+
+    public bool isLeftOnWall;
+    public bool isRightOnWall;
 
     [Header("跳跃参数")]
     public float JumpForce;
@@ -36,7 +39,7 @@ public class PlayerInputController : MonoBehaviour
 
     public float JumpLimitFactor;
 
-    [HideInInspector] public bool isJumpAble;
+    /*[HideInInspector]*/ public bool isJumpAble;
 
     [Header("冲刺参数")]
     public float DushAcceleration;
@@ -46,6 +49,11 @@ public class PlayerInputController : MonoBehaviour
     public float DushTime;
 
     public float DushCD;
+
+    [Header("攀爬参数")]
+    public bool isClimbAble;
+
+    public float ClimbSpeed;
 
     [HideInInspector] public float speed = 0;
 
@@ -101,9 +109,8 @@ public class PlayerInputController : MonoBehaviour
     void Update()
     {
         GetMoveDirection();
+        GetDushDirection();
         GetisJumpAble();
-        Debug.Log(PhysicsCheck.CanJumpTwice);
-        Debug.Log(PhysicsCheck.jumpTimes);
     }
 
     private void FixedUpdate()
@@ -121,10 +128,37 @@ public class PlayerInputController : MonoBehaviour
     {
         if(isMoveAble)
         {
-            Rigidbody2D.velocity = new Vector2(Speed*MoveDirection.x*Time.deltaTime, Rigidbody2D.velocity.y);
+            if (!isClimbAble)
+            {
+                if (isLeftOnWall)
+                {
+                    if (MoveDirection.x < 0)
+                    {
+                        Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
+                        return;
+                    }
+                }
+                else if (isRightOnWall)
+                {
+                    if (MoveDirection.x > 0)
+                    {
+                        Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
+                        return;
+                    }
+                }
+            }
+
+            if (inputDirection.y > 0 && isClimbAble && (isLeftOnWall || isRightOnWall))
+            {
+                Rigidbody2D.AddForce(-ClimbSpeed * Physics2D.gravity, ForceMode2D.Force);
+                Rigidbody2D.velocity = Vector2.up * inputDirection.y;
+            }
+            //else
+            Rigidbody2D.velocity = new Vector2(Speed * MoveDirection.x * Time.deltaTime, Rigidbody2D.velocity.y);
         }
 
-        if(MoveDirection.x > 0)
+        #region 人物翻转
+        if (MoveDirection.x > 0)
         {
             spriteRenderer.flipX = false;
         }
@@ -132,6 +166,7 @@ public class PlayerInputController : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+        #endregion
     }
 
     private void GetMoveDirection()
@@ -166,8 +201,24 @@ public class PlayerInputController : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if(isJumpAble)
-            Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+        if (isJumpAble)
+        {
+            if (isClimbAble)
+            {
+                if (isLeftOnWall)
+                {
+                    UnMoveForaWhile(0.2f);
+                    Rigidbody2D.AddForce(JumpForce * (Vector2.right + Vector2.up), ForceMode2D.Impulse);
+                }
+                else if (isRightOnWall)
+                {
+                    UnMoveForaWhile(0.2f);
+                    Rigidbody2D.AddForce(JumpForce * (Vector2.left + Vector2.up), ForceMode2D.Impulse);
+                }
+                else Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+            }
+            else Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+        }
     }
 
     private void Jump()
@@ -197,7 +248,6 @@ public class PlayerInputController : MonoBehaviour
 
     private void DushTap(InputAction.CallbackContext context)
     {
-        GetDushDirection();
         if(isDushAble) 
         {
             isDush = true;
@@ -208,7 +258,6 @@ public class PlayerInputController : MonoBehaviour
     }
     public void DushTap()
     {
-        GetDushDirection();
         if (isDushAble)
         {
             isDush = true;
@@ -242,19 +291,7 @@ public class PlayerInputController : MonoBehaviour
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
 
             Rigidbody2D.position += DushDirection.normalized * speed * Time.deltaTime;
-            if(DushDirection.x < 0)
-            {
-                Rigidbody2D.AddForce(Vector2.left * speed, ForceMode2D.Force);
-            }
-            else if(DushDirection.x > 0) 
-            {
-                Rigidbody2D.AddForce(Vector2.right * speed, ForceMode2D.Force);
-            }
-
-            if (DushDirection.y > 0)
-                Rigidbody2D.AddForce(Vector2.up * speed, ForceMode2D.Force);
-            else if (DushDirection.y < 0)
-                Rigidbody2D.AddForce(Vector2.down * speed, ForceMode2D.Force);
+            Rigidbody2D.AddForce(DushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {
@@ -277,6 +314,16 @@ public class PlayerInputController : MonoBehaviour
         
     }
 
+    public void ClimbEnable()
+    {
+        isClimbAble = true;
+    }
+
+    public void ClimbDisable()
+    {
+        isClimbAble = false;
+    }
+
     public void UnMoveForaWhile(float Time)
     {
         MoveDisable();
@@ -286,12 +333,10 @@ public class PlayerInputController : MonoBehaviour
     public void MoveDisable()
     {
         isMoveAble = false;
-        PlayerInput.GamePlay.Move.Disable();
     }
     public void MoveEnable()
     {
         isMoveAble = true;
-        PlayerInput.GamePlay.Move.Enable();
     }
     public void ControllDisable()
     {

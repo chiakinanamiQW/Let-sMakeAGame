@@ -6,6 +6,8 @@ public class SkillCenter : MonoBehaviour
 {
     public static SkillCenter instance;
 
+    private float SquirrelclimbDuration;
+
     private SkillCenter() { }
 
     private void Awake()
@@ -22,4 +24,8 @@ public class SkillCenter : MonoBehaviour
         PlayerInputController.Instance.JumpTwice();
     }
     
+    public void Squirrelclimb()
+    {
+        PlayerInputController.Instance.ClimbEnable();
+    }
 }
