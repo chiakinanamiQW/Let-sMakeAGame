@@ -27,6 +27,7 @@ public class SkillCenter : MonoBehaviour
         PlayerInputController.Instance.JumpTwiceEnable();
         PlayerInputController.Instance.jumpTimes++;
     }
+
     
     public void Squirrelclimb()
     {

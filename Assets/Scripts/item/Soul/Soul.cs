@@ -10,6 +10,7 @@ public class Soul : Item
     {
 
     }
+   
 
     protected override void itemBePick()
     {
