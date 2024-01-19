@@ -10,6 +10,19 @@ public class LeftWallCheck : MonoBehaviour
         {
             Debug.Log("LeftWall");
             PlayerInputController.Instance.isLeftOnWall = true;
+            if(PlayerInputController.Instance.isClimbAble)
+            {
+                if (PlayerInputController.Instance.CanJumpTwice)
+                {
+                    PhysicsCheck.instance.isOnGround = true;
+                    PlayerInputController.Instance.jumpTimes = 2;
+                }
+                else
+                {
+                    PhysicsCheck.instance.isOnGround = true;
+                    PlayerInputController.Instance.jumpTimes = 1;
+                }
+            }
         }
     }
 

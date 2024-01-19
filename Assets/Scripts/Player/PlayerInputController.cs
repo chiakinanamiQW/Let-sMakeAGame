@@ -39,7 +39,12 @@ public class PlayerInputController : MonoBehaviour
 
     public float JumpLimitFactor;
 
-    /*[HideInInspector]*/ public bool isJumpAble;
+    public int jumpTimes = 1;
+
+    public bool CanJumpTwice = false;
+
+    /*[HideInInspector]*/
+    public bool isJumpAble;
 
     [Header("³å´Ì²ÎÊý")]
     public float DushAcceleration;
@@ -203,6 +208,7 @@ public class PlayerInputController : MonoBehaviour
     {
         if (isJumpAble)
         {
+            jumpTimes--;
             if (isClimbAble)
             {
                 if (isLeftOnWall)
@@ -221,12 +227,6 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
-    private void Jump()
-    {
-        if (isJumpAble)
-            Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
-    }
-
     private void LeaveButton(InputAction.CallbackContext context)
     {
         if(Rigidbody2D.velocity.y >= JumpLimitFactor)
@@ -235,15 +235,14 @@ public class PlayerInputController : MonoBehaviour
 
     private void GetisJumpAble()
     {
-        if(PhysicsCheck.jumpTimes>0)
+        if(Instance.jumpTimes > 0)
             isJumpAble = true;
         else
             isJumpAble = false;
     }
     public void JumpTwice()
     {
-        if (PhysicsCheck.isOnGround)
-            PhysicsCheck.CanJumpTwice = true;
+            CanJumpTwice = true;
     }
 
     private void DushTap(InputAction.CallbackContext context)

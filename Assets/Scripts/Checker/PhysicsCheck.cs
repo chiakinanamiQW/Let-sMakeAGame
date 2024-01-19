@@ -5,30 +5,32 @@ using UnityEngine.UI;
 
 public class PhysicsCheck : MonoBehaviour
 {
+    public static PhysicsCheck instance;
     public bool isOnGround;
+    public bool isOnWall;
     public Canvas canvas;
-    public  int jumpTimes=1;
-    public bool CanJumpTwice = false;
     private bool isJump=true;
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
        
-     if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.gameObject.SetActive(true);
         }
+
         if (Input.GetKeyDown(KeyCode.Space)&&isJump)
         {
-            jumpTimes--;
+
             isJump = false;
         }
+
         isJump = true;
     }
 
@@ -36,15 +38,15 @@ public class PhysicsCheck : MonoBehaviour
     {
         if (collision.tag == "Ground")
         {
-            if (CanJumpTwice)
+            if (PlayerInputController.Instance.CanJumpTwice)
             {
                 isOnGround = true;
-                jumpTimes = 2;
+                PlayerInputController.Instance.jumpTimes = 2;
             }
             else
             {
                 isOnGround = true;
-                jumpTimes = 1;
+                PlayerInputController.Instance.jumpTimes = 1;
             }
         }
     }

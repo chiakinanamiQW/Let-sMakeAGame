@@ -10,6 +10,19 @@ public class RightWallCheck : MonoBehaviour
         {
             Debug.Log("RightWall");
             PlayerInputController.Instance.isRightOnWall = true;
+            if (PlayerInputController.Instance.isClimbAble)
+            {
+                if (PlayerInputController.Instance.CanJumpTwice)
+                {
+                    PhysicsCheck.instance.isOnGround = true;
+                    PlayerInputController.Instance.jumpTimes = 2;
+                }
+                else
+                {
+                    PhysicsCheck.instance.isOnGround = true;
+                    PlayerInputController.Instance.jumpTimes = 1;
+                }
+            }
         }
     }
 
