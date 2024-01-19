@@ -6,6 +6,7 @@ using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.TextCore.Text;
 
 public class PlayerInputController : MonoBehaviour
 {
@@ -58,6 +59,8 @@ public class PlayerInputController : MonoBehaviour
 
     [HideInInspector] public bool isMoveAble;
 
+    public float UnControllTime;
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -77,6 +80,8 @@ public class PlayerInputController : MonoBehaviour
 
         PlayerInput.GamePlay.Skill1.started += GameEventSystem.instance.Skill1Use;
         PlayerInput.GamePlay.Skill2.started += GameEventSystem.instance.Skill2Use;
+
+        GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
     }
 
     private void Start()
@@ -233,17 +238,17 @@ public class PlayerInputController : MonoBehaviour
             Rigidbody2D.position += DushDirection.normalized * speed * Time.deltaTime;
             if(DushDirection.x < 0)
             {
-                Rigidbody2D.AddForce(Vector2.left * 100 * speed, ForceMode2D.Force);
+                Rigidbody2D.AddForce(Vector2.left * speed, ForceMode2D.Force);
             }
             else if(DushDirection.x > 0) 
             {
-                Rigidbody2D.AddForce(Vector2.right * 100 * speed, ForceMode2D.Force);
+                Rigidbody2D.AddForce(Vector2.right * speed, ForceMode2D.Force);
             }
 
             if (DushDirection.y > 0)
-                Rigidbody2D.AddForce(Vector2.up * 20 * speed, ForceMode2D.Force);
+                Rigidbody2D.AddForce(Vector2.up * speed, ForceMode2D.Force);
             else if (DushDirection.y < 0)
-                Rigidbody2D.AddForce(Vector2.down * 20 * speed, ForceMode2D.Force);
+                Rigidbody2D.AddForce(Vector2.down * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {
@@ -255,12 +260,31 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
+    public void BeHurt(Transform attacker)
+    {
+        float knockBack = attacker.GetComponent<Attack>().knockBack;
+
+        Rigidbody2D.velocity = Vector2.zero;
+        UnMoveForaWhile(UnControllTime);
+        Vector2 dir = new Vector2((transform.position.x - attacker.transform.position.x), (transform.position.y - attacker.transform.position.y)).normalized;
+        Rigidbody2D.AddForce(dir * knockBack, ForceMode2D.Impulse);
+        
+    }
+
+    public void UnMoveForaWhile(float Time)
+    {
+        MoveDisable();
+        Invoke("MoveEnable", Time);
+    }
+
     public void MoveDisable()
     {
+        isMoveAble = false;
         PlayerInput.GamePlay.Move.Disable();
     }
     public void MoveEnable()
     {
+        isMoveAble = true;
         PlayerInput.GamePlay.Move.Enable();
     }
     public void ControllDisable()

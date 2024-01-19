@@ -16,6 +16,7 @@ public class GameEventSystem : MonoBehaviour
         instance = this;
     }
 
+    public event Action<Transform> OnPlayerTakeDamage;
     public event Action OnPlayerDead;
 
     public event Action OnSkill1Use;
@@ -81,4 +82,15 @@ public class GameEventSystem : MonoBehaviour
             OnSkillPickAchieve();
         }
     }
+
+    public void PlayerTakeDamage(Transform transform)
+    {
+        {
+            if(OnPlayerTakeDamage != null)
+            {
+                OnPlayerTakeDamage(transform);
+            }
+        }
+    }
+
 }
