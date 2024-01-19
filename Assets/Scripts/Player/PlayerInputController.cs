@@ -74,6 +74,15 @@ public class PlayerInputController : MonoBehaviour
 
     public float UnControllTime;
 
+    [Header("·ÉÐÐ²ÎÊý")]
+    public float FlyForce;
+
+    public float FlyDownForce;
+
+    public bool isFlyAble;
+
+    public float FlyDuration;
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -123,10 +132,10 @@ public class PlayerInputController : MonoBehaviour
         DushControll();
         Dush();
 
-        if (isMoveAble) 
-        {
-            Move();
-        }
+       
+        Move();
+        Fly();
+        
     }
 
     private void Move()
@@ -172,6 +181,24 @@ public class PlayerInputController : MonoBehaviour
             spriteRenderer.flipX = true;
         }
         #endregion
+    }
+
+    public void Fly()
+    {
+        if(isFlyAble)
+        {
+            
+            Rigidbody2D.AddForce(-0.9f*Physics2D.gravity, ForceMode2D.Force);
+            if(inputDirection.y > 0)
+            {
+                Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, FlyForce);
+            }
+            else if(inputDirection.y < 0)
+            {
+                Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, -FlyDownForce);
+            }
+
+        }
     }
 
     private void GetMoveDirection()
@@ -239,10 +266,6 @@ public class PlayerInputController : MonoBehaviour
             isJumpAble = true;
         else
             isJumpAble = false;
-    }
-    public void JumpTwice()
-    {
-            CanJumpTwice = true;
     }
 
     private void DushTap(InputAction.CallbackContext context)
@@ -312,14 +335,26 @@ public class PlayerInputController : MonoBehaviour
         Rigidbody2D.AddForce(dir * knockBack, ForceMode2D.Impulse);
         
     }
+    public void JumpTwiceEnable()
+    {
+        Debug.Log("JumpTwiceEnable");
+        CanJumpTwice = true;
+    }
 
+    public void JumpTwiceDisable()
+    {
+        Debug.Log("JumpTwiceDisable");
+        CanJumpTwice = false;
+    }
     public void ClimbEnable()
     {
+        Debug.Log("ClimbEnable");
         isClimbAble = true;
     }
 
     public void ClimbDisable()
     {
+        Debug.Log("ClimbDisable");
         isClimbAble = false;
     }
 
@@ -344,5 +379,19 @@ public class PlayerInputController : MonoBehaviour
     public void ControllEnable()
     {
         PlayerInput.GamePlay.Enable();
+    }
+
+    public void BirdFly()
+    {
+        FlyEnable();
+        Invoke("FlyDisable",FlyDuration);
+    }
+    public void FlyEnable()
+    {
+        isFlyAble = true;
+    }
+    public void FlyDisable()
+    {
+        isFlyAble = false;
     }
 }

@@ -7,6 +7,7 @@ public class SkillCenter : MonoBehaviour
     public static SkillCenter instance;
 
     private float SquirrelclimbDuration;
+    public float CatDushFactor;
 
     private SkillCenter() { }
 
@@ -17,15 +18,23 @@ public class SkillCenter : MonoBehaviour
 
     public void CatDush()
     {
-        PlayerInputController.Instance.DushTap();
+        PlayerInputController.Instance.isDush = true;
+        PlayerInputController.Instance.DushTapTime = Time.time;
+        PlayerInputController.Instance.isDushAble = false;
     }
     public void RabitJump()
     {
-        PlayerInputController.Instance.JumpTwice();
+        PlayerInputController.Instance.JumpTwiceEnable();
+        PlayerInputController.Instance.jumpTimes++;
     }
     
     public void Squirrelclimb()
     {
         PlayerInputController.Instance.ClimbEnable();
+    }
+
+    public void BirdFly()
+    {
+        PlayerInputController.Instance.BirdFly();
     }
 }
