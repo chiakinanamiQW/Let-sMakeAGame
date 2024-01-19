@@ -14,6 +14,6 @@ public class Attack : MonoBehaviour
 
     private void Awake()
     {
-        attackCheck = transform.Find("AttackChecker").GetComponent<AttackCheck>();
+        attackCheck = transform.Find("AttackChecker")?.GetComponent<AttackCheck>();
     }
 }

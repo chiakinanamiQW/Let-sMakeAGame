@@ -78,8 +78,7 @@ public class PlayerInputController : MonoBehaviour
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
         PlayerInput.GamePlay.Dush.started += DushTap;
 
-        PlayerInput.GamePlay.Skill1.started += GameEventSystem.instance.Skill1Use;
-        PlayerInput.GamePlay.Skill2.started += GameEventSystem.instance.Skill2Use;
+        PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
 
         GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
     }
@@ -98,7 +97,7 @@ public class PlayerInputController : MonoBehaviour
     {
         PlayerInput.Disable();
     }
-    // Update is called once per frame
+
     void Update()
     {
         GetMoveDirection();

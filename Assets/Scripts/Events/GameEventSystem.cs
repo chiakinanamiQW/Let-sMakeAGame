@@ -18,6 +18,7 @@ public class GameEventSystem : MonoBehaviour
 
     public event Action<Transform> OnPlayerTakeDamage;
     public event Action OnPlayerDead;
+
     public event Action OnSkill1Use;
     public event Action OnSkill1;
     public event Action OnSkill2Use;
@@ -33,6 +34,21 @@ public class GameEventSystem : MonoBehaviour
             return 2;
         else return 0;
     }
+
+    public void UseSkill_1or2(InputAction.CallbackContext context)
+    {
+        if (OnSkill2Use != null)
+            Skill2Use(context);
+        else if (OnSkill1Use != null)
+            Skill1Use(context);
+        else SkillUseFall();
+    }
+
+    public void SkillUseFall()
+    {
+        Debug.Log("Skill Use Fall");
+    }
+
     public void PlayerDead()
     {
         if (OnPlayerDead != null)
