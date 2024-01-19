@@ -7,7 +7,7 @@ public class PhysicsCheck : MonoBehaviour
 {
     public bool isOnGround;
     public Canvas canvas;
-    public static int jumpTimes=1;
+    public  int jumpTimes=1;
     public bool CanJumpTwice = false;
     private bool isJump=true;
     // Start is called before the first frame update
@@ -34,15 +34,18 @@ public class PhysicsCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground" && CanJumpTwice)
+        if (collision.tag == "Ground")
         {
-            isOnGround = true;
-            jumpTimes = 3;
-        }
-        else if (collision.tag == "Ground")
-        {
-            isOnGround = true;
-            jumpTimes = 1;
+            if (CanJumpTwice)
+            {
+                isOnGround = true;
+                jumpTimes = 2;
+            }
+            else
+            {
+                isOnGround = true;
+                jumpTimes = 1;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
