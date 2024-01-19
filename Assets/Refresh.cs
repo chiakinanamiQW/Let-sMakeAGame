@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class Refresh : MonoBehaviour
 {
-    public float RefreshTime;
+    // Start is called before the first frame update
+   
 
-    
+    // Update is called once per frame
     void Update()
     {
-        if (GetComponent<Renderer>().enabled == false && GetComponent<Collider2D>().enabled == false)
-            Invoke("refresh", RefreshTime);
-    }
-    private void refresh()
-    {
-        
-            GetComponent<Renderer>().enabled = true;
-            GetComponent<Collider2D>().enabled = true;
+            
+            gameObject.SetActive(true);
         
     }
 }
