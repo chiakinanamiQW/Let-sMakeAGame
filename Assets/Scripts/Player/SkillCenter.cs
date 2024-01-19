@@ -11,10 +11,20 @@ public class SkillCenter : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Timer.Instance.Schedule(Dectect,null, 0, 0, 5);
+        Debug.Log(Timer.Instance);
     }
 
     public void CatDush()
     {
         PlayerInputController.Instance.DushTap();
+    }
+    public void RabitJump()
+    {
+        PlayerInputController.Instance.JumpTwice();
+    }
+    private void Dectect(object t)
+    {   PlayerInputController p= (PlayerInputController)t;  
+        Debug.Log(p);
     }
 }

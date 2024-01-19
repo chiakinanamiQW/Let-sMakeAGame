@@ -7,6 +7,7 @@ public class PhysicsCheck : MonoBehaviour
 {
     public bool isOnGround;
     public Canvas canvas;
+    public int jumpTimes=1;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class PhysicsCheck : MonoBehaviour
         if (collision.tag == "Ground")
         {
             isOnGround = false;
+            jumpTimes--;
         }
     }
 }

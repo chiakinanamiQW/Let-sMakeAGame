@@ -183,6 +183,11 @@ public class PlayerInputController : MonoBehaviour
         else
             isJumpAble = false;
     }
+    public void JumpTwice()
+    {
+        if (PhysicsCheck.isOnGround)
+            PhysicsCheck.jumpTimes = 2;
+    }
 
     private void DushTap(InputAction.CallbackContext context)
     {
