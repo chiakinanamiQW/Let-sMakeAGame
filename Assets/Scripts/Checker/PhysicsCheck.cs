@@ -34,12 +34,14 @@ public class PhysicsCheck : MonoBehaviour
         isJump = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(PlayerInputController.Instance.jumpTimes);
         if (collision.tag == "Ground")
         {
             if (PlayerInputController.Instance.CanJumpTwice)
             {
+
                 isOnGround = true;
                 PlayerInputController.Instance.jumpTimes = 2;
             }
@@ -50,9 +52,21 @@ public class PhysicsCheck : MonoBehaviour
             }
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground")
+        {
+            if (PlayerInputController.Instance.CanJumpTwice)
+            {
+
+                isOnGround = true;
+                PlayerInputController.Instance.jumpTimes = 2;
+            }
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "Ground")
+        if (collision.tag == "Ground")
         {
             isOnGround = false;
         }
