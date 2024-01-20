@@ -123,11 +123,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""465360b4-4572-4827-b578-d2341260ed96"",
-<<<<<<< HEAD
                     ""path"": ""<Keyboard>/k"",
-=======
-                    ""path"": ""<Keyboard>/j"",
->>>>>>> WuLing
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -138,11 +134,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b2a9ff46-7e78-4aa1-bdd1-79324bda9e0e"",
-<<<<<<< HEAD
                     ""path"": ""<Keyboard>/j"",
-=======
-                    ""path"": ""<Keyboard>/k"",
->>>>>>> WuLing
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
