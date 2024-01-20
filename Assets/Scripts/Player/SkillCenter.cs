@@ -4,10 +4,44 @@ using UnityEngine;
 
 public class SkillCenter : MonoBehaviour
 {
+    IEnumerator RabbitJumpCD()
+    {
+        yield return new WaitForSeconds(RabbitJumpDuration);
+        PlayerInputController.Instance.JumpTwiceDisable();
+    }
+    IEnumerator FlyCD()
+    {
+        yield return new WaitForSeconds(BridFlyDuration);
+        PlayerInputController.Instance.FlyDisable();
+    }
+    IEnumerator ClimbCD()
+    {
+        yield return new WaitForSeconds(SquirrelclimbDuration);
+        PlayerInputController.Instance.ClimbDisable();
+    }
+
+    IEnumerator CatDushCD()
+    {
+        yield return new WaitForSeconds(CatDushDuration);
+        PlayerInputController.Instance.CatDushDisable();
+    }
+
     public static SkillCenter instance;
+
+    public float BridFlyDuration;
+
+    public float RabbitJumpDuration;
+
+    public float SquirrelclimbDuration;
+
+    public float CatDushDuration;
+
+    public float CatDushPlusTime;//puls
+
 
     private SkillCenter() { }
 
+    
     private void Awake()
     {
         instance = this; 
@@ -15,12 +49,30 @@ public class SkillCenter : MonoBehaviour
 
     public void CatDush()
     {
-        PlayerInputController.Instance.DushTap();
+        Debug.Log("CatDush");
+        PlayerInputController.Instance.CatDushEnable();
+        StartCoroutine(CatDushCD());
     }
     public void RabitJump()
     {
-        PlayerInputController.Instance.JumpTwice();
+        Debug.Log("RabbitJump");
+        PlayerInputController.Instance.JumpTwiceEnable();
+        PlayerInputController.Instance.jumpTimes++;
+        StartCoroutine(RabbitJumpCD());
     }
 
     
+    public void Squirrelclimb()
+    {
+        Debug.Log("Squirrelclimb");
+        PlayerInputController.Instance.ClimbEnable();
+        StartCoroutine(ClimbCD());
+    }
+
+    public void BirdFly()
+    {
+        Debug.Log("BirdFly");
+        PlayerInputController.Instance.FlyEnable();
+        StartCoroutine(FlyCD());
+    }
 }

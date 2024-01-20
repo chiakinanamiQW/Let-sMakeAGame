@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
 
     protected virtual void itemBePick()
     {
-        gameObject.SetActive(false);
+        Destroy(this.gameObject);
         Debug.Log("IsPick");
     }
 }
