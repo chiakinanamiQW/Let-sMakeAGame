@@ -15,7 +15,11 @@ public class Soul : Item
     {
         a = GameEventSystem.instance.GetSkill_1or2();
         if (a == 0)
+        {
             GameEventSystem.instance.SkillPickFall();
+            return;
+        }
+            
         else if (a == 1)
         {
             GameEventSystem.instance.OnSkill1Use += Skill;

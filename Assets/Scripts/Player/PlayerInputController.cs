@@ -81,8 +81,6 @@ public class PlayerInputController : MonoBehaviour
 
     public bool isFlyAble;
 
-    public float FlyDuration;
-
     // Start is called before the first frame update
 
     private void Awake()
@@ -125,6 +123,7 @@ public class PlayerInputController : MonoBehaviour
         GetMoveDirection();
         GetDushDirection();
         GetisJumpAble();
+        TwiceJumpLimit();
     }
 
     private void FixedUpdate()
@@ -319,6 +318,7 @@ public class PlayerInputController : MonoBehaviour
         {
             Rigidbody2D.velocity = Vector2.zero;
             MoveEnable();
+            if(isFlyAble) { FlyDisable(); }
             speed = 0;
             timeSpend = 0;
             j = 1;
@@ -334,6 +334,12 @@ public class PlayerInputController : MonoBehaviour
         Vector2 dir = new Vector2((transform.position.x - attacker.transform.position.x), (transform.position.y - attacker.transform.position.y)).normalized;
         Rigidbody2D.AddForce(dir * knockBack, ForceMode2D.Impulse);
         
+    }
+
+    public void TwiceJumpLimit()
+    {
+        if(CanJumpTwice&&(jumpTimes == 0))
+            JumpTwiceDisable();
     }
     public void JumpTwiceEnable()
     {
@@ -379,12 +385,6 @@ public class PlayerInputController : MonoBehaviour
     public void ControllEnable()
     {
         PlayerInput.GamePlay.Enable();
-    }
-
-    public void BirdFly()
-    {
-        FlyEnable();
-        Invoke("FlyDisable",FlyDuration);
     }
     public void FlyEnable()
     {
