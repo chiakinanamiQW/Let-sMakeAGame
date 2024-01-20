@@ -24,10 +24,13 @@ public class PlayerInputController : MonoBehaviour
 
     /*[HideInInspector]*/ public Vector2 DushDirection;
 
-    private Vector2 inputDirection;
+    public Vector2 inputDirection;
 
     [Header("移动参数")]
     public float Speed;
+
+    public bool isLeftOnWall;
+    public bool isRightOnWall;
 
     [Header("跳跃参数")]
     public float JumpForce;
@@ -36,7 +39,12 @@ public class PlayerInputController : MonoBehaviour
 
     public float JumpLimitFactor;
 
-    [HideInInspector] public bool isJumpAble;
+    public int jumpTimes = 1;
+
+    public bool CanJumpTwice = false;
+
+    /*[HideInInspector]*/
+    public bool isJumpAble;
 
     [Header("冲刺参数")]
     public float DushAcceleration;
@@ -46,6 +54,11 @@ public class PlayerInputController : MonoBehaviour
     public float DushTime;
 
     public float DushCD;
+
+    [Header("攀爬参数")]
+    public bool isClimbAble;
+
+    public float ClimbSpeed;
 
     [HideInInspector] public float speed = 0;
 
@@ -60,6 +73,13 @@ public class PlayerInputController : MonoBehaviour
     [HideInInspector] public bool isMoveAble;
 
     public float UnControllTime;
+
+    [Header("飞行参数")]
+    public float FlyForce;
+
+    public float FlyDownForce;
+
+    public bool isFlyAble;
 
     // Start is called before the first frame update
 
@@ -101,9 +121,9 @@ public class PlayerInputController : MonoBehaviour
     void Update()
     {
         GetMoveDirection();
+        GetDushDirection();
         GetisJumpAble();
-        Debug.Log(PhysicsCheck.CanJumpTwice);
-        Debug.Log(PhysicsCheck.jumpTimes);
+        TwiceJumpLimit();
     }
 
     private void FixedUpdate()
@@ -111,26 +131,72 @@ public class PlayerInputController : MonoBehaviour
         DushControll();
         Dush();
 
-        if (isMoveAble) 
-        {
-            Move();
-        }
+       
+        Move();
+        Fly();
+        
     }
 
     private void Move()
     {
         if(isMoveAble)
         {
-            Rigidbody2D.velocity = new Vector2(Speed*MoveDirection.x*Time.deltaTime, Rigidbody2D.velocity.y);
+            if (!isClimbAble)
+            {
+                if (isLeftOnWall)
+                {
+                    if (MoveDirection.x < 0)
+                    {
+                        Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
+                        return;
+                    }
+                }
+                else if (isRightOnWall)
+                {
+                    if (MoveDirection.x > 0)
+                    {
+                        Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
+                        return;
+                    }
+                }
+            }
+
+            if (inputDirection.y > 0 && isClimbAble && (isLeftOnWall || isRightOnWall))
+            {
+                Rigidbody2D.AddForce(-ClimbSpeed * Physics2D.gravity, ForceMode2D.Force);
+                Rigidbody2D.velocity = Vector2.up * inputDirection.y;
+            }
+            //else
+            Rigidbody2D.velocity = new Vector2(Speed * MoveDirection.x * Time.deltaTime, Rigidbody2D.velocity.y);
         }
 
-        if(MoveDirection.x > 0)
+        #region 人物翻转
+        if (MoveDirection.x > 0)
         {
             spriteRenderer.flipX = false;
         }
         else if(MoveDirection.x < 0)
         {
             spriteRenderer.flipX = true;
+        }
+        #endregion
+    }
+
+    public void Fly()
+    {
+        if(isFlyAble)
+        {
+            
+            Rigidbody2D.AddForce(-0.9f*Physics2D.gravity, ForceMode2D.Force);
+            if(inputDirection.y > 0)
+            {
+                Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, FlyForce);
+            }
+            else if(inputDirection.y < 0)
+            {
+                Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, -FlyDownForce);
+            }
+
         }
     }
 
@@ -166,14 +232,25 @@ public class PlayerInputController : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if(isJumpAble)
-            Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
-    }
-
-    private void Jump()
-    {
         if (isJumpAble)
-            Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+        {
+            jumpTimes--;
+            if (isClimbAble)
+            {
+                if (isLeftOnWall)
+                {
+                    UnMoveForaWhile(0.2f);
+                    Rigidbody2D.AddForce(JumpForce * (Vector2.right + Vector2.up), ForceMode2D.Impulse);
+                }
+                else if (isRightOnWall)
+                {
+                    UnMoveForaWhile(0.2f);
+                    Rigidbody2D.AddForce(JumpForce * (Vector2.left + Vector2.up), ForceMode2D.Impulse);
+                }
+                else Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+            }
+            else Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+        }
     }
 
     private void LeaveButton(InputAction.CallbackContext context)
@@ -184,20 +261,18 @@ public class PlayerInputController : MonoBehaviour
 
     private void GetisJumpAble()
     {
-        if(PhysicsCheck.jumpTimes>0)
+        if(Instance.jumpTimes > 0)
             isJumpAble = true;
         else
             isJumpAble = false;
-    }
-    public void JumpTwice()
-    {
-        if (PhysicsCheck.isOnGround)
-            PhysicsCheck.CanJumpTwice = true;
+        if (jumpTimes == 2)
+        {
+            CanJumpTwice = false;
+        }
     }
 
     private void DushTap(InputAction.CallbackContext context)
     {
-        GetDushDirection();
         if(isDushAble) 
         {
             isDush = true;
@@ -208,7 +283,6 @@ public class PlayerInputController : MonoBehaviour
     }
     public void DushTap()
     {
-        GetDushDirection();
         if (isDushAble)
         {
             isDush = true;
@@ -242,24 +316,13 @@ public class PlayerInputController : MonoBehaviour
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
 
             Rigidbody2D.position += DushDirection.normalized * speed * Time.deltaTime;
-            if(DushDirection.x < 0)
-            {
-                Rigidbody2D.AddForce(Vector2.left * speed, ForceMode2D.Force);
-            }
-            else if(DushDirection.x > 0) 
-            {
-                Rigidbody2D.AddForce(Vector2.right * speed, ForceMode2D.Force);
-            }
-
-            if (DushDirection.y > 0)
-                Rigidbody2D.AddForce(Vector2.up * speed, ForceMode2D.Force);
-            else if (DushDirection.y < 0)
-                Rigidbody2D.AddForce(Vector2.down * speed, ForceMode2D.Force);
+            Rigidbody2D.AddForce(DushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {
             Rigidbody2D.velocity = Vector2.zero;
             MoveEnable();
+            if(isFlyAble) { FlyDisable(); }
             speed = 0;
             timeSpend = 0;
             j = 1;
@@ -277,6 +340,34 @@ public class PlayerInputController : MonoBehaviour
         
     }
 
+    public void TwiceJumpLimit()
+    {
+        if(CanJumpTwice&&(jumpTimes == 0))
+            JumpTwiceDisable();
+    }
+    public void JumpTwiceEnable()
+    {
+        Debug.Log("JumpTwiceEnable");
+        CanJumpTwice = true;
+    }
+
+    public void JumpTwiceDisable()
+    {
+        Debug.Log("JumpTwiceDisable");
+        CanJumpTwice = false;
+    }
+    public void ClimbEnable()
+    {
+        Debug.Log("ClimbEnable");
+        isClimbAble = true;
+    }
+
+    public void ClimbDisable()
+    {
+        Debug.Log("ClimbDisable");
+        isClimbAble = false;
+    }
+
     public void UnMoveForaWhile(float Time)
     {
         MoveDisable();
@@ -286,12 +377,10 @@ public class PlayerInputController : MonoBehaviour
     public void MoveDisable()
     {
         isMoveAble = false;
-        PlayerInput.GamePlay.Move.Disable();
     }
     public void MoveEnable()
     {
         isMoveAble = true;
-        PlayerInput.GamePlay.Move.Enable();
     }
     public void ControllDisable()
     {
@@ -300,5 +389,13 @@ public class PlayerInputController : MonoBehaviour
     public void ControllEnable()
     {
         PlayerInput.GamePlay.Enable();
+    }
+    public void FlyEnable()
+    {
+        isFlyAble = true;
+    }
+    public void FlyDisable()
+    {
+        isFlyAble = false;
     }
 }
