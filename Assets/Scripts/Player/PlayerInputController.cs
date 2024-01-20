@@ -20,9 +20,9 @@ public class PlayerInputController : MonoBehaviour
 
     private PhysicsCheck PhysicsCheck;
 
-    [HideInInspector] public Vector2 MoveDirection;
+    private Character character;
 
-    /*[HideInInspector]*/ public Vector2 DushDirection;
+    [HideInInspector] public Vector2 MoveDirection;
 
     public Vector2 inputDirection;
 
@@ -43,10 +43,13 @@ public class PlayerInputController : MonoBehaviour
 
     public bool CanJumpTwice = false;
 
-    /*[HideInInspector]*/
     public bool isJumpAble;
 
     [Header("冲刺参数")]
+    /*[HideInInspector]*/ public Vector2 InputDushDirection;
+
+    /*[HideInInspector]*/ public Vector2  currentDushDirection = Vector2.zero;
+
     public float DushAcceleration;
 
     [HideInInspector] public float DushTapTime;
@@ -54,6 +57,8 @@ public class PlayerInputController : MonoBehaviour
     public float DushTime;
 
     public float DushCD;
+
+    public bool isCatDushAble;
 
     [Header("攀爬参数")]
     public bool isClimbAble;
@@ -66,7 +71,7 @@ public class PlayerInputController : MonoBehaviour
 
     private float j = 1;
 
-    [HideInInspector] public bool isDushAble;
+    /*[HideInInspector]*/ public bool isDushAble;
 
     [HideInInspector] public bool isDush;
 
@@ -93,6 +98,7 @@ public class PlayerInputController : MonoBehaviour
         Rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         PhysicsCheck = transform.Find("IsOnGroundChecker").GetComponent<PhysicsCheck>();
+        character = GetComponent<Character>();
 
         PlayerInput.GamePlay.Jump.started += Jump;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
@@ -213,19 +219,19 @@ public class PlayerInputController : MonoBehaviour
     private void GetDushDirection()
     {
         if(PlayerInput.GamePlay.Move.ReadValue<Vector2>() != Vector2.zero)
-            DushDirection = PlayerInput.GamePlay.Move.ReadValue<Vector2>().normalized;
+            InputDushDirection = PlayerInput.GamePlay.Move.ReadValue<Vector2>().normalized;
         else
         {
             if (spriteRenderer.flipX != true)
             {
-                DushDirection.x = 1;
-                DushDirection.y = 0;
+                InputDushDirection.x = 1;
+                InputDushDirection.y = 0;
             }
 
             else
             {
-                DushDirection.x = -1;
-                DushDirection.y = 0;
+                InputDushDirection.x = -1;
+                InputDushDirection.y = 0;
             }
         }
     }
@@ -273,7 +279,8 @@ public class PlayerInputController : MonoBehaviour
 
     private void DushTap(InputAction.CallbackContext context)
     {
-        if(isDushAble) 
+        
+        if (isDushAble||isCatDushAble) 
         {
             isDush = true;
             DushTapTime = Time.time;
@@ -294,15 +301,38 @@ public class PlayerInputController : MonoBehaviour
 
     private void DushControll()
     {
+        float CatDushPlusTime = 0;
+        if(isCatDushAble)
+        {
+            CatDushPlusTime = SkillCenter.instance.CatDushPlusTime;
+        }//判断是否在技能期间，增加冲刺时间
+
         if(isDush)
         {
-            if(Time.time - DushTapTime >= DushTime)
+            if(isCatDushAble)
+            {
+                character.BeInvulnerableEnable();
+            }
+
+            if(Time.time - DushTapTime >= DushTime + CatDushPlusTime)
+            {
+                if (isCatDushAble)
+                {
+                    isCatDushAble = false;
+                    character.BeInvulnerableDisable();
+                }
+
                 isDush = false;
+            }
         }
+
         if(!isDushAble)
         {
             if (Time.time - DushTapTime >= DushCD)
+            {
                 isDushAble = true;
+            }
+                
         }
     }
 
@@ -310,17 +340,20 @@ public class PlayerInputController : MonoBehaviour
     {
         if(isDush)
         {
+            if (j == 1)
+                currentDushDirection = InputDushDirection;
             j++;
             MoveDisable();
             Debug.Log("Dush");
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
 
-            Rigidbody2D.position += DushDirection.normalized * speed * Time.deltaTime;
-            Rigidbody2D.AddForce(DushDirection * speed, ForceMode2D.Force);
+            Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
+            Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {
             Rigidbody2D.velocity = Vector2.zero;
+            currentDushDirection = Vector2.zero;
             MoveEnable();
             if(isFlyAble) { FlyDisable(); }
             speed = 0;
@@ -397,5 +430,15 @@ public class PlayerInputController : MonoBehaviour
     public void FlyDisable()
     {
         isFlyAble = false;
+    }
+
+    public void CatDushEnable()
+    {
+        isCatDushAble = true;
+    }
+
+    public void CatDushDisable()
+    {
+        isCatDushAble = false;
     }
 }
