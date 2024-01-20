@@ -60,6 +60,8 @@ public class PlayerInputController : MonoBehaviour
 
     public bool isCatDushAble;
 
+    public bool isAttackAble;
+
     [Header("攀爬参数")]
     public bool isClimbAble;
 
@@ -313,6 +315,7 @@ public class PlayerInputController : MonoBehaviour
             if(isCatDushAble)
             {
                 character.BeInvulnerableEnable();
+                isAttackAble = true;
                 //这里可以插入镜头抖动事件（猫猫冲刺时
             }
 
@@ -321,6 +324,7 @@ public class PlayerInputController : MonoBehaviour
                 if (isCatDushAble)
                 {
                     isCatDushAble = false;
+                    isAttackAble = false;
                     character.BeInvulnerableDisable();
                 }
 
