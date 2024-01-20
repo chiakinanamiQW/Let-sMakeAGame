@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
     public int MaxHealth;
-    public int CurrentHealth;
+    public  int CurrentHealth;
 
     public float invulnerableDuration;
 
@@ -16,7 +17,7 @@ public class Character : MonoBehaviour
     public bool isHurt;
 
     public bool isdead;
-
+    public UnityEvent<Character> OnHealthChange;
     private float invulnerableCounter;
 
     private void Awake()
@@ -28,7 +29,7 @@ public class Character : MonoBehaviour
     }
     void Start()
     {
-        
+        OnHealthChange?.Invoke(this);
     }
 
     // Update is called once per frame
@@ -42,6 +43,7 @@ public class Character : MonoBehaviour
                 invulnerable = false;
             }
         }
+        OnHealthChange?.Invoke(this);
     }
 
     public void BeInvulnerableEnable()

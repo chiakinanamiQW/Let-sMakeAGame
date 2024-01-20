@@ -271,6 +271,10 @@ public class PlayerInputController : MonoBehaviour
             isJumpAble = true;
         else
             isJumpAble = false;
+        if (jumpTimes == 2)
+        {
+            CanJumpTwice = false;
+        }
     }
 
     private void DushTap(InputAction.CallbackContext context)
