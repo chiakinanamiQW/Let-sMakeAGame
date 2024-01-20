@@ -9,6 +9,8 @@ public class Character : MonoBehaviour
     public int CurrentHealth;
 
     public float invulnerableDuration;
+
+    public bool BeInvulnerable = false;//主动进入无敌状态，结束时间由外部控制
     public bool invulnerable;
 
     public bool isHurt;
@@ -42,11 +44,20 @@ public class Character : MonoBehaviour
         }
     }
 
-    
+    public void BeInvulnerableEnable()
+    {
+        BeInvulnerable = true;
+        Debug.Log("BeInvulnerableEnable");
+    }
+
+    public void BeInvulnerableDisable()
+    {
+        BeInvulnerable = false;
+    }
 
     public void TakeDamage(Attack attacker)
     {
-        if (invulnerable) { return; }
+        if (invulnerable||BeInvulnerable) { return; }
 
         if(CurrentHealth - attacker.Damage > 0)
         {

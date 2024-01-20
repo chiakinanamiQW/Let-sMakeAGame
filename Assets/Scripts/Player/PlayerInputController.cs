@@ -20,6 +20,8 @@ public class PlayerInputController : MonoBehaviour
 
     private PhysicsCheck PhysicsCheck;
 
+    private Character character;
+
     [HideInInspector] public Vector2 MoveDirection;
 
     public Vector2 inputDirection;
@@ -96,6 +98,7 @@ public class PlayerInputController : MonoBehaviour
         Rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         PhysicsCheck = transform.Find("IsOnGroundChecker").GetComponent<PhysicsCheck>();
+        character = GetComponent<Character>();
 
         PlayerInput.GamePlay.Jump.started += Jump;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
@@ -302,13 +305,23 @@ public class PlayerInputController : MonoBehaviour
 
         if(isDush)
         {
+            if(isCatDushAble)
+            {
+                character.BeInvulnerableEnable();
+            }
+
             if(Time.time - DushTapTime >= DushTime + CatDushPlusTime)
             {
                 if (isCatDushAble)
+                {
                     isCatDushAble = false;
+                    character.BeInvulnerableDisable();
+                }
+
                 isDush = false;
             }
         }
+
         if(!isDushAble)
         {
             if (Time.time - DushTapTime >= DushCD)
