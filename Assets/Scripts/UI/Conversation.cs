@@ -9,7 +9,7 @@ public class Conversation : MonoBehaviour
     [Header("UI")]
     public Image Face;
     public TMP_Text context;
-    public TMP_Text Playername;
+    public TMP_Text name;
     [Header("ÄÚÈÝ")]
     public TextAsset textAsset;
     public int index;
