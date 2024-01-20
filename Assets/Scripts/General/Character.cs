@@ -2,19 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
     public int MaxHealth;
-    public int CurrentHealth;
+    public  int CurrentHealth;
 
     public float invulnerableDuration;
+
+    public bool BeInvulnerable = false;//主动进入无敌状态，结束时间由外部控制
     public bool invulnerable;
 
     public bool isHurt;
 
     public bool isdead;
-
+    public UnityEvent<Character> OnHealthChange;
     private float invulnerableCounter;
 
     private void Awake()
@@ -26,7 +29,7 @@ public class Character : MonoBehaviour
     }
     void Start()
     {
-        
+        OnHealthChange?.Invoke(this);
     }
 
     // Update is called once per frame
@@ -40,13 +43,23 @@ public class Character : MonoBehaviour
                 invulnerable = false;
             }
         }
+        OnHealthChange?.Invoke(this);
     }
 
-    
+    public void BeInvulnerableEnable()
+    {
+        BeInvulnerable = true;
+        Debug.Log("BeInvulnerableEnable");
+    }
+
+    public void BeInvulnerableDisable()
+    {
+        BeInvulnerable = false;
+    }
 
     public void TakeDamage(Attack attacker)
     {
-        if (invulnerable) { return; }
+        if (invulnerable||BeInvulnerable) { return; }
 
         if(CurrentHealth - attacker.Damage > 0)
         {
