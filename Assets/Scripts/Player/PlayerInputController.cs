@@ -305,12 +305,14 @@ public class PlayerInputController : MonoBehaviour
 
         if(isDush)
         {
+            //这里可以插入镜头抖动事件（
             if(isCatDushAble)
             {
                 character.BeInvulnerableEnable();
+                //这里可以插入镜头抖动事件（猫猫冲刺时
             }
 
-            if(Time.time - DushTapTime >= DushTime + CatDushPlusTime)
+            if (Time.time - DushTapTime >= DushTime + CatDushPlusTime)
             {
                 if (isCatDushAble)
                 {
