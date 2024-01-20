@@ -5,68 +5,57 @@ using UnityEngine.UI;
 
 public class PhysicsCheck : MonoBehaviour
 {
-    public static PhysicsCheck instance;
     public bool isOnGround;
-    public bool isOnWall;
     public Canvas canvas;
+    public  int jumpTimes=1;
+    public bool CanJumpTwice = false;
     private bool isJump=true;
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+
     }
 
     // Update is called once per frame
     void Update()
     {
        
-        if(Input.GetKeyDown(KeyCode.Escape))
+     if(Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.gameObject.SetActive(true);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space)&&isJump)
+        if (Input.GetKeyDown(KeyCode.J)&&isJump)
         {
-
+            jumpTimes--;
             isJump = false;
         }
-
         isJump = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(PlayerInputController.Instance.jumpTimes);
         if (collision.tag == "Ground")
         {
-            if (PlayerInputController.Instance.CanJumpTwice)
+            if (CanJumpTwice)
             {
-
                 isOnGround = true;
-                PlayerInputController.Instance.jumpTimes = 2;
+                jumpTimes = 2;
             }
             else
             {
                 isOnGround = true;
-                PlayerInputController.Instance.jumpTimes = 1;
+                jumpTimes = 1;
             }
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
-        {
-            if (PlayerInputController.Instance.CanJumpTwice)
-            {
-
-                isOnGround = true;
-                PlayerInputController.Instance.jumpTimes = 2;
-            }
-        }
+        if (collision.tag == "Ground" && CanJumpTwice)
+            jumpTimes = 2;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if(collision.tag == "Ground")
         {
             isOnGround = false;
         }
