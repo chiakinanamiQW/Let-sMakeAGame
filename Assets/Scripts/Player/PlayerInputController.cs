@@ -22,8 +22,6 @@ public class PlayerInputController : MonoBehaviour
 
     [HideInInspector] public Vector2 MoveDirection;
 
-    /*[HideInInspector]*/ public Vector2 DushDirection;
-
     public Vector2 inputDirection;
 
     [Header("移动参数")]
@@ -47,6 +45,10 @@ public class PlayerInputController : MonoBehaviour
     public bool isJumpAble;
 
     [Header("冲刺参数")]
+    /*[HideInInspector]*/ public Vector2 InputDushDirection;
+
+    public Vector2  currentDushDirection = Vector2.zero;
+
     public float DushAcceleration;
 
     [HideInInspector] public float DushTapTime;
@@ -213,19 +215,19 @@ public class PlayerInputController : MonoBehaviour
     private void GetDushDirection()
     {
         if(PlayerInput.GamePlay.Move.ReadValue<Vector2>() != Vector2.zero)
-            DushDirection = PlayerInput.GamePlay.Move.ReadValue<Vector2>().normalized;
+            InputDushDirection = PlayerInput.GamePlay.Move.ReadValue<Vector2>().normalized;
         else
         {
             if (spriteRenderer.flipX != true)
             {
-                DushDirection.x = 1;
-                DushDirection.y = 0;
+                InputDushDirection.x = 1;
+                InputDushDirection.y = 0;
             }
 
             else
             {
-                DushDirection.x = -1;
-                DushDirection.y = 0;
+                InputDushDirection.x = -1;
+                InputDushDirection.y = 0;
             }
         }
     }
@@ -306,17 +308,20 @@ public class PlayerInputController : MonoBehaviour
     {
         if(isDush)
         {
+            if (j == 1)
+                currentDushDirection = InputDushDirection;
             j++;
             MoveDisable();
             Debug.Log("Dush");
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
 
-            Rigidbody2D.position += DushDirection.normalized * speed * Time.deltaTime;
-            Rigidbody2D.AddForce(DushDirection * speed, ForceMode2D.Force);
+            Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
+            Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {
             Rigidbody2D.velocity = Vector2.zero;
+            currentDushDirection = Vector2.zero;
             MoveEnable();
             if(isFlyAble) { FlyDisable(); }
             speed = 0;

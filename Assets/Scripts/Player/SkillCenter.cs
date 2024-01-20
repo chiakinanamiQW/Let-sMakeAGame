@@ -14,11 +14,19 @@ public class SkillCenter : MonoBehaviour
         yield return new WaitForSeconds(BridFlyDuration);
         PlayerInputController.Instance.FlyDisable();
     }
+    IEnumerator ClimbCD()
+    {
+        yield return new WaitForSeconds(SquirrelclimbDuration);
+        PlayerInputController.Instance.ClimbDisable();
+    }
+
     public static SkillCenter instance;
+
     public float BridFlyDuration;
     public float RabbitJumpDuration;
     private float SquirrelclimbDuration;
-    public float CatDushFactor;
+    public float CatDushFactor;//puls
+
 
     private SkillCenter() { }
 
@@ -40,10 +48,12 @@ public class SkillCenter : MonoBehaviour
         PlayerInputController.Instance.jumpTimes++;
         StartCoroutine(RabbitJumpCD());
     }
+
     
     public void Squirrelclimb()
     {
         PlayerInputController.Instance.ClimbEnable();
+        StartCoroutine(ClimbCD());
     }
 
     public void BirdFly()
