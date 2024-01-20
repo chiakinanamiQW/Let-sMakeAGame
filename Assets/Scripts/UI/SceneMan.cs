@@ -21,18 +21,6 @@ public class SceneMan : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex-1);
         Destroy(canvas);
     }
-    public void ToggleFullScreen()
-    {
-        Screen.fullScreen = !Screen.fullScreen;
-    }
-    public void SetResolution(int width, int height, bool fullScreen)
-    {
-        Screen.SetResolution(width, height, fullScreen);
-    }
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
-
+    
+   
 }
