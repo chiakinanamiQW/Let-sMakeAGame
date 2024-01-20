@@ -41,13 +41,12 @@ public class PlayerInputController : MonoBehaviour
 
     public bool CanJumpTwice = false;
 
-    /*[HideInInspector]*/
     public bool isJumpAble;
 
     [Header("冲刺参数")]
     /*[HideInInspector]*/ public Vector2 InputDushDirection;
 
-    public Vector2  currentDushDirection = Vector2.zero;
+    /*[HideInInspector]*/ public Vector2  currentDushDirection = Vector2.zero;
 
     public float DushAcceleration;
 
@@ -56,6 +55,8 @@ public class PlayerInputController : MonoBehaviour
     public float DushTime;
 
     public float DushCD;
+
+    public bool isCatDushAble;
 
     [Header("攀爬参数")]
     public bool isClimbAble;
@@ -68,7 +69,7 @@ public class PlayerInputController : MonoBehaviour
 
     private float j = 1;
 
-    [HideInInspector] public bool isDushAble;
+    /*[HideInInspector]*/ public bool isDushAble;
 
     [HideInInspector] public bool isDush;
 
@@ -271,7 +272,8 @@ public class PlayerInputController : MonoBehaviour
 
     private void DushTap(InputAction.CallbackContext context)
     {
-        if(isDushAble) 
+        
+        if (isDushAble||isCatDushAble) 
         {
             isDush = true;
             DushTapTime = Time.time;
@@ -292,15 +294,28 @@ public class PlayerInputController : MonoBehaviour
 
     private void DushControll()
     {
+        float CatDushPlusTime = 0;
+        if(isCatDushAble)
+        {
+            CatDushPlusTime = SkillCenter.instance.CatDushPlusTime;
+        }//判断是否在技能期间，增加冲刺时间
+
         if(isDush)
         {
-            if(Time.time - DushTapTime >= DushTime)
+            if(Time.time - DushTapTime >= DushTime + CatDushPlusTime)
+            {
+                if (isCatDushAble)
+                    isCatDushAble = false;
                 isDush = false;
+            }
         }
         if(!isDushAble)
         {
             if (Time.time - DushTapTime >= DushCD)
+            {
                 isDushAble = true;
+            }
+                
         }
     }
 
@@ -398,5 +413,15 @@ public class PlayerInputController : MonoBehaviour
     public void FlyDisable()
     {
         isFlyAble = false;
+    }
+
+    public void CatDushEnable()
+    {
+        isCatDushAble = true;
+    }
+
+    public void CatDushDisable()
+    {
+        isCatDushAble = false;
     }
 }

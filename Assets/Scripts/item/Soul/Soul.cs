@@ -32,6 +32,9 @@ public class Soul : Item
             GameEventSystem.instance.OnSkill2Use += Skill;
             GameEventSystem.instance.SkillPickAchieve();
         }
-        base.itemBePick();
+
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        Debug.Log("IsPick");
     }
 }

@@ -20,12 +20,23 @@ public class SkillCenter : MonoBehaviour
         PlayerInputController.Instance.ClimbDisable();
     }
 
+    IEnumerator CatDushCD()
+    {
+        yield return new WaitForSeconds(CatDushDuration);
+        PlayerInputController.Instance.CatDushDisable();
+    }
+
     public static SkillCenter instance;
 
     public float BridFlyDuration;
+
     public float RabbitJumpDuration;
-    private float SquirrelclimbDuration;
-    public float CatDushFactor;//puls
+
+    public float SquirrelclimbDuration;
+
+    public float CatDushDuration;
+
+    public float CatDushPlusTime;//puls
 
 
     private SkillCenter() { }
@@ -38,12 +49,13 @@ public class SkillCenter : MonoBehaviour
 
     public void CatDush()
     {
-        PlayerInputController.Instance.isDush = true;
-        PlayerInputController.Instance.DushTapTime = Time.time;
-        PlayerInputController.Instance.isDushAble = false;
+        Debug.Log("CatDush");
+        PlayerInputController.Instance.CatDushEnable();
+        StartCoroutine(CatDushCD());
     }
     public void RabitJump()
     {
+        Debug.Log("RabbitJump");
         PlayerInputController.Instance.JumpTwiceEnable();
         PlayerInputController.Instance.jumpTimes++;
         StartCoroutine(RabbitJumpCD());
@@ -52,12 +64,14 @@ public class SkillCenter : MonoBehaviour
     
     public void Squirrelclimb()
     {
+        Debug.Log("Squirrelclimb");
         PlayerInputController.Instance.ClimbEnable();
         StartCoroutine(ClimbCD());
     }
 
     public void BirdFly()
     {
+        Debug.Log("BirdFly");
         PlayerInputController.Instance.FlyEnable();
         StartCoroutine(FlyCD());
     }
