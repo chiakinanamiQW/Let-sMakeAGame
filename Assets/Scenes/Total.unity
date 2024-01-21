@@ -224,6 +224,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 720320356902730614, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2296144b20e2b8d4fb803d7fef7fccef, type: 3}
+    - target: {fileID: 1679412217538805205, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679412217538805205, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679412217538805205, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1679412217538805205, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 69.71097
@@ -264,6 +280,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1679412217538805205, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206419217436143352, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
+      propertyPath: m_Radius
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5119438997095019824, guid: 4cc29ac8d7391e442a77bbbd707522fd, type: 3}
       propertyPath: m_Name
       value: BirdSoul
@@ -292,6 +316,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1507282427742268866, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507282427742268866, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507282427742268866, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1507282427742268866, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 72.17613
@@ -332,9 +368,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1507282427742268866, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478756462212703156, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d845f1613d6ba044ab256010c6666227, type: 3}
     - target: {fileID: 4412273349155834436, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
       propertyPath: m_Name
       value: CatSoul
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460854012192777399, guid: 580649d56d9f62a498f56750bf79504b, type: 3}
+      propertyPath: m_Radius
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -641,9 +689,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1260970657185029826, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_Radius
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1516314384864522024, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
       propertyPath: m_Name
       value: RabbitSoul
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779559440739732352, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cec31f000e398cf4fb96292a9c69e97e, type: 3}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
       propertyPath: m_LocalPosition.x
@@ -684,6 +752,10 @@ PrefabInstance:
     - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1005,12 +1077,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 186907568655379061, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 186907568655379061, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 186907568655379061, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 186907568655379061, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.86945
+      value: 72.54
       objectReference: {fileID: 0}
     - target: {fileID: 186907568655379061, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8017035
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 186907568655379061, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1044,9 +1128,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 186907568655379061, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571724043236983606, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93e0d8330f8a35648a926a4e620f58fb, type: 3}
     - target: {fileID: 8954944316914557824, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
       propertyPath: m_Name
       value: SquirrelSoul
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062905170485423987, guid: 52060d76323a9384f9d4b87dde9badbe, type: 3}
+      propertyPath: m_Radius
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1343,8 +1439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c8a636d8db0a249930d99dc4c63911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 0
-  knockBack: 0
+  Damage: 1
+  knockBack: 10
   PlayerattackCheck: {fileID: 0}
   character: {fileID: 0}
 --- !u!114 &1856874025
