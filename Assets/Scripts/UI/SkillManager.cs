@@ -6,6 +6,7 @@ public class SkillManager : MonoBehaviour
 {
     public SpriteRenderer Skill1;
     public SpriteRenderer Skill2;
+
     public List<Sprite> sprites=new List<Sprite>();
     public Dictionary<string,Sprite> imageDic=new Dictionary<string,Sprite>();
     private void Awake()
@@ -18,5 +19,6 @@ public class SkillManager : MonoBehaviour
     private void UpdateSprites(string _name)
     {  
         Skill1.sprite = imageDic[_name];
-    }
-}
+
+    public List<Sprite> sprites = new List<Sprite>();
+    public Dictionary<string, Sprite> imageDic=new Dictionary<string, Sprite>();}
