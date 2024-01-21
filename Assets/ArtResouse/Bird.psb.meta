@@ -94,18 +94,18 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Fly2
+  - name: Bird_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.500007, y: 0.5885005}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 44
+      y: 40
       width: 16
-      height: 9
-    spriteID: 4c1ad3546dae93b449ac42b876ac8993
+      height: 16
+    spriteID: fcb49fbe43d503f4dbff1e09be823c43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,9 +113,51 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 41}
-    spritePosition: {x: 0, y: 3}
-  - name: Fly1
+    uvTransform: {x: 4, y: 40}
+    spritePosition: {x: 0, y: 0}
+  - name: Bird_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 22
+      width: 16
+      height: 16
+    spriteID: b861a040b0a41eb4a80f7bb0e466c2a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 22}
+    spritePosition: {x: 0, y: 0}
+  - name: Bird_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2
+      width: 16
+      height: 16
+    spriteID: c88c2108c7ceb084c8e80a76142bc5ab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2}
+    spritePosition: {x: 0, y: 0}
+  - name: Bird_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -123,10 +165,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 28
-      y: 4
+      y: 1
       width: 16
-      height: 9
-    spriteID: 2d4850e66df27e846b4be903fbc020e1
+      height: 16
+    spriteID: ec81ccc8ee4e6784a950dd50ee4326e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -135,49 +177,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 28, y: 1}
-    spritePosition: {x: 0, y: 3}
-  - name: Idle2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 16
-      height: 12
-    spriteID: 6d7672e5175cc4a4e8d8b250295e7d79
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 3}
-    spritePosition: {x: 0, y: 1}
-  - name: Idle1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 24
-      width: 16
-      height: 12
-    spriteID: 0a686c4836b9d85478b2a1019b41bd48
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 23}
-    spritePosition: {x: 0, y: 1}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -301,7 +301,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638413819564133768
+  platformSettingsDirtyTick: 638414676600544069
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

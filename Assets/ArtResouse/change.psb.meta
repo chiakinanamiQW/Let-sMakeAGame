@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 467175bf22504d5499c427109716805b
+guid: d195c5f50e1190d46bce345039fdd566
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,39 +94,18 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Squirrel1_0
+  - name: change_0
     originalName: 
-    pivot: {x: 0.5000001, y: 0.64988303}
+    pivot: {x: 0.50767374, y: 0.065788776}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 28
-      width: 16
-      height: 15
-    spriteID: b6f57562660dd944d8100f1af995cdb1
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
-    spritePosition: {x: 0, y: 0}
-  - name: Squirrel1_1
-    originalName: 
-    pivot: {x: 0.50520426, y: 0.604143}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
+      y: 5
       width: 16
       height: 16
-    spriteID: 9ac77f39a6c25f54ca14e2f6e6ae8d61
+    spriteID: 01268ab1089ee304bb4b5aed29570d5e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,7 +113,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 5}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
@@ -206,23 +185,13 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Idle_2
-    spriteName: Idle_2
+  - name: "\u56FE\u5C42 1"
+    spriteName: "\u56FE\u5C42 1"
     isGroup: 0
     parentIndex: -1
-    spriteID: 943a0bd0bb5c8694ab5e97bf8c7bfef0
-    layerID: 3
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Idle_1
-    spriteName: Idle_1
-    isGroup: 0
-    parentIndex: -1
-    spriteID: f8bb078c545690149bb0371024abd4b8
+    spriteID: b5f7ead1910e8af429cb7fa2c92af592
     layerID: 2
-    mosaicPosition: {x: 4, y: 28}
+    mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -230,7 +199,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 9178e813cf5d11d418cb455038d4daa8
+    spriteID: 6cf36abd3b7c8134caef48265df897b6
     layerID: 1
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -239,7 +208,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638414678664894345
+  platformSettingsDirtyTick: 638414677630625167
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

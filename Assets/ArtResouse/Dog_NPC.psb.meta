@@ -94,18 +94,81 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Pose3
+  - name: Dog_NPC_2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3
+      y: 99
+      width: 16
+      height: 16
+    spriteID: 60fbeb986636afd4e85f2fbd29270979
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3, y: 99}
+    spritePosition: {x: 0, y: 0}
+  - name: Dog_NPC_4
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3
+      y: 75
+      width: 16
+      height: 16
+    spriteID: 6aeb4c0946d4e4245a202e929da69681
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3, y: 75}
+    spritePosition: {x: 0, y: 0}
+  - name: Dog_NPC_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 3
+      y: 51
+      width: 16
+      height: 16
+    spriteID: 07a28c3b0dcdf514b95d6ca760a3ed55
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3, y: 51}
+    spritePosition: {x: 0, y: 0}
+  - name: Dog_NPC_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3
       y: 28
-      width: 15
-      height: 15
-    spriteID: 852d83e10f0ddc649bdc63abb465a0d3
+      width: 16
+      height: 16
+    spriteID: 23bec6afd401ff142a9e43f5a15f1912
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -114,19 +177,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3, y: 28}
-    spritePosition: {x: 1, y: 0}
-  - name: Pose2
+    spritePosition: {x: 0, y: 0}
+  - name: Dog_NPC_12
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 3
       y: 4
-      width: 15
+      width: 16
       height: 16
-    spriteID: c6a6693e65a4d3d4da2951a87795b430
+    spriteID: 0be9417b152a0544992a7b8399f39f64
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,71 +197,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 1, y: 0}
-  - name: Pose1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 51
-      width: 13
-      height: 16
-    spriteID: cd54c5507e405ef4ebd77858600d7494
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 51}
-    spritePosition: {x: 1, y: 0}
-  - name: idle
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 75
-      width: 13
-      height: 16
-    spriteID: ffeacdfd5eef98049930e688942942e3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 75}
-    spritePosition: {x: 1, y: 0}
-  - name: idle_use_in_talk
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 99
-      width: 13
-      height: 16
-    spriteID: 967f3883a4048aa4e993058b229d5a49
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 99}
-    spritePosition: {x: 1, y: 0}
+    uvTransform: {x: 3, y: 4}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -332,7 +332,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638413820281803879
+  platformSettingsDirtyTick: 638414677821482462
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
