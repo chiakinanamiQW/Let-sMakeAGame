@@ -60,6 +60,8 @@ public class PlayerInputController : MonoBehaviour
 
     public bool isCatDushAble;
 
+    public bool isDushCollide;
+
     public bool isAttackAble;
 
     [Header("攀爬参数")]
@@ -319,7 +321,7 @@ public class PlayerInputController : MonoBehaviour
                 //这里可以插入镜头抖动事件（猫猫冲刺时
             }
 
-            if (Time.time - DushTapTime >= DushTime + CatDushPlusTime)
+            if (Time.time - DushTapTime >= DushTime + CatDushPlusTime||isDushCollide)
             {
                 if (isCatDushAble)
                 {
@@ -352,9 +354,9 @@ public class PlayerInputController : MonoBehaviour
             MoveDisable();
             Debug.Log("Dush");
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
-
-            Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
-            Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
+            Rigidbody2D.velocity = currentDushDirection * speed; 
+            //Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
+            //Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {
@@ -366,6 +368,11 @@ public class PlayerInputController : MonoBehaviour
             timeSpend = 0;
             j = 1;
         }
+    }
+
+    private void DushStopControll()
+    {
+        
     }
 
     public void BeHurt(Transform attacker)
@@ -447,4 +454,6 @@ public class PlayerInputController : MonoBehaviour
     {
         isCatDushAble = false;
     }
+
+    
 }
