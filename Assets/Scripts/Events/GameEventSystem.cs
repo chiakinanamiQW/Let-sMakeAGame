@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class GameEventSystem : MonoBehaviour
 {
     public static GameEventSystem instance;
+
     private GameEventSystem() { }
 
     private void Awake()
