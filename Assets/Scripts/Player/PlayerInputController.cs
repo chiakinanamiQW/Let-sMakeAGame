@@ -14,9 +14,9 @@ public class PlayerInputController : MonoBehaviour
 
     public PlayerInput PlayerInput;
 
-    private Rigidbody2D Rigidbody2D;
+    public Rigidbody2D Rigidbody2D;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     private PhysicsCheck PhysicsCheck;
 
@@ -91,11 +91,14 @@ public class PlayerInputController : MonoBehaviour
     public bool isFlyAble;
 
     // Start is called before the first frame update
+    private PlayerInputController()
+    {
+
+    }
 
     private void Awake()
     {
         Instance = this;
-
         isMoveAble = true;
         isDushAble = true;
         PlayerInput = new PlayerInput();
@@ -140,8 +143,6 @@ public class PlayerInputController : MonoBehaviour
     {
         DushControll();
         Dush();
-
-       
         Move();
         Fly();
         
@@ -370,11 +371,6 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
-    private void DushStopControll()
-    {
-        
-    }
-
     public void BeHurt(Transform attacker)
     {
         float knockBack = attacker.GetComponent<Attack>().knockBack;
@@ -455,5 +451,13 @@ public class PlayerInputController : MonoBehaviour
         isCatDushAble = false;
     }
 
-    
+    public void DushColliderTrue()
+    {
+        isDushCollide = true;
+    }
+
+    public void DushColliderFlase()
+    {
+        isDushCollide = false;
+    }
 }
