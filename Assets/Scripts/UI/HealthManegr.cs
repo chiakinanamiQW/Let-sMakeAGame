@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class HealthManegr : MonoBehaviour
 {
-    public Image h1;
-    public Image h2;
-    public Image h3;
-    
+    public SpriteRenderer h1;
+    public SpriteRenderer h2;
+    public SpriteRenderer h3;
+
+
     public void OnHealthChange(int currentHealth)
     {
         if (currentHealth == 2)

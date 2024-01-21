@@ -246,7 +246,7 @@ public class PlayerInputController : MonoBehaviour
         if (isJumpAble)
         {
             jumpTimes--;
-            if (isClimbAble)//ÄÜÅÊÅÀÇé¿ö
+            if (isClimbAble)
             {
                 if (isLeftOnWall)
                 {
@@ -276,8 +276,7 @@ public class PlayerInputController : MonoBehaviour
             isJumpAble = true;
         else
             isJumpAble = false;
-
-        if (jumpTimes == 0)
+        if (jumpTimes == 2)
         {
             CanJumpTwice = false;
         }
