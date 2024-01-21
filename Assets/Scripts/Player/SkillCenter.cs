@@ -47,32 +47,36 @@ public class SkillCenter : MonoBehaviour
         instance = this; 
     }
 
-    public void CatDush()
+    public string CatDush()
     {
         Debug.Log("CatDush");
         PlayerInputController.Instance.CatDushEnable();
         StartCoroutine(CatDushCD());
+        return "Cat";
     }
-    public void RabitJump()
+    public string RabitJump()
     {
         Debug.Log("RabbitJump");
         PlayerInputController.Instance.JumpTwiceEnable();
         PlayerInputController.Instance.jumpTimes++;
         StartCoroutine(RabbitJumpCD());
+        return "Rabbit";
     }
 
     
-    public void Squirrelclimb()
+    public string Squirrelclimb()
     {
         Debug.Log("Squirrelclimb");
         PlayerInputController.Instance.ClimbEnable();
         StartCoroutine(ClimbCD());
+        return "Squirrel";
     }
 
-    public void BirdFly()
+    public string BirdFly()
     {
         Debug.Log("BirdFly");
         PlayerInputController.Instance.FlyEnable();
         StartCoroutine(FlyCD());
+        return "Bird";
     }
 }
