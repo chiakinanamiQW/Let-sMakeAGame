@@ -159,8 +159,8 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Character_3
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 7
+    pivot: {x: 0.6957147, y: 0.0071024895}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -567,7 +567,97 @@ ScriptedImporter:
     isImported: 0
     isVisible: 0
   sharedRigPSDLayers: []
-  pSDLayerImportSetting: []
+  pSDLayerImportSetting:
+  - spriteId: 19122cf3347926f4ead7b2aa771e7d44
+    name: Weapon2
+    layerId: 14
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 7d789cb81c6c94247a5b5ffe202bfe2a
+    name: Weapon1
+    layerId: 13
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: df9f52f9c4a777c4180819a54b3f997c
+    name: reborn2
+    layerId: 16
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 1529e205f7e7ddd47b0ad1d973ef41b8
+    name: reborn1
+    layerId: 11
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: ec8e67b09c8ff1b44b61a5e710d1c758
+    name: die
+    layerId: 10
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 43fc865da7eb83e4faf8db98d389ad8b
+    name: Attack
+    layerId: 9
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 71d612e9c4d3e51478b9306d1ab9b4c6
+    name: Run1
+    layerId: 8
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: e2e51a17fd8ebde40ab7d1a0c0388c12
+    name: Run2
+    layerId: 7
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: e7fc8df215a6e2f4f9c03647dc1cbbe1
+    name: Jump/Run0
+    layerId: 6
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 3f8c3436edbae774aa29edc48c7f2c52
+    name: Jump_down
+    layerId: 5
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 90e44b802d88d914bb4b6fc65168cc2b
+    name: Jump_up
+    layerId: 4
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 3c493a543504a6045b62e6dba143f613
+    name: Idle2
+    layerId: 3
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: af15a3c85b2a4964cb407e0dc8e094fd
+    name: Idle1_shadow_use_in_talk
+    layerId: 18
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 3be14c1899e5fdf46898346440ea4562
+    name: Idle1
+    layerId: 2
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: b4a23a501389c3249afb8d563fa46adb
+    name: "\u80CC\u666F"
+    layerId: 1
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
   importFileNodeState: 1
   platformSettingsDirtyTick: 638413820134497791
   spriteSizeExpandChanged: 0
