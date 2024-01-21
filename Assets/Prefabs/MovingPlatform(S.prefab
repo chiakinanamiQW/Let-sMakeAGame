@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1494158757543173774}
   - component: {fileID: 8760009096739789323}
   - component: {fileID: 2205701554172958355}
-  - component: {fileID: 7388531506798396762}
+  - component: {fileID: 9068376198473460143}
   m_Layer: 0
   m_Name: MovingPlatform(S
   m_TagString: Ground
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   moveduration: 5
---- !u!61 &7388531506798396762
+--- !u!61 &9068376198473460143
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
