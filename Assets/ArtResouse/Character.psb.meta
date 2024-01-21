@@ -145,7 +145,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 30
       y: 53
-      width: 18
+      width: 24
       height: 16
     spriteID: df9f52f9c4a777c4180819a54b3f997c
     spriteBone: []
@@ -166,7 +166,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 30
       y: 4
-      width: 19
+      width: 24
       height: 17
     spriteID: 1529e205f7e7ddd47b0ad1d973ef41b8
     spriteBone: []
@@ -187,7 +187,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 18
+      width: 24
       height: 19
     spriteID: ec8e67b09c8ff1b44b61a5e710d1c758
     spriteBone: []
@@ -208,7 +208,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 30
       y: 29
-      width: 19
+      width: 24
       height: 16
     spriteID: 43fc865da7eb83e4faf8db98d389ad8b
     spriteBone: []
@@ -229,7 +229,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 30
       y: 77
-      width: 18
+      width: 24
       height: 16
     spriteID: 71d612e9c4d3e51478b9306d1ab9b4c6
     spriteBone: []
@@ -250,7 +250,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 30
       y: 101
-      width: 18
+      width: 24
       height: 16
     spriteID: e2e51a17fd8ebde40ab7d1a0c0388c12
     spriteBone: []
@@ -271,7 +271,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 31
-      width: 18
+      width: 24
       height: 16
     spriteID: e7fc8df215a6e2f4f9c03647dc1cbbe1
     spriteBone: []
@@ -292,7 +292,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 55
-      width: 18
+      width: 24
       height: 16
     spriteID: 3f8c3436edbae774aa29edc48c7f2c52
     spriteBone: []
@@ -313,7 +313,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 57
       y: 27
-      width: 15
+      width: 24
       height: 16
     spriteID: 90e44b802d88d914bb4b6fc65168cc2b
     spriteBone: []
@@ -334,7 +334,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 57
       y: 4
-      width: 18
+      width: 24
       height: 15
     spriteID: 3c493a543504a6045b62e6dba143f613
     spriteBone: []
@@ -355,7 +355,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 79
-      width: 18
+      width: 24
       height: 16
     spriteID: af15a3c85b2a4964cb407e0dc8e094fd
     spriteBone: []
@@ -376,7 +376,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 103
-      width: 18
+      width: 24
       height: 16
     spriteID: 3be14c1899e5fdf46898346440ea4562
     spriteBone: []

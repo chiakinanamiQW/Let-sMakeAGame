@@ -5,26 +5,26 @@ using UnityEngine;
 
 public class CollisionCheck : MonoBehaviour
 {
-    PlayerInputController playerInputController;
-    private int i;
 
-    private void Awake()
-    {
-        playerInputController = transform.parent.GetComponent<PlayerInputController>();
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(playerInputController.isDush&&collision.tag != "Item")
+        if(PlayerInputController.Instance.isDush&&collision.tag != "Item")
         {
-            playerInputController.isDushCollide = true;
-        
+            PlayerInputController.Instance.DushColliderTrue();
+            StartCoroutine(isDushCollide());
 
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag != "Item")
-        playerInputController.isDushCollide = false;
+        if (collision.tag != "Item")
+            PlayerInputController.Instance.DushColliderFlase();
+    }
+
+    IEnumerator isDushCollide()
+    {
+        yield return new WaitForSeconds(0.1f);
+        PlayerInputController.Instance.DushColliderFlase();
     }
 }
