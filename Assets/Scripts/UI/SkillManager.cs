@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class SkillManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SpriteRenderer Skill1;
+    public SpriteRenderer Skill2;
 
-    // Update is called once per frame
-    void Update()
+    public List<Sprite> sprites=new List<Sprite>();
+    public Dictionary<string,Sprite> imageDic=new Dictionary<string,Sprite>();
+    private void Awake()
     {
-        
+        imageDic["Cat"] = sprites[0];
+        imageDic["Rabbit"] = sprites[1];
+        imageDic["Squirrel"] = sprites[2];
+        imageDic["Bird"] = sprites[3];
     }
-}
+    private void UpdateSprites(string _name)
+    {  
+        Skill1.sprite = imageDic[_name];
+
+    public List<Sprite> sprites = new List<Sprite>();
+    public Dictionary<string, Sprite> imageDic=new Dictionary<string, Sprite>();}
