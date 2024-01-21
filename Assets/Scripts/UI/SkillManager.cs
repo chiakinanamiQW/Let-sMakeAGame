@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SkillManager : MonoBehaviour
 {
-    public Image Skill1;
-    public Image Skill2;
+    public SpriteRenderer Skill1;
+    public SpriteRenderer Skill2;
     public List<Sprite> sprites=new List<Sprite>();
     public Dictionary<string,Sprite> imageDic=new Dictionary<string,Sprite>();
     private void Awake()
@@ -16,7 +16,7 @@ public class SkillManager : MonoBehaviour
         imageDic["Bird"] = sprites[3];
     }
     private void UpdateSprites(string _name)
-    {
-        
+    {  
+        Skill1.sprite = imageDic[_name];
     }
 }
