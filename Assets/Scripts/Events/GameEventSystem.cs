@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,8 @@ using UnityEngine.InputSystem;
 public class GameEventSystem : MonoBehaviour
 {
     public static GameEventSystem instance;
+    public bool _1isnull=true;
+    public bool _2isnull=true;
     private GameEventSystem() { }
 
     private void Awake()
@@ -32,9 +35,15 @@ public class GameEventSystem : MonoBehaviour
     public int GetSkill_1or2()
     {
         if (OnSkill1Use == null)
-            return 1;
+        {
+            
+            return  1;
+        }
         else if (OnSkill2Use == null)
-            return 2;
+        {
+
+            return  2; 
+        }
         else return 0;
     }
 
