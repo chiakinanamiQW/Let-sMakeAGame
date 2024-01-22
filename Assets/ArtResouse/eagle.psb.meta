@@ -117,8 +117,8 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: eagle_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.48914456, y: 0.20711696}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -138,8 +138,8 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: eagle_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.4887944, y: 0.75731343}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
