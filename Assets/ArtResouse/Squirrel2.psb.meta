@@ -96,7 +96,7 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Squirrel2_0
     originalName: 
-    pivot: {x: 0.5062423, y: 0.67977524}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -104,7 +104,7 @@ ScriptedImporter:
       x: 43
       y: 49
       width: 32
-      height: 10
+      height: 15
     spriteID: 20495d46e1c6eb8448b5cd5bea799b8c
     spriteBone: []
     spriteOutline: []
@@ -159,7 +159,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Squirrel2_3
     originalName: 
-    pivot: {x: 0.50312114, y: 0.6459712}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,13 +243,13 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Squirrel2_7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 5
       width: 32
       height: 16
     spriteID: 5d0bc761657f6f1468ed75624c21e078
@@ -260,17 +260,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 5}
     spritePosition: {x: 0, y: 0}
   - name: Squirrel2_8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 44
-      y: 4
+      y: 5
       width: 32
       height: 16
     spriteID: 132691b73d261694d8a9250ee45038cd
@@ -281,17 +281,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 4}
+    uvTransform: {x: 44, y: 5}
     spritePosition: {x: 0, y: 0}
   - name: Squirrel2_9
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 84
-      y: 4
+      y: 5
       width: 32
       height: 16
     spriteID: 5a571f4fe228f434fab6657fe29bc2b9
@@ -302,7 +302,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 84, y: 4}
+    uvTransform: {x: 84, y: 5}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []

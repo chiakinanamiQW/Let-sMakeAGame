@@ -96,7 +96,7 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Squirrel1_0
     originalName: 
-    pivot: {x: 0.5000001, y: 0.64988303}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -104,7 +104,7 @@ ScriptedImporter:
       x: 4
       y: 28
       width: 16
-      height: 15
+      height: 16
     spriteID: b6f57562660dd944d8100f1af995cdb1
     spriteBone: []
     spriteOutline: []
@@ -117,7 +117,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Squirrel1_1
     originalName: 
-    pivot: {x: 0.50520426, y: 0.604143}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

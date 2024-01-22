@@ -276,7 +276,7 @@ public class PlayerInputController : MonoBehaviour
             isJumpAble = true;
         else
             isJumpAble = false;
-        if (jumpTimes == 2)
+        if (jumpTimes == 0)
         {
             CanJumpTwice = false;
         }

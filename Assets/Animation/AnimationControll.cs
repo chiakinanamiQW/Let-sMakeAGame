@@ -19,14 +19,18 @@ public class AnimationControll : MonoBehaviour
     void Update()
     {
         animator.SetFloat("VelocityX", Mathf.Abs(PlayerInputController.Instance.Rigidbody2D.velocity.x));
+        animator.SetFloat("VelocityY", Mathf.Abs(PlayerInputController.Instance.Rigidbody2D.velocity.y));
         animator.SetBool("isDush", PlayerInputController.Instance.isDush);
         if(PlayerInputController.Instance.isFlyAble) 
         {
             animator.SetBool("isOnGround", PhysicsCheck.instance.isOnGround);
         }
+        isClimb();
+
         Cat();
         Bird();
         Rabbit();
+        Squirrel();
     }
 
     private void Cat()
@@ -54,6 +58,30 @@ public class AnimationControll : MonoBehaviour
         else if(PlayerInputController.Instance.CanJumpTwice == false)
         {
             animator.SetLayerWeight(3, 0);
+        }
+    }
+
+    private void Squirrel()
+    {
+        if (PlayerInputController.Instance.isClimbAble)
+        {
+            animator.SetLayerWeight(4, 0.51f);
+        }
+        else if (PlayerInputController.Instance.isClimbAble == false)
+        {
+            animator.SetLayerWeight(4, 0);
+        }
+    }
+    private void isClimb()
+    {
+        
+        if (PlayerInputController.Instance.inputDirection.y > 0 && PlayerInputController.Instance.isClimbAble && (PlayerInputController.Instance.isLeftOnWall || PlayerInputController.Instance.isRightOnWall))
+        {
+            animator.SetBool("isClimb",true);
+        }
+        else
+        {
+            animator.SetBool("isClimb", false);
         }
     }
 }

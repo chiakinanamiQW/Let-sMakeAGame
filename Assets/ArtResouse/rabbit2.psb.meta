@@ -96,15 +96,15 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: rabbit2_0
     originalName: 
-    pivot: {x: 0.50640744, y: 0.3667487}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 2
       y: 26
-      width: 13
-      height: 15
+      width: 16
+      height: 16
     spriteID: a757e97e207c9c14ab1f3027206ce284
     spriteBone: []
     spriteOutline: []
@@ -113,19 +113,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 26}
+    uvTransform: {x: 2, y: 26}
     spritePosition: {x: 0, y: 0}
   - name: rabbit2_1
     originalName: 
-    pivot: {x: 0.53569806, y: 0.4048043}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 3
       y: 4
-      width: 14
-      height: 14
+      width: 16
+      height: 16
     spriteID: 070435347a8bffe4994b6b69286c4593
     spriteBone: []
     spriteOutline: []
@@ -134,7 +134,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 3, y: 4}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
