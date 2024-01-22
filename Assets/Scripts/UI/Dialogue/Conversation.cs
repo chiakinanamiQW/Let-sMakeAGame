@@ -9,12 +9,13 @@ public class Conversation : MonoBehaviour
     [Header("UI")]
     public Image Face;
     public TMP_Text context;
-    public TMP_Text Playername;
     [Header("ÄÚÈÝ")]
     public TextAsset textAsset;
     public int index;
     public float textspeed;
     private bool isFinshedSpeak=false;
+    [Header("Í·Ïñ")]
+    public Sprite face01, face02;
 
     List<string> textlist = new List<string>();
     private void Awake()
@@ -30,13 +31,13 @@ public class Conversation : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.F) && index == textlist.Count)
+        if (Input.GetKeyUp(KeyCode.J) && index == textlist.Count)
         {
             gameObject.SetActive(false);
             index = 0;
             return;
         }
-        if (Input.GetKeyUp(KeyCode.F) && isFinshedSpeak == true)
+        if (Input.GetKeyUp(KeyCode.J) && isFinshedSpeak == true)
         {
             /*context.text = textlist[index];
             index++;*/
@@ -57,6 +58,18 @@ public class Conversation : MonoBehaviour
     {
         context.text = "";
         isFinshedSpeak = false;
+        switch (textlist[index])
+        {
+            case"A":
+                Face.sprite=face01;
+                index++;
+                break;
+            case "B":
+                Face.sprite=face02;
+                index++;
+                break;
+         
+        }
         for(int i = 0; i < textlist[index].Length; i++)
         {
             context.text += textlist[index][i];
