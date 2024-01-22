@@ -12,7 +12,7 @@ public class CameraControlar : MonoBehaviour
       
             Vector3 pos = transform.position;
             pos = Vector3.Lerp(pos, lookat.transform.position, smooth);
-            pos.z = -10;
+            pos.z = -17;
             transform.position = pos;
 
         
