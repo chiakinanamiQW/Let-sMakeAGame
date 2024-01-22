@@ -4542,21 +4542,21 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   MoveDirection: {x: 0, y: 0}
   inputDirection: {x: 0, y: 0}
-  Speed: 100
+  Speed: 670
   isLeftOnWall: 0
   isRightOnWall: 0
-  JumpForce: 10
-  JumpForcedown: 4
+  JumpForce: 20.8
+  JumpForcedown: 0
   JumpLimitFactor: 4.5
   jumpTimes: 1
   CanJumpTwice: 0
   isJumpAble: 0
   InputDushDirection: {x: 0, y: 0}
   currentDushDirection: {x: 0, y: 0}
-  DushAcceleration: 20
+  DushAcceleration: 10
   DushTapTime: 0
-  DushTime: 0.5
-  DushCD: 0.3
+  DushTime: 0.4
+  DushCD: 1
   isCatDushAble: 0
   isDushCollide: 0
   isAttackAble: 0
@@ -4586,7 +4586,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
