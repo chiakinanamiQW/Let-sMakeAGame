@@ -96,13 +96,13 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Bird_0
     originalName: 
-    pivot: {x: 0.500007, y: 0.5885005}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 40
+      y: 44
       width: 16
       height: 16
     spriteID: fcb49fbe43d503f4dbff1e09be823c43
@@ -113,17 +113,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 40}
+    uvTransform: {x: 4, y: 44}
     spritePosition: {x: 0, y: 0}
   - name: Bird_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 22
+      y: 24
       width: 16
       height: 16
     spriteID: b861a040b0a41eb4a80f7bb0e466c2a6
@@ -134,17 +134,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 22}
+    uvTransform: {x: 4, y: 24}
     spritePosition: {x: 0, y: 0}
   - name: Bird_6
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 2
+      y: 4
       width: 16
       height: 16
     spriteID: c88c2108c7ceb084c8e80a76142bc5ab
@@ -155,17 +155,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2}
+    uvTransform: {x: 4, y: 4}
     spritePosition: {x: 0, y: 0}
   - name: Bird_8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 28
-      y: 1
+      y: 4
       width: 16
       height: 16
     spriteID: ec81ccc8ee4e6784a950dd50ee4326e7
@@ -176,7 +176,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 1}
+    uvTransform: {x: 28, y: 4}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []

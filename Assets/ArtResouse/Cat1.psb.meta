@@ -96,8 +96,8 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Cat1_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -117,8 +117,8 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Cat1_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

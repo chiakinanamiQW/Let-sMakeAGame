@@ -96,15 +96,15 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: idle1
     originalName: 
-    pivot: {x: 0.6492592, y: 0.18503419}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3
-      y: 101
-      width: 20
-      height: 20
+      x: 4
+      y: 103
+      width: 24
+      height: 16
     spriteID: abfc08337d5f694479cdcc748724382d
     spriteBone: []
     spriteOutline: []
@@ -113,19 +113,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3, y: 101}
+    uvTransform: {x: 4, y: 103}
     spritePosition: {x: 0, y: 0}
   - name: run1
     originalName: 
-    pivot: {x: 0.6477283, y: 0.21509513}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 29
-      y: 99
-      width: 20
-      height: 20
+      x: 31
+      y: 101
+      width: 24
+      height: 16
     spriteID: dcf291258e4e17e4cbedd5d3e14c91e5
     spriteBone: []
     spriteOutline: []
@@ -134,19 +134,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 29, y: 99}
+    uvTransform: {x: 31, y: 101}
     spritePosition: {x: 0, y: 0}
   - name: Character_6
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3
-      y: 77
-      width: 20
-      height: 20
+      x: 4
+      y: 79
+      width: 24
+      height: 16
     spriteID: 6f5d01c9b52d93248af89677462539cf
     spriteBone: []
     spriteOutline: []
@@ -155,19 +155,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3, y: 77}
+    uvTransform: {x: 4, y: 79}
     spritePosition: {x: 0, y: 0}
   - name: run2
     originalName: 
-    pivot: {x: 0.70199454, y: 0.21483116}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 28
-      y: 75
-      width: 20
-      height: 20
+      x: 30
+      y: 77
+      width: 24
+      height: 16
     spriteID: 929945eb2dd37ca44a019dea5ffc927d
     spriteBone: []
     spriteOutline: []
@@ -176,19 +176,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 75}
+    uvTransform: {x: 30, y: 77}
     spritePosition: {x: 0, y: 0}
   - name: jump2
     originalName: 
-    pivot: {x: 0.5982419, y: 0.019706154}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 55
-      width: 20
-      height: 20
+      width: 24
+      height: 16
     spriteID: 5522050f45ae7444da8a058adedfd857
     spriteBone: []
     spriteOutline: []
@@ -201,15 +201,15 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Character_11
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 30
-      y: 51
-      width: 20
-      height: 20
+      y: 53
+      width: 24
+      height: 16
     spriteID: 43b3f306a8f694b41a28968a85886062
     spriteBone: []
     spriteOutline: []
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 30, y: 51}
+    uvTransform: {x: 30, y: 53}
     spritePosition: {x: 0, y: 0}
   - name: weapon
     originalName: 
@@ -228,9 +228,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 54
-      y: 54
+      y: 58
       width: 20
-      height: 20
+      height: 5
     spriteID: 2c8b938b4d16a8949a88f4d1b7978731
     spriteBone: []
     spriteOutline: []
@@ -239,19 +239,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 54}
+    uvTransform: {x: 54, y: 58}
     spritePosition: {x: 0, y: 0}
   - name: run0reborn
     originalName: 
-    pivot: {x: 0.6169877, y: 0.11958866}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 29
-      width: 20
-      height: 20
+      x: 5
+      y: 31
+      width: 24
+      height: 16
     spriteID: 4bc32d6f127779248869eda78df564ee
     spriteBone: []
     spriteOutline: []
@@ -260,19 +260,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 29}
+    uvTransform: {x: 5, y: 31}
     spritePosition: {x: 0, y: 0}
   - name: attack
     originalName: 
-    pivot: {x: 0.60834044, y: 0.112928584}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 31
-      y: 27
-      width: 20
-      height: 20
+      y: 29
+      width: 24
+      height: 16
     spriteID: 5c012acb13fc1c34cb8a1c0fe51c7834
     spriteBone: []
     spriteOutline: []
@@ -281,19 +281,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 31, y: 27}
+    uvTransform: {x: 31, y: 29}
     spritePosition: {x: 0, y: 0}
   - name: jump1
     originalName: 
-    pivot: {x: 0.55463374, y: 0.023199081}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 55
       y: 27
-      width: 20
-      height: 20
+      width: 24
+      height: 16
     spriteID: f1ea5bf3372e166478fd9608d2538686
     spriteBone: []
     spriteOutline: []
@@ -306,14 +306,14 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: die
     originalName: 
-    pivot: {x: 0.6478863, y: 0.017762303}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3
+      x: 4
       y: 4
-      width: 20
+      width: 24
       height: 20
     spriteID: 0df721fff81eef948a0322e36d81f970
     spriteBone: []
@@ -323,18 +323,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3, y: 4}
+    uvTransform: {x: 4, y: 4}
     spritePosition: {x: 0, y: 0}
   - name: reborn
     originalName: 
-    pivot: {x: 0.6000311, y: 0.17493418}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 30
-      y: 2
-      width: 20
+      x: 31
+      y: 4
+      width: 24
       height: 20
     spriteID: 5c73043aa4896ec4c8993fa4c785c2ba
     spriteBone: []
@@ -344,18 +344,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 30, y: 2}
+    uvTransform: {x: 31, y: 4}
     spritePosition: {x: 0, y: 0}
   - name: idle2
     originalName: 
-    pivot: {x: 0.5473957, y: 0.1841743}
+    pivot: {x: 0.5, y: 0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 58
-      y: 2
-      width: 20
+      x: 57
+      y: 4
+      width: 24
       height: 20
     spriteID: e5676d41e0ce69d43b4379d105532bc9
     spriteBone: []
@@ -365,7 +365,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 58, y: 2}
+    uvTransform: {x: 57, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: weapon1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 49
+      width: 20
+      height: 5
+    spriteID: b041efe161110c94790f914b6ae48689
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 49}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []

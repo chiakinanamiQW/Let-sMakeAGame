@@ -96,14 +96,14 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Cat2_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 28
-      width: 28
+      width: 31
       height: 16
     spriteID: ff2c49e800782144e9399828295b4072
     spriteBone: []
@@ -117,14 +117,14 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Cat2_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 40
       y: 28
-      width: 28
+      width: 31
       height: 16
     spriteID: 5e995823eeb165946af65d378ec0cfcd
     spriteBone: []
@@ -138,14 +138,14 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Cat2_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 76
       y: 28
-      width: 28
+      width: 31
       height: 15
     spriteID: e0a0bf30bf4d443428a22478cae27881
     spriteBone: []
@@ -159,8 +159,8 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Cat2_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -180,14 +180,14 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Cat2_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 43
       y: 4
-      width: 29
+      width: 31
       height: 16
     spriteID: 3f39f18104806b14aa4495175525a178
     spriteBone: []
@@ -201,14 +201,14 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: Cat2_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.01}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 80
       y: 4
-      width: 29
+      width: 31
       height: 16
     spriteID: a9a78ff2861baa04eae1263157e353ca
     spriteBone: []
