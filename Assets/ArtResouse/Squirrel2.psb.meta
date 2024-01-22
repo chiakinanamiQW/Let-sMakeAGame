@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -94,7 +94,154 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Pose_in_sky
+  - name: Squirrel2_0
+    originalName: 
+    pivot: {x: 0.5062423, y: 0.67977524}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 49
+      width: 32
+      height: 10
+    spriteID: 20495d46e1c6eb8448b5cd5bea799b8c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 49}
+    spritePosition: {x: 0, y: 0}
+  - name: Squirrel2_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 12
+      height: 14
+    spriteID: 15787caa6e6f69c4c87d896461236674
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28}
+    spritePosition: {x: 0, y: 0}
+  - name: Squirrel2_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 29
+      width: 19
+      height: 12
+    spriteID: b1a78fa5ba41e554a97ece5bb4f8d94e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 16, y: 29}
+    spritePosition: {x: 0, y: 0}
+  - name: Squirrel2_3
+    originalName: 
+    pivot: {x: 0.50312114, y: 0.6459712}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 28
+      width: 32
+      height: 13
+    spriteID: 7cb4207947a361b49a6c90d95fa2a305
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 28}
+    spritePosition: {x: 0, y: 0}
+  - name: Squirrel2_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 83
+      y: 32
+      width: 31
+      height: 9
+    spriteID: f3af4d5c4f135cc49b5a7b39e1d1d78c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 83, y: 32}
+    spritePosition: {x: 0, y: 0}
+  - name: Squirrel2_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 28
+      width: 17
+      height: 8
+    spriteID: 0314a14b4a08c2f4ea8f2a6cf2c9faed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 28}
+    spritePosition: {x: 0, y: 0}
+  - name: Squirrel2_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 28
+      width: 10
+      height: 4
+    spriteID: ef6db6db983334f439585ed595452914
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 28}
+    spritePosition: {x: 0, y: 0}
+  - name: Squirrel2_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -105,7 +252,7 @@ ScriptedImporter:
       y: 4
       width: 32
       height: 16
-    spriteID: 60f7e6c8c6fb46540b8555d43be6337b
+    spriteID: 5d0bc761657f6f1468ed75624c21e078
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -115,7 +262,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
     spritePosition: {x: 0, y: 0}
-  - name: Speedup_2
+  - name: Squirrel2_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -126,7 +273,7 @@ ScriptedImporter:
       y: 4
       width: 32
       height: 16
-    spriteID: c1a5669c81d62254c9155f3972b2c1e1
+    spriteID: 132691b73d261694d8a9250ee45038cd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -136,91 +283,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 44, y: 4}
     spritePosition: {x: 0, y: 0}
-  - name: Speedup_1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 43
-      y: 28
-      width: 32
-      height: 13
-    spriteID: 1de6f00c326208f47b73db8bee86e15c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 43, y: 28}
-    spritePosition: {x: 0, y: 0}
-  - name: Acceleration_effect2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 28
-      width: 31
-      height: 14
-    spriteID: eaafa1f57beba8a4fa81bc7e7a7f51ac
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3, y: 28}
-    spritePosition: {x: 1, y: 0}
-  - name: Acceleration_effect1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 83
-      y: 28
-      width: 31
-      height: 13
-    spriteID: 507a4754ffbfefb408090f928621d24b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 82, y: 28}
-    spritePosition: {x: 1, y: 0}
-  - name: run/climb_2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 43
-      y: 49
-      width: 32
-      height: 10
-    spriteID: 755b0373159ec614087467f5a6358408
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 43, y: 48}
-    spritePosition: {x: 0, y: 1}
-  - name: run/climb_1
+  - name: Squirrel2_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -231,7 +294,7 @@ ScriptedImporter:
       y: 4
       width: 32
       height: 16
-    spriteID: 51a1bdb54866adb4f90608ab4b5cd2e9
+    spriteID: 5a571f4fe228f434fab6657fe29bc2b9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -394,7 +457,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638413821157424920
+  platformSettingsDirtyTick: 638414678784012470
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

@@ -94,7 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Idle2
+  - name: Cat1_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -102,10 +102,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 25
       width: 16
-      height: 14
-    spriteID: f7925fc5b1182804e810c3a02ae602bb
+      height: 16
+    spriteID: 6fad640855211254b82f8624cc71eda6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,9 +113,9 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 25}
     spritePosition: {x: 0, y: 0}
-  - name: Idle1
+  - name: Cat1_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -123,10 +123,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 26
+      y: 3
       width: 16
-      height: 14
-    spriteID: 14cb3899fd40e9c4487fb7aecb5ee8b0
+      height: 16
+    spriteID: e6d2af933d4e8394088fa6d360b19e81
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,7 +134,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 26}
+    uvTransform: {x: 4, y: 3}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
@@ -239,7 +239,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638413819795362003
+  platformSettingsDirtyTick: 638414677200421649
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

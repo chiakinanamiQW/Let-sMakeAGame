@@ -94,28 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: pose_in_sky
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 76
-      y: 28
-      width: 28
-      height: 15
-    spriteID: 9ad5b75dfeff9bf43a1751585674481c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 73, y: 27}
-    spritePosition: {x: 3, y: 1}
-  - name: Idle
+  - name: Cat2_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -126,7 +105,7 @@ ScriptedImporter:
       y: 28
       width: 28
       height: 16
-    spriteID: 170c1d295fdd50f4b9a1cb1ab8f53d93
+    spriteID: ff2c49e800782144e9399828295b4072
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,72 +113,9 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 0, y: 28}
-    spritePosition: {x: 4, y: 0}
-  - name: Speedup2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 43
-      y: 4
-      width: 29
-      height: 16
-    spriteID: 81c9fddcc2aca984889f66e5353d1706
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 41, y: 4}
-    spritePosition: {x: 2, y: 0}
-  - name: Speedup1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 31
-      height: 16
-    spriteID: 927d471c037438e4fa97143f325947ef
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3, y: 4}
-    spritePosition: {x: 1, y: 0}
-  - name: Run2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 80
-      y: 4
-      width: 29
-      height: 16
-    spriteID: ce76fc99e9997de429d3a98620add3d1
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 77, y: 4}
-    spritePosition: {x: 3, y: 0}
-  - name: Run1
+    uvTransform: {x: 4, y: 28}
+    spritePosition: {x: 0, y: 0}
+  - name: Cat2_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -210,7 +126,7 @@ ScriptedImporter:
       y: 28
       width: 28
       height: 16
-    spriteID: 950a161c83675af4aaa07914cfe04ea3
+    spriteID: 5e995823eeb165946af65d378ec0cfcd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,8 +134,92 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 28}
-    spritePosition: {x: 3, y: 0}
+    uvTransform: {x: 40, y: 28}
+    spritePosition: {x: 0, y: 0}
+  - name: Cat2_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 28
+      width: 28
+      height: 15
+    spriteID: e0a0bf30bf4d443428a22478cae27881
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 28}
+    spritePosition: {x: 0, y: 0}
+  - name: Cat2_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 31
+      height: 16
+    spriteID: 1b0c3a848e523d5479edb5a6d0f7f602
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Cat2_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 4
+      width: 29
+      height: 16
+    spriteID: 3f39f18104806b14aa4495175525a178
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Cat2_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 4
+      width: 29
+      height: 16
+    spriteID: a9a78ff2861baa04eae1263157e353ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 80, y: 4}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -363,7 +363,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638413819967539267
+  platformSettingsDirtyTick: 638414677492936675
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

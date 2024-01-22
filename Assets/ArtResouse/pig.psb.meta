@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -94,30 +94,9 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: idle2
+  - name: pig_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 32
-      height: 28
-    spriteID: 42147d1690f813744bbde485cbf43520
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 1}
-    spritePosition: {x: 0, y: 3}
-  - name: idle1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -125,8 +104,8 @@ ScriptedImporter:
       x: 4
       y: 40
       width: 32
-      height: 23
-    spriteID: b94576426f1022a42bdf3f11e8821674
+      height: 32
+    spriteID: 68ea1087ad999084c8310fb5bd4a7056
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,8 +113,29 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 37}
-    spritePosition: {x: 0, y: 3}
+    uvTransform: {x: 4, y: 40}
+    spritePosition: {x: 0, y: 0}
+  - name: pig_2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 32
+      height: 32
+    spriteID: df0d643958e3866479bb15c64c9b905c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -239,7 +239,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638413820543063016
+  platformSettingsDirtyTick: 638414678168758126
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
