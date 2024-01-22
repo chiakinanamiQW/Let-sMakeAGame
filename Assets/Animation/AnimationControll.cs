@@ -25,6 +25,8 @@ public class AnimationControll : MonoBehaviour
         {
             animator.SetBool("isOnGround", PhysicsCheck.instance.isOnGround);
         }
+        isClimb();
+
         Cat();
         Bird();
         Rabbit();
@@ -68,6 +70,18 @@ public class AnimationControll : MonoBehaviour
         else if (PlayerInputController.Instance.isClimbAble == false)
         {
             animator.SetLayerWeight(4, 0);
+        }
+    }
+    private void isClimb()
+    {
+        
+        if (PlayerInputController.Instance.inputDirection.y > 0 && PlayerInputController.Instance.isClimbAble && (PlayerInputController.Instance.isLeftOnWall || PlayerInputController.Instance.isRightOnWall))
+        {
+            animator.SetBool("isClimb",true);
+        }
+        else
+        {
+            animator.SetBool("isClimb", false);
         }
     }
 }
