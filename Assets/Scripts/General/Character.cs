@@ -75,6 +75,26 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void CharacterTakeDamage(PlayerAttack attacker)
+    {
+        if (invulnerable || BeInvulnerable) { return; }
+
+        if (CurrentHealth - attacker.Damage > 0)
+        {
+            //GameEventSystem.instance.PlayerTakeDamage(attacker.transform);
+            Debug.Log("character takeDamege");
+
+            CurrentHealth -= attacker.Damage;
+            TriggerInvulnerable();
+        }
+        else
+        {
+            CurrentHealth = 0;
+            Debug.Log("character Dead");
+            //GameEventSystem.instance.PlayerDead();
+        }
+    }
+
     private void TriggerInvulnerable()
     {
         if (invulnerable != true)

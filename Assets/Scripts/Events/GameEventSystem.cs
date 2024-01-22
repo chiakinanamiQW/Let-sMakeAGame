@@ -2,19 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameEventSystem : MonoBehaviour
 {
     public static GameEventSystem instance;
-
     private GameEventSystem() { }
 
     private void Awake()
     {
         instance = this;
     }
+
+    public event Action<Transform> OnCharacterTakeDamege;
+    public event Action OnCharacterDead;
 
     public event Action<Transform> OnPlayerTakeDamage;
     public event Action OnPlayerDead;
@@ -107,5 +110,4 @@ public class GameEventSystem : MonoBehaviour
             }
         }
     }
-
 }

@@ -19,7 +19,6 @@ public class PhysicsCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.gameObject.SetActive(true);
@@ -34,14 +33,12 @@ public class PhysicsCheck : MonoBehaviour
         isJump = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(PlayerInputController.Instance.jumpTimes);
-        if (collision.tag == "Ground")
+        if (collision.tag == "Ground" || (collision.tag == "Wall"&&PlayerInputController.Instance.isClimbAble))
         {
             if (PlayerInputController.Instance.CanJumpTwice)
             {
-
                 isOnGround = true;
                 PlayerInputController.Instance.jumpTimes = 2;
             }
@@ -49,18 +46,6 @@ public class PhysicsCheck : MonoBehaviour
             {
                 isOnGround = true;
                 PlayerInputController.Instance.jumpTimes = 1;
-            }
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Ground")
-        {
-            if (PlayerInputController.Instance.CanJumpTwice)
-            {
-
-                isOnGround = true;
-                PlayerInputController.Instance.jumpTimes = 2;
             }
         }
     }

@@ -14,9 +14,9 @@ public class PlayerInputController : MonoBehaviour
 
     public PlayerInput PlayerInput;
 
-    private Rigidbody2D Rigidbody2D;
+    public Rigidbody2D Rigidbody2D;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     private PhysicsCheck PhysicsCheck;
 
@@ -60,6 +60,10 @@ public class PlayerInputController : MonoBehaviour
 
     public bool isCatDushAble;
 
+    public bool isDushCollide;
+
+    public bool isAttackAble;
+
     [Header("攀爬参数")]
     public bool isClimbAble;
 
@@ -87,11 +91,14 @@ public class PlayerInputController : MonoBehaviour
     public bool isFlyAble;
 
     // Start is called before the first frame update
+    private PlayerInputController()
+    {
+
+    }
 
     private void Awake()
     {
         Instance = this;
-
         isMoveAble = true;
         isDushAble = true;
         PlayerInput = new PlayerInput();
@@ -136,8 +143,6 @@ public class PlayerInputController : MonoBehaviour
     {
         DushControll();
         Dush();
-
-       
         Move();
         Fly();
         
@@ -271,7 +276,7 @@ public class PlayerInputController : MonoBehaviour
             isJumpAble = true;
         else
             isJumpAble = false;
-        if (jumpTimes == 2)
+        if (jumpTimes == 0)
         {
             CanJumpTwice = false;
         }
@@ -313,14 +318,16 @@ public class PlayerInputController : MonoBehaviour
             if(isCatDushAble)
             {
                 character.BeInvulnerableEnable();
+                isAttackAble = true;
                 //这里可以插入镜头抖动事件（猫猫冲刺时
             }
 
-            if (Time.time - DushTapTime >= DushTime + CatDushPlusTime)
+            if (Time.time - DushTapTime >= DushTime + CatDushPlusTime||isDushCollide)
             {
                 if (isCatDushAble)
                 {
                     isCatDushAble = false;
+                    isAttackAble = false;
                     character.BeInvulnerableDisable();
                 }
 
@@ -348,9 +355,9 @@ public class PlayerInputController : MonoBehaviour
             MoveDisable();
             Debug.Log("Dush");
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
-
-            Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
-            Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
+            Rigidbody2D.velocity = currentDushDirection * speed; 
+            //Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
+            //Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {
@@ -442,5 +449,15 @@ public class PlayerInputController : MonoBehaviour
     public void CatDushDisable()
     {
         isCatDushAble = false;
+    }
+
+    public void DushColliderTrue()
+    {
+        isDushCollide = true;
+    }
+
+    public void DushColliderFlase()
+    {
+        isDushCollide = false;
     }
 }
