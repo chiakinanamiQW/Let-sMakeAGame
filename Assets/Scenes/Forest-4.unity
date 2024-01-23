@@ -1427,6 +1427,18 @@ PrefabInstance:
       value: RabbitSoul
       objectReference: {fileID: 0}
     - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.789577
       objectReference: {fileID: 0}
@@ -1466,6 +1478,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6669874852665418636, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: s1
+      value: 
+      objectReference: {fileID: 565984269}
+    - target: {fileID: 6669874852665418636, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: s2
+      value: 
+      objectReference: {fileID: 1229219043}
+    - target: {fileID: 6669874852665418636, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cec31f000e398cf4fb96292a9c69e97e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3299,9 +3323,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1260970657185029826, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_Radius
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260970657185029826, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1516314384864522024, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
       propertyPath: m_Name
       value: RabbitSoul (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779559440739732352, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cec31f000e398cf4fb96292a9c69e97e, type: 3}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.97
       objectReference: {fileID: 0}
     - target: {fileID: 6003937241830440377, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3343,6 +3391,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6669874852665418636, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: s1
+      value: 
+      objectReference: {fileID: 565984269}
+    - target: {fileID: 6669874852665418636, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: s2
+      value: 
+      objectReference: {fileID: 1229219043}
+    - target: {fileID: 6669874852665418636, guid: 928b5e3117671ac4c863d6aab01c9154, type: 3}
+      propertyPath: Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cec31f000e398cf4fb96292a9c69e97e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3873,6 +3933,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82289509a466e804790254a9c80dab22, type: 3}
+--- !u!114 &1229219043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9056947019821174736, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
+  m_PrefabInstance: {fileID: 565984266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565984267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1237682237
 PrefabInstance:
   m_ObjectHideFlags: 0
