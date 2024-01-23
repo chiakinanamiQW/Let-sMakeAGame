@@ -18,6 +18,7 @@ public class HealthManegr : MonoBehaviour
             h1.gameObject.SetActive(true);
             h2.gameObject.SetActive(true);
             h3.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(false);
         }
         if (currentHealth == 2)
         {
