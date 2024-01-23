@@ -4810,7 +4810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 3
   CurrentHealth: 3
-  invulnerableDuration: 0
+  invulnerableDuration: 0.5
   BeInvulnerable: 0
   invulnerable: 0
   isHurt: 0
@@ -4870,6 +4870,7 @@ MonoBehaviour:
   jumpTimes: 1
   CanJumpTwice: 0
   isJumpAble: 0
+  JumpFrame: 0
   InputDushDirection: {x: 0, y: 0}
   currentDushDirection: {x: 0, y: 0}
   DushAcceleration: 10
@@ -4883,6 +4884,7 @@ MonoBehaviour:
   ClimbSpeed: 6
   speed: 0
   timeSpend: 0
+  testForce: 0
   isDushAble: 0
   isDush: 0
   isMoveAble: 0

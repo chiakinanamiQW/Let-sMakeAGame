@@ -43,6 +43,15 @@ public class Character : MonoBehaviour
                 invulnerable = false;
             }
         }
+
+        if(CurrentHealth <= 0)
+        {
+            isdead = true;
+        }
+        else
+        {
+            isdead = false;
+        }
         OnHealthChange?.Invoke(this);
     }
 
@@ -91,7 +100,7 @@ public class Character : MonoBehaviour
         {
             CurrentHealth = 0;
             Debug.Log("character Dead");
-            //GameEventSystem.instance.PlayerDead();
+            GameEventSystem.instance.PlayerDead();
         }
     }
 

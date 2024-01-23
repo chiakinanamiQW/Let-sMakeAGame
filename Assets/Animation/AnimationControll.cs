@@ -25,6 +25,7 @@ public class AnimationControll : MonoBehaviour
         animator.SetBool("isDush", PlayerInputController.Instance.isDush);
         animator.SetBool("isHurt", character.invulnerable);
         animator.SetBool("isOnGround", PhysicsCheck.instance.isOnGround);
+        animator.SetBool("isDead", character.isdead);
         isClimb();
 
         Cat();
