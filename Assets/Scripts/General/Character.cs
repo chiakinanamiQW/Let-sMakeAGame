@@ -29,7 +29,10 @@ public class Character : MonoBehaviour
         isdead = false;
         isHurt = false;
         if(this.tag == "Player")
-            GameEventSystem.instance.OnPlayerReborn += Reborn; 
+        {
+            RebornPosition = transform.position;
+            GameEventSystem.instance.OnPlayerReborn += Reborn;
+        }
     }
     void Start()
     {

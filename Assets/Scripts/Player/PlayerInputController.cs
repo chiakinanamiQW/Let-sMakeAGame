@@ -277,7 +277,7 @@ public class PlayerInputController : MonoBehaviour
             {
                 Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, FlyForce);
             }
-            else if(inputDirection.y < 0)
+            else //if(inputDirection.y < 0)
             {
                 Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, -FlyDownForce);
             }
