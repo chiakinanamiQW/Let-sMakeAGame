@@ -2116,7 +2116,7 @@ MonoBehaviour:
   currentDushDirection: {x: 0, y: 0}
   DushAcceleration: 20
   DushTapTime: 0
-  DushTime: 0.5
+  DushTime: 0.3
   DushCD: 0.3
   isCatDushAble: 0
   isDushCollide: 0
