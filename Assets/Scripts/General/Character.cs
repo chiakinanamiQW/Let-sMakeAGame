@@ -20,12 +20,19 @@ public class Character : MonoBehaviour
     public UnityEvent<Character> OnHealthChange;
     private float invulnerableCounter;
 
+    private Vector3 RebornPosition;//only for player
+
     private void Awake()
     {
         CurrentHealth = MaxHealth;
         invulnerable = false;
         isdead = false;
         isHurt = false;
+        if(this.tag == "Player")
+        {
+            RebornPosition = transform.position;
+            GameEventSystem.instance.OnPlayerReborn += Reborn;
+        }
     }
     void Start()
     {
@@ -42,6 +49,15 @@ public class Character : MonoBehaviour
             {
                 invulnerable = false;
             }
+        }
+
+        if(CurrentHealth <= 0)
+        {
+            isdead = true;
+        }
+        else
+        {
+            isdead = false;
         }
         OnHealthChange?.Invoke(this);
     }
@@ -81,7 +97,6 @@ public class Character : MonoBehaviour
 
         if (CurrentHealth - attacker.Damage > 0)
         {
-            //GameEventSystem.instance.PlayerTakeDamage(attacker.transform);
             Debug.Log("character takeDamege");
 
             CurrentHealth -= attacker.Damage;
@@ -91,7 +106,6 @@ public class Character : MonoBehaviour
         {
             CurrentHealth = 0;
             Debug.Log("character Dead");
-            //GameEventSystem.instance.PlayerDead();
         }
     }
 
@@ -101,5 +115,27 @@ public class Character : MonoBehaviour
             invulnerable = true;
 
         invulnerableCounter = invulnerableDuration;
+    }
+
+    IEnumerator REBorn()
+    {
+        yield return new WaitForSeconds(1f);
+        isdead = false;
+        CurrentHealth = MaxHealth;
+        transform.position = RebornPosition;
+        PlayerInputController.Instance.ControllEnable();
+    }
+
+    public void ChangRebornPosition(Vector3 position)
+    {
+        RebornPosition = position;
+    }
+
+    public void Reborn()
+    {
+        isdead = false;
+        CurrentHealth = MaxHealth;
+        transform.position = RebornPosition;
+        PlayerInputController.Instance.ControllEnable();
     }
 }

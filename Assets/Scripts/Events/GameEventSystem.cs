@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,9 @@ using UnityEngine.InputSystem;
 public class GameEventSystem : MonoBehaviour
 {
     public static GameEventSystem instance;
+    public int a;
+    public bool _1SkillUse = false;
+    public bool _2SkillUse = false;
     private GameEventSystem() { }
 
     private void Awake()
@@ -21,6 +25,7 @@ public class GameEventSystem : MonoBehaviour
 
     public event Action<Transform> OnPlayerTakeDamage;
     public event Action OnPlayerDead;
+    public event Action OnPlayerReborn;
 
     public event Action OnSkill1Use;
     public event Action OnSkill1;
@@ -32,9 +37,15 @@ public class GameEventSystem : MonoBehaviour
     public int GetSkill_1or2()
     {
         if (OnSkill1Use == null)
-            return 1;
+        {
+
+            return a=1;
+        }
         else if (OnSkill2Use == null)
-            return 2;
+        {
+
+            return a=2;
+        }
         else return 0;
     }
 
@@ -65,7 +76,8 @@ public class GameEventSystem : MonoBehaviour
         if(OnSkill1Use != null)
         {
             OnSkill1Use();
-            if(OnSkill1 != null)
+            _1SkillUse = true;
+            if (OnSkill1 != null)
                 OnSkill1();
 
             OnSkill1Use = null;
@@ -78,6 +90,7 @@ public class GameEventSystem : MonoBehaviour
         if(OnSkill2Use != null)
         {
             OnSkill2Use();
+            _2SkillUse = true;
             if(OnSkill2 != null)
                 OnSkill2();
 
@@ -108,6 +121,14 @@ public class GameEventSystem : MonoBehaviour
             {
                 OnPlayerTakeDamage(transform);
             }
+        }
+    }
+
+    public void PlayerReborn()
+    {
+        if (OnPlayerReborn != null) 
+        {
+            OnPlayerReborn();
         }
     }
 }
