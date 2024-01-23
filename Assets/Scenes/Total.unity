@@ -4890,7 +4890,7 @@ MonoBehaviour:
   isMoveAble: 0
   UnControllTime: 0.5
   FlyForce: 7
-  FlyDownForce: 6
+  FlyDownForce: 1
   isFlyAble: 0
 --- !u!50 &1856874028
 Rigidbody2D:
