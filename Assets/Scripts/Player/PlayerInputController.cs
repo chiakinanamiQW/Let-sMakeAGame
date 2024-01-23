@@ -121,6 +121,7 @@ public class PlayerInputController : MonoBehaviour
         PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
 
         GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
+        GameEventSystem.instance.OnPlayerDead += ControllDisable;
     }
 
     private void Start()
@@ -457,8 +458,6 @@ public class PlayerInputController : MonoBehaviour
             Debug.Log("Dush");
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
             Rigidbody2D.velocity = currentDushDirection * speed; 
-            //Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
-            //Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {

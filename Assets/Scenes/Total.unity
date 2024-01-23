@@ -4998,7 +4998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 3
   CurrentHealth: 3
-  invulnerableDuration: 0
+  invulnerableDuration: 0.5
   BeInvulnerable: 0
   invulnerable: 0
   isHurt: 0
