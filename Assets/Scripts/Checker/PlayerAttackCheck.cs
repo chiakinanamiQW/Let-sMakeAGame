@@ -15,6 +15,10 @@ public class PlayerAttackCheck : MonoBehaviour
         {
             GetComponent<Collider2D>().enabled = true;
         }
+        else
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
