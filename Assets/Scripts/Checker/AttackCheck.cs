@@ -9,7 +9,11 @@ public class AttackCheck : MonoBehaviour
     {
         if(other.tag == "Player"&&other.GetComponent<Character>().isdead!=true)
         {
-            other.GetComponent<Character>()?.TakeDamage(transform.parent.GetComponent<Attack>());
+            if (this.transform.parent != null)
+                other.GetComponent<Character>()?.TakeDamage(transform.parent.GetComponent<Attack>());
+            else
+                other.GetComponent<Character>()?.TakeDamage(this.GetComponent<Attack>());
+
         }
     }
 }

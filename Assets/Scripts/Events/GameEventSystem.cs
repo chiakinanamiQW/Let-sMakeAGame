@@ -131,4 +131,12 @@ public class GameEventSystem : MonoBehaviour
             OnPlayerReborn();
         }
     }
+
+    public void PlayerReborn(InputAction.CallbackContext context)
+    {
+        if (OnPlayerReborn != null)
+        {
+            OnPlayerReborn();
+        }
+    }
 }
