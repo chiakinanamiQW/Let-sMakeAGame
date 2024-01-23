@@ -10,6 +10,9 @@ using UnityEngine.TextCore.Text;
 
 public class PlayerInputController : MonoBehaviour
 {
+    AudioSource audioS;
+    public AudioClip running,jumping;
+
     public static PlayerInputController Instance;
 
     public PlayerInput PlayerInput;
@@ -118,6 +121,8 @@ public class PlayerInputController : MonoBehaviour
 
     private void Start()
     {
+        audioS=GetComponent<AudioSource>();
+
         Rigidbody2D.drag = 0f;
     }
 
@@ -213,9 +218,11 @@ public class PlayerInputController : MonoBehaviour
 
     private void GetMoveDirection()
     {
+
         inputDirection = PlayerInput.GamePlay.Move.ReadValue<Vector2>();
         if (inputDirection.x > 0)
             MoveDirection.x = 1;
+
         else if(inputDirection.x < 0)
             MoveDirection.x = -1;
         else MoveDirection.x = 0;
@@ -245,6 +252,9 @@ public class PlayerInputController : MonoBehaviour
     {
         if (isJumpAble)
         {
+            audioS.clip = jumping;
+            audioS.Play();
+
             jumpTimes--;
             if (isClimbAble)
             {
