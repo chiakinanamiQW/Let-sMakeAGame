@@ -23,5 +23,17 @@ public class SkillManager : MonoBehaviour
             }
         }
     }
+    private void Update()
+    {
+        if (GameEventSystem.instance._1SkillUse)
+        {
+            s1.sprite = null;
+            GameEventSystem.instance._1SkillUse=false;
+        }
+        if (GameEventSystem.instance._2SkillUse) 
+        {
+            s2.sprite = null; GameEventSystem.instance._2SkillUse=false;    
+        }
+    }
 
 }

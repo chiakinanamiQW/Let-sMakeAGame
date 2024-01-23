@@ -1763,6 +1763,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   a: 0
+  _1SkillUse: 0
+  _2SkillUse: 0
 --- !u!1 &861829489
 GameObject:
   m_ObjectHideFlags: 0
@@ -5056,6 +5058,7 @@ MonoBehaviour:
   jumpTimes: 1
   CanJumpTwice: 0
   isJumpAble: 0
+  JumpFrame: 0
   InputDushDirection: {x: 0, y: 0}
   currentDushDirection: {x: 0, y: 0}
   DushAcceleration: 10
@@ -5069,6 +5072,7 @@ MonoBehaviour:
   ClimbSpeed: 6
   speed: 0
   timeSpend: 0
+  testForce: 0
   isDushAble: 0
   isDush: 0
   isMoveAble: 0

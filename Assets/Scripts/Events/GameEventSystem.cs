@@ -11,6 +11,8 @@ public class GameEventSystem : MonoBehaviour
 {
     public static GameEventSystem instance;
     public int a;
+    public bool _1SkillUse = false;
+    public bool _2SkillUse = false;
     private GameEventSystem() { }
 
     private void Awake()
@@ -73,7 +75,8 @@ public class GameEventSystem : MonoBehaviour
         if(OnSkill1Use != null)
         {
             OnSkill1Use();
-            if(OnSkill1 != null)
+            _1SkillUse = true;
+            if (OnSkill1 != null)
                 OnSkill1();
 
             OnSkill1Use = null;
@@ -86,6 +89,7 @@ public class GameEventSystem : MonoBehaviour
         if(OnSkill2Use != null)
         {
             OnSkill2Use();
+            _2SkillUse = true;
             if(OnSkill2 != null)
                 OnSkill2();
 
