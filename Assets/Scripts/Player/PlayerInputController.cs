@@ -31,6 +31,7 @@ public class PlayerInputController : MonoBehaviour
 
     public bool isLeftOnWall;
     public bool isRightOnWall;
+    public bool isSpeeking=false;
 
     [Header("ÌøÔ¾²ÎÊý")]
     public float JumpForce;
@@ -121,6 +122,7 @@ public class PlayerInputController : MonoBehaviour
         PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
 
         GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
+        GameEventSystem.instance.OnPlayerDead += ControllDisable;
     }
 
     private void Start()
@@ -140,10 +142,10 @@ public class PlayerInputController : MonoBehaviour
 
     void Update()
     {
-        GetMoveDirection();
-        GetDushDirection();
-        GetisJumpAble();
-        TwiceJumpLimit();
+            GetMoveDirection();
+            GetDushDirection();
+            GetisJumpAble();
+            TwiceJumpLimit();
         
     }
 
@@ -157,10 +159,12 @@ public class PlayerInputController : MonoBehaviour
         //{
         //    Jump();
         //}
-        DushControll();
-        Dush();
-        Move();
-        Fly();
+       
+            DushControll();
+            Dush();
+            Move();
+            Fly();
+        
         
     }
 
@@ -273,7 +277,7 @@ public class PlayerInputController : MonoBehaviour
             {
                 Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, FlyForce);
             }
-            else if(inputDirection.y < 0)
+            else //if(inputDirection.y < 0)
             {
                 Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, -FlyDownForce);
             }
@@ -457,8 +461,6 @@ public class PlayerInputController : MonoBehaviour
             Debug.Log("Dush");
             speed += DushAcceleration * (timeSpend += Time.deltaTime);
             Rigidbody2D.velocity = currentDushDirection * speed; 
-            //Rigidbody2D.position += currentDushDirection * speed * Time.deltaTime;
-            //Rigidbody2D.AddForce(currentDushDirection * speed, ForceMode2D.Force);
         }
         if (!isDush&&j!=1)
         {

@@ -22,6 +22,7 @@ public class PhysicsCheck : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.Space)&&isJump)
@@ -54,7 +55,10 @@ public class PhysicsCheck : MonoBehaviour
         if (collision.tag == "Ground"|| (collision.tag == "Wall" && PlayerInputController.Instance.isClimbAble))
         {
             isOnGround = false;
-            PlayerInputController.Instance.jumpTimes = 0;
+            if(PlayerInputController.Instance.Rigidbody2D.velocity.y <= 0.01)
+            {
+                PlayerInputController.Instance.jumpTimes--;
+            }
         }
     }
 }
