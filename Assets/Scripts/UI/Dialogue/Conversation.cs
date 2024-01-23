@@ -16,6 +16,7 @@ public class Conversation : MonoBehaviour
     private bool isFinshedSpeak=false;
     [Header("Í·Ïñ")]
     public Sprite face01, face02;
+    bool isSpeeking = false;
 
     List<string> textlist = new List<string>();
     private void Awake()
@@ -31,10 +32,13 @@ public class Conversation : MonoBehaviour
     }
     private void Update()
     {
+
         if (Input.GetKeyUp(KeyCode.J) && index == textlist.Count)
         {
             gameObject.SetActive(false);
             index = 0;
+            Debug.Log(1);
+           
             return;
         }
         if (Input.GetKeyUp(KeyCode.J) && isFinshedSpeak == true)
@@ -42,6 +46,15 @@ public class Conversation : MonoBehaviour
             /*context.text = textlist[index];
             index++;*/
             StartCoroutine(SetTextUI());
+        }
+        if(isSpeeking)
+        {
+            PlayerInputController.Instance.ControllDisable();
+        }
+        else if(!isSpeeking)
+        {
+            Debug.Log(1);
+            PlayerInputController.Instance.ControllEnable();
         }
     }
     void GetText(TextAsset file)
@@ -55,16 +68,17 @@ public class Conversation : MonoBehaviour
         }
     }
     IEnumerator SetTextUI()
-    {
+    {   isSpeeking=true;   
+        Debug.Log(textlist[0]);
         context.text = "";
         isFinshedSpeak = false;
         switch (textlist[index])
         {
-            case"A":
+            case"ÉÙÄê":
                 Face.sprite=face01;
                 index++;
                 break;
-            case "B":
+            case "":
                 Face.sprite=face02;
                 index++;
                 break;
@@ -76,6 +90,7 @@ public class Conversation : MonoBehaviour
             yield return new WaitForSeconds(textspeed);
         }
         isFinshedSpeak = true;
+        isSpeeking = false;
         index++;
     }
 

@@ -31,6 +31,7 @@ public class PlayerInputController : MonoBehaviour
 
     public bool isLeftOnWall;
     public bool isRightOnWall;
+    public bool isSpeeking=false;
 
     [Header("ÌøÔ¾²ÎÊý")]
     public float JumpForce;
@@ -141,10 +142,10 @@ public class PlayerInputController : MonoBehaviour
 
     void Update()
     {
-        GetMoveDirection();
-        GetDushDirection();
-        GetisJumpAble();
-        TwiceJumpLimit();
+            GetMoveDirection();
+            GetDushDirection();
+            GetisJumpAble();
+            TwiceJumpLimit();
         
     }
 
@@ -158,10 +159,12 @@ public class PlayerInputController : MonoBehaviour
         //{
         //    Jump();
         //}
-        DushControll();
-        Dush();
-        Move();
-        Fly();
+       
+            DushControll();
+            Dush();
+            Move();
+            Fly();
+        
         
     }
 
