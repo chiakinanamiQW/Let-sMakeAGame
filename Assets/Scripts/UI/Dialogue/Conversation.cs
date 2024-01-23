@@ -7,7 +7,6 @@ using TMPro;
 public class Conversation : MonoBehaviour
 {
     [Header("UI")]
-    public Image Face;
     public TMP_Text context;
     [Header("内容")]
     public TextAsset textAsset;
@@ -15,12 +14,18 @@ public class Conversation : MonoBehaviour
     public float textspeed;
     private bool isFinshedSpeak=false;
     [Header("头像")]
-    public Sprite face01, face02;
+    public Image spriteLeft;
+    public Image spriteRight;
+    public List<Sprite> sprites = new List<Sprite>();
+    Dictionary<string, Sprite> imageDic = new Dictionary<string, Sprite>();
     bool isSpeeking = false;
 
     List<string> textlist = new List<string>();
     private void Awake()
     {
+        imageDic["少年"] = sprites[0];
+        imageDic["自称是神使的很可爱的小狗"] =imageDic["不知道哪里来的很可爱的小狗"] = sprites[1];
+
         GetText(textAsset);
         index = 0;
     }
@@ -37,8 +42,8 @@ public class Conversation : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
-            Debug.Log(1);
-           
+            PlayerInputController.Instance.ControllEnable();
+
             return;
         }
         if (Input.GetKeyUp(KeyCode.J) && isFinshedSpeak == true)
@@ -51,11 +56,7 @@ public class Conversation : MonoBehaviour
         {
             PlayerInputController.Instance.ControllDisable();
         }
-        else if(!isSpeeking)
-        {
-            Debug.Log(1);
-            PlayerInputController.Instance.ControllEnable();
-        }
+       
     }
     void GetText(TextAsset file)
     {
@@ -67,23 +68,25 @@ public class Conversation : MonoBehaviour
             textlist.Add(line);
         }
     }
+    public void UpdateSpite(string _name)
+    {
+        if (_name == "少年")
+        {
+            spriteLeft.sprite = imageDic[_name];
+            spriteLeft.gameObject.SetActive(true);
+        }
+        else if(_name == "不知道哪里来的很可爱的小狗"||_name== "自称是神使的很可爱的小狗")
+        {
+            spriteRight.sprite = imageDic[_name];
+            spriteRight.gameObject.SetActive(true);
+        }
+    }
     IEnumerator SetTextUI()
     {   isSpeeking=true;   
         Debug.Log(textlist[0]);
         context.text = "";
         isFinshedSpeak = false;
-        switch (textlist[index])
-        {
-            case"少年":
-                Face.sprite=face01;
-                index++;
-                break;
-            case " ":
-                Face.sprite=face02;
-                index++;
-                break;
-         
-        }
+        UpdateSpite(textlist[index]);
         for(int i = 0; i < textlist[index].Length; i++)
         {
             context.text += textlist[index][i];

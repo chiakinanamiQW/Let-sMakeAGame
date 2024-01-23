@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneMan : MonoBehaviour
-{   
+{
+    public Animator transition;
+    public Canvas c;
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -14,12 +16,11 @@ public class SceneMan : MonoBehaviour
     public void ClickNext()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(currentSceneIndex+1);
     }
     public void ClickOut(Canvas canvas)
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex-1);
+        SceneManager.LoadScene("Menu");
         Destroy(canvas);
     }
     public void ToggleFullScreen()
@@ -42,4 +43,9 @@ public class SceneMan : MonoBehaviour
     {
         Time.timeScale = 1.0f;
     }
+    public void LoadNextLevel(int TargetIndex)
+    {
+        SceneManager.LoadScene(TargetIndex);
+    }
+    
 }
