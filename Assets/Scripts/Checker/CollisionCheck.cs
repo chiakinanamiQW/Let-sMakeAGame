@@ -8,12 +8,14 @@ public class CollisionCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(PlayerInputController.Instance.isDush&&collision.tag != "Item")
+        if(PlayerInputController.Instance.isDush&&collision.tag != "Item"&& (collision.tag != "Enemy" && !PlayerInputController.Instance.isCatDushAble))
         {
             PlayerInputController.Instance.DushColliderTrue();
             StartCoroutine(isDushCollide());
 
         }
+
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
