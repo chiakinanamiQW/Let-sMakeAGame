@@ -45,6 +45,8 @@ public class PlayerInputController : MonoBehaviour
 
     public bool isJumpAble;
 
+    public int JumpFrame;
+
     [Header("³å´Ì²ÎÊý")]
     /*[HideInInspector]*/ public Vector2 InputDushDirection;
 
@@ -74,6 +76,10 @@ public class PlayerInputController : MonoBehaviour
     [HideInInspector] public float timeSpend = 0;
 
     private float j = 1;
+
+    private int i = 0;
+
+    public float testForce;
 
     /*[HideInInspector]*/ public bool isDushAble;
 
@@ -108,6 +114,7 @@ public class PlayerInputController : MonoBehaviour
         character = GetComponent<Character>();
 
         PlayerInput.GamePlay.Jump.started += Jump;
+        //PlayerInput.GamePlay.Jump.started += JumpFrameCount;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
         PlayerInput.GamePlay.Dush.started += DushTap;
 
@@ -137,10 +144,19 @@ public class PlayerInputController : MonoBehaviour
         GetDushDirection();
         GetisJumpAble();
         TwiceJumpLimit();
+        
     }
 
     private void FixedUpdate()
     {
+        //if(JumpFrame >= 0)
+        //{
+        //    JumpFrame--;
+        //}
+        //if(JumpFrame >0&&PhysicsCheck.isOnGround)
+        //{
+        //    Jump();
+        //}
         DushControll();
         Dush();
         Move();
@@ -150,6 +166,7 @@ public class PlayerInputController : MonoBehaviour
 
     private void Move()
     {
+        
         if(isMoveAble)
         {
             if (!isClimbAble)
@@ -174,8 +191,19 @@ public class PlayerInputController : MonoBehaviour
 
             if (inputDirection.y > 0 && isClimbAble && (isLeftOnWall || isRightOnWall))
             {
+                
                 Rigidbody2D.AddForce(-ClimbSpeed * Physics2D.gravity, ForceMode2D.Force);
                 Rigidbody2D.velocity = Vector2.up * inputDirection.y;
+                //if(i == 0&&isRightOnWall)
+                //{
+                //    StartCoroutine(testRight());
+                //}
+                //if(i == 0&&isLeftOnWall)
+                //{
+                //    StartCoroutine(testLeft());
+                //}
+                //i = 1;
+                
             }
             //else
             Rigidbody2D.velocity = new Vector2(Speed * MoveDirection.x * Time.deltaTime, Rigidbody2D.velocity.y);
@@ -191,6 +219,48 @@ public class PlayerInputController : MonoBehaviour
             spriteRenderer.flipX = true;
         }
         #endregion
+    }
+
+    IEnumerator testRight()
+    {
+        Debug.Log("Coroutine Start");
+        while(true)
+        {
+            yield return null;
+            if (!isRightOnWall)
+            {
+                Debug.Log("Leave Wall");
+                break;
+            }
+        }
+
+        i = 0;
+        MoveDisable();
+        transform.position += new Vector3(testForce,testForce,0);
+        MoveEnable();
+        
+        Debug.Log("Coroutine over");
+    }
+
+    IEnumerator testLeft()
+    {
+        Debug.Log("Coroutine Start");
+        while (true)
+        {
+            yield return null;
+            if (!isLeftOnWall)
+            {
+                Debug.Log("Leave Wall");
+                break;
+            }
+        }
+
+        i = 0;
+        MoveDisable();
+        transform.position += new Vector3(-testForce, testForce,0);
+        MoveEnable();
+
+        Debug.Log("Coroutine over");
     }
 
     public void Fly()
@@ -243,6 +313,32 @@ public class PlayerInputController : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
+        
+        if (isJumpAble)
+        {
+            Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, 0);
+            jumpTimes--;
+            if (isClimbAble)
+            {
+                if (isLeftOnWall)
+                {
+                    UnMoveForaWhile(0.2f);
+                    Rigidbody2D.AddForce(JumpForce * (Vector2.right + Vector2.up), ForceMode2D.Impulse);
+                }
+                else if (isRightOnWall)
+                {
+                    UnMoveForaWhile(0.2f);
+                    Rigidbody2D.AddForce(JumpForce * (Vector2.left + Vector2.up), ForceMode2D.Impulse);
+                }
+                else Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+            }
+            else Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
+        }
+    }
+
+    private void Jump()
+    {
+
         if (isJumpAble)
         {
             jumpTimes--;
@@ -263,6 +359,11 @@ public class PlayerInputController : MonoBehaviour
             else Rigidbody2D.AddForce(JumpForce * transform.up, ForceMode2D.Impulse);
         }
     }
+
+    //private void JumpFrameCount(InputAction.CallbackContext context)
+    //{
+    //    JumpFrame = 6;
+    //}
 
     private void LeaveButton(InputAction.CallbackContext context)
     {
