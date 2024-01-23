@@ -9,11 +9,11 @@ public class Item : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            itemBePick();
+            itemBePick(collision);
         }
     }
 
-    protected virtual void itemBePick()
+    protected virtual void itemBePick(Collider2D collision)
     {
         Destroy(this.gameObject);
         Debug.Log("IsPick");

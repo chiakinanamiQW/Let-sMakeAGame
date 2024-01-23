@@ -3594,6 +3594,7 @@ MonoBehaviour:
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
+  RebornPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1387829784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,6 +4591,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730267955}
   m_CullTransparentMesh: 1
+--- !u!1001 &1818116600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 76.05963
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.87274
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921586832512210813, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627035991487238245, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_Name
+      value: BloodVial
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627035991487238245, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 5660654874789293644, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
+      propertyPath: RecoverHealth
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fce0cd7a7c5f845449fdd8f70c8bd322, type: 3}
 --- !u!1 &1834911060
 GameObject:
   m_ObjectHideFlags: 0
@@ -4830,6 +4896,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  RebornPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1856874026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5763,3 +5830,4 @@ SceneRoots:
   - {fileID: 1318807583}
   - {fileID: 263577880}
   - {fileID: 356211519}
+  - {fileID: 1818116600}

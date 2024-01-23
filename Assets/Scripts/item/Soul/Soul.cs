@@ -12,7 +12,7 @@ public class Soul : Item
     }
    
 
-    protected override void itemBePick()
+    protected override void itemBePick(Collider2D collision)
     {
         a = GameEventSystem.instance.GetSkill_1or2();
         if (a == 0)

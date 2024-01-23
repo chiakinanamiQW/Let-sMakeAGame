@@ -10,6 +10,8 @@ using UnityEngine.TextCore.Text;
 
 public class PlayerInputController : MonoBehaviour
 {
+
+
     public static PlayerInputController Instance;
 
     public PlayerInput PlayerInput;
@@ -102,6 +104,8 @@ public class PlayerInputController : MonoBehaviour
 
     }
 
+    
+
     private void Awake()
     {
         Instance = this;
@@ -117,6 +121,7 @@ public class PlayerInputController : MonoBehaviour
         //PlayerInput.GamePlay.Jump.started += JumpFrameCount;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
         PlayerInput.GamePlay.Dush.started += DushTap;
+        PlayerInput.GamePlay.Retry.started += SceneMan.Instance.Restart;
 
         PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
 

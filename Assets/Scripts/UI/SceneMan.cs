@@ -1,13 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class SceneMan : MonoBehaviour
-{   
+{
+    public static SceneMan Instance;
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        GameEventSystem.instance.OnPlayerReborn += Restart;
         DontDestroyOnLoad(this);
     }
     public void ClickNext()
@@ -35,8 +47,13 @@ public class SceneMan : MonoBehaviour
     }
     public void Restart()
     {
+        Debug.Log("Restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-
+    public void Restart(InputAction.CallbackContext context)
+    {
+        Debug.Log("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
