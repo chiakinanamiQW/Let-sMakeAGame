@@ -97,8 +97,6 @@ public class PlayerInputController : MonoBehaviour
     public float FlyDownForce;
 
     public bool isFlyAble;
-
-    // Start is called before the first frame update
     private PlayerInputController()
     {
 
@@ -131,6 +129,7 @@ public class PlayerInputController : MonoBehaviour
 
     private void Start()
     {
+        transform.position = RebornPosition.Instance.rebornPosition;
         Rigidbody2D.drag = 0f;
     }
 

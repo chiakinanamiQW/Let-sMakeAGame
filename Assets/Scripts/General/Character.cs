@@ -124,7 +124,7 @@ public class Character : MonoBehaviour
 
     public void Reborn()
     {
-        isdead = false;
+        //isdead = false;
         CurrentHealth = MaxHealth;
         transform.position = RebornPosition;
         PlayerInputController.Instance.ControllEnable();
