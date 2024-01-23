@@ -7,65 +7,21 @@ public class SkillManager : MonoBehaviour
 {
     public Image s1;
     public Image s2;
-    public Sprite sprite;
-    private int a;
-    private int b;
-    
-    
+    public Sprite Sprite;
     private void OnTriggerEnter2D(Collider2D collision)
-    {   a=GameEventSystem.instance.GetSkill_1or2();
+    {
         if (collision.gameObject.tag == "Player")
         {
-            switch (a)
+            switch (GameEventSystem.instance.a)
             {
                 case 1:
-                    s1.sprite = sprite;b = 1; break;
+                    s1.sprite = Sprite;
+                    break;
                 case 2:
-                    s2.sprite = sprite;b = 2; break;
+                    s2.sprite = Sprite;
+                    break;
             }
         }
     }
-    private void Update()
-    {
-        Debug.Log(PlayerInputController.Instance.isFlyAble);
-        
-        if (b == 1)
-        {
-            if (!PlayerInputController.Instance.isCatDushAble)
-            {
-                s1.sprite = null;
-            }
-            if (!PlayerInputController.Instance.isFlyAble)
-            {
-                s1.sprite = null;
-            }
-            if (!PlayerInputController.Instance.isClimbAble)
-            {
-                s1.sprite = null;
-            }
-            if (!PlayerInputController.Instance.CanJumpTwice)
-            {
-                s1.sprite = null;
-            }
-        }
-        else if (b == 2)
-        {
-            if (!PlayerInputController.Instance.isCatDushAble)
-            {
-                s2.sprite = null;
-            }
-            if (!PlayerInputController.Instance.isFlyAble)
-            {
-                s2.sprite = null;
-            }
-            if (!PlayerInputController.Instance.isClimbAble)
-            {
-                s2.sprite = null;
-            }
-            if (!PlayerInputController.Instance.CanJumpTwice)
-            {
-                s2.sprite = null;
-            }
-        }
-    }
+
 }

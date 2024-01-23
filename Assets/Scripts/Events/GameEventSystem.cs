@@ -10,8 +10,7 @@ using UnityEngine.InputSystem;
 public class GameEventSystem : MonoBehaviour
 {
     public static GameEventSystem instance;
-    public bool _1isnull=true;
-    public bool _2isnull=true;
+    public int a;
     private GameEventSystem() { }
 
     private void Awake()
@@ -36,13 +35,13 @@ public class GameEventSystem : MonoBehaviour
     {
         if (OnSkill1Use == null)
         {
-            
-            return  1;
+
+            return a=1;
         }
         else if (OnSkill2Use == null)
         {
 
-            return  2; 
+            return a=2;
         }
         else return 0;
     }
