@@ -51,9 +51,10 @@ public class PhysicsCheck : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.tag == "Ground"|| (collision.tag == "Wall" && PlayerInputController.Instance.isClimbAble))
         {
             isOnGround = false;
+            PlayerInputController.Instance.jumpTimes = 0;
         }
     }
 }
