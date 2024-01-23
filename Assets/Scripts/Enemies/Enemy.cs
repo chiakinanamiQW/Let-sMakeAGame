@@ -27,12 +27,15 @@ public class Enemy : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private Character character;
+
     private int i = 0;
     private void Awake()
     {
         currentSpeed = Speed;
         Rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        character = GetComponent<Character>();
     }
     void Start()
     {
@@ -42,7 +45,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         GetisStandbyPointLorR();
-
+        enemyDead();
     }
 
     private void FixedUpdate()
@@ -109,5 +112,15 @@ public class Enemy : MonoBehaviour
         isStop = true;
         yield return new WaitForSeconds(StopTime);
         isStop = false;
+    }
+
+    private void enemyDead()
+    {
+        if(character.isdead) 
+        {
+            Speed = 0;
+            Debug.Log("Enemy Dead");
+            Destroy(gameObject);
+        }
     }
 }

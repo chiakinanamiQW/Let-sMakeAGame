@@ -90,7 +90,6 @@ public class Character : MonoBehaviour
 
         if (CurrentHealth - attacker.Damage > 0)
         {
-            //GameEventSystem.instance.PlayerTakeDamage(attacker.transform);
             Debug.Log("character takeDamege");
 
             CurrentHealth -= attacker.Damage;
@@ -100,7 +99,6 @@ public class Character : MonoBehaviour
         {
             CurrentHealth = 0;
             Debug.Log("character Dead");
-            GameEventSystem.instance.PlayerDead();
         }
     }
 
