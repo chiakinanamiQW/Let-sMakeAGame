@@ -9,6 +9,7 @@ public class HealthManegr : MonoBehaviour
     public Image h1;
     public Image h2;
     public Image h3;
+    public Canvas canvas;
 
 
     public void OnHealthChange(int currentHealth)
@@ -17,6 +18,7 @@ public class HealthManegr : MonoBehaviour
             h1.gameObject.SetActive(true);
             h2.gameObject.SetActive(true);
             h3.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(false);
         }
         if (currentHealth == 2)
         {
@@ -36,6 +38,7 @@ public class HealthManegr : MonoBehaviour
             h1.gameObject.SetActive(false);
             h2.gameObject.SetActive(false);
             h3.gameObject.SetActive(false);
+            canvas.gameObject.SetActive(true);
         }
     }
 }

@@ -5,10 +5,12 @@ using UnityEngine;
 public class AnimationControll : MonoBehaviour
 {
     public Animator animator;
+    private Character character;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        character = GameObject.Find("Player").GetComponent<Character>();
     }
     void Start()
     {
@@ -19,12 +21,11 @@ public class AnimationControll : MonoBehaviour
     void Update()
     {
         animator.SetFloat("VelocityX", Mathf.Abs(PlayerInputController.Instance.Rigidbody2D.velocity.x));
-        animator.SetFloat("VelocityY", Mathf.Abs(PlayerInputController.Instance.Rigidbody2D.velocity.y));
+        animator.SetFloat("VelocityY",PlayerInputController.Instance.Rigidbody2D.velocity.y);
         animator.SetBool("isDush", PlayerInputController.Instance.isDush);
-        if(PlayerInputController.Instance.isFlyAble) 
-        {
-            animator.SetBool("isOnGround", PhysicsCheck.instance.isOnGround);
-        }
+        animator.SetBool("isHurt", character.invulnerable);
+        animator.SetBool("isOnGround", PhysicsCheck.instance.isOnGround);
+        animator.SetBool("isDead", character.isdead);
         isClimb();
 
         Cat();
@@ -36,7 +37,7 @@ public class AnimationControll : MonoBehaviour
     private void Cat()
     {
         if (PlayerInputController.Instance.isCatDushAble)
-            animator.SetLayerWeight(1, 0.51f);
+            animator.SetLayerWeight(1, 1);
         else if(PlayerInputController.Instance.isCatDushAble == false)
             animator.SetLayerWeight(1, 0);
     }
@@ -44,7 +45,7 @@ public class AnimationControll : MonoBehaviour
     private void Bird()
     {
         if (PlayerInputController.Instance.isFlyAble)
-            animator.SetLayerWeight(2,0.51f);
+            animator.SetLayerWeight(2,1);
         else if(PlayerInputController.Instance.isFlyAble == false)
             animator.SetLayerWeight(2, 0);
     }
@@ -53,7 +54,7 @@ public class AnimationControll : MonoBehaviour
     {
         if(PlayerInputController.Instance.CanJumpTwice) 
         {
-            animator.SetLayerWeight(3, 0.51f);
+            animator.SetLayerWeight(3, 1);
         }
         else if(PlayerInputController.Instance.CanJumpTwice == false)
         {
@@ -65,7 +66,7 @@ public class AnimationControll : MonoBehaviour
     {
         if (PlayerInputController.Instance.isClimbAble)
         {
-            animator.SetLayerWeight(4, 0.51f);
+            animator.SetLayerWeight(4, 1);
         }
         else if (PlayerInputController.Instance.isClimbAble == false)
         {
