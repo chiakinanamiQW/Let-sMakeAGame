@@ -167,11 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd28030151e97b245ab411c9f0be5a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BridFlyDuration: 10
+  BridFlyDuration: 5
   RabbitJumpDuration: 10
-  SquirrelclimbDuration: 10
+  SquirrelclimbDuration: 5
   CatDushDuration: 10
-  CatDushPlusTime: 0.1
+  CatDushPlusTime: 0.07
 --- !u!1 &44140967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,15 +3455,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298615645}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad12199a2109c546b235b74bea12223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lookat: {fileID: 1856874021}
   smooth: 3
-  Expandx: 23
-  Expandy: 13
+  Expandx: 15
+  Expandy: 10
   OffSet: {x: 0, y: 0}
 --- !u!81 &1298615647
 AudioListener:
@@ -5827,7 +5827,7 @@ MonoBehaviour:
   isDushCollide: 0
   isAttackAble: 0
   isClimbAble: 0
-  ClimbSpeed: 6
+  ClimbSpeed: 30
   speed: 0
   timeSpend: 0
   testForce: 0
@@ -12814,7 +12814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1803998025463677824, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 450
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1803998025463677824, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12834,7 +12834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2736163879249482335, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -930
+      value: -800
       objectReference: {fileID: 0}
     - target: {fileID: 2736163879249482335, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12862,7 +12862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3454275870759642158, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -860
+      value: -730
       objectReference: {fileID: 0}
     - target: {fileID: 3454275870759642158, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12918,7 +12918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6279164368193220108, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1000
+      value: -870
       objectReference: {fileID: 0}
     - target: {fileID: 6279164368193220108, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12938,7 +12938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7705528177180762178, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 450
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7705528177180762178, guid: 39a801a4f6927e845aaf56c71de98dac, type: 3}
       propertyPath: m_AnchoredPosition.y
