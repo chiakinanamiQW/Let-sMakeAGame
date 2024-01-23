@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BUllet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -10,5 +10,10 @@ public class BUllet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+        Destroy(gameObject, 3f);
     }
 }
