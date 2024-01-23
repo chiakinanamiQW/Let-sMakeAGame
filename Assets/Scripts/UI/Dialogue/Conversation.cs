@@ -78,7 +78,7 @@ public class Conversation : MonoBehaviour
                 Face.sprite=face01;
                 index++;
                 break;
-            case "":
+            case " ":
                 Face.sprite=face02;
                 index++;
                 break;
@@ -90,7 +90,7 @@ public class Conversation : MonoBehaviour
             yield return new WaitForSeconds(textspeed);
         }
         isFinshedSpeak = true;
-        isSpeeking = false;
+        
         index++;
     }
 

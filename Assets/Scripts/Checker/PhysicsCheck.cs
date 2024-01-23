@@ -22,6 +22,7 @@ public class PhysicsCheck : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.Space)&&isJump)
