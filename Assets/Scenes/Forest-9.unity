@@ -13343,6 +13343,10 @@ PrefabInstance:
       value: Reborn
       objectReference: {fileID: 0}
     - target: {fileID: 6287016722282831201, guid: 8f4909fdb7152ae449b9a0f833daf7b2, type: 3}
+      propertyPath: Place
+      value: "\u68EE\u6797"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287016722282831201, guid: 8f4909fdb7152ae449b9a0f833daf7b2, type: 3}
       propertyPath: rebornPosition.x
       value: -21.6
       objectReference: {fileID: 0}

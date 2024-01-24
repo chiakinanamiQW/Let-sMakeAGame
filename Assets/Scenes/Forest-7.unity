@@ -1701,6 +1701,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 473654757204434085, guid: 6a13ef0642a669a40ae74c68f2436887, type: 3}
+      propertyPath: Place
+      value: "\u68EE\u6797"
+      objectReference: {fileID: 0}
+    - target: {fileID: 473654757204434085, guid: 6a13ef0642a669a40ae74c68f2436887, type: 3}
       propertyPath: rebornPosition.x
       value: -22.8
       objectReference: {fileID: 0}
