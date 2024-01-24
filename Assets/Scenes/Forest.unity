@@ -52557,15 +52557,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629968b1ce375014eb64f5c9c0d0425c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  c: {fileID: 0}
   context: {fileID: 1739667876}
-  textAsset:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  textAsset: {fileID: 0}
   index: 0
   textspeed: 0
   spriteLeft: {fileID: 0}
   spriteRight: {fileID: 0}
+  Speek: 0
 --- !u!114 &461618399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56606,7 +56605,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19, y: -0.95}
+  m_Offset: {x: 0.19, y: -0.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
