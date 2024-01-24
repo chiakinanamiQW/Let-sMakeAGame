@@ -1495,8 +1495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db9e102bb93a4547bdac187dcb8d8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  c: {fileID: 0}
 --- !u!4 &835811331
 Transform:
   m_ObjectHideFlags: 0
@@ -15606,6 +15604,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1750952212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1750952214}
+  - component: {fileID: 1750952213}
+  m_Layer: 0
+  m_Name: RebornPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1750952213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750952212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18dbae2001caed6459751ab7f86862f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rebornPosition: {x: 84.6, y: -9.1, z: 0}
+--- !u!4 &1750952214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750952212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.75564, y: -9.908835, z: -0.045954403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1752447637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16196,6 +16239,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  RebornPosition: {x: 0, y: 0, z: 0}
 --- !u!61 &1898397991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16828,3 +16872,4 @@ SceneRoots:
   - {fileID: 73759399}
   - {fileID: 293610321}
   - {fileID: 462069250}
+  - {fileID: 1750952214}
