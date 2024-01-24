@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
     public UnityEvent<Character> OnHealthChange;
     private float invulnerableCounter;
 
-    private Vector3 RebornPosition;//only for player
+    public Vector3 RebornPosition;//only for player
 
     private void Awake()
     {
@@ -117,15 +117,6 @@ public class Character : MonoBehaviour
         invulnerableCounter = invulnerableDuration;
     }
 
-    IEnumerator REBorn()
-    {
-        yield return new WaitForSeconds(1f);
-        isdead = false;
-        CurrentHealth = MaxHealth;
-        transform.position = RebornPosition;
-        PlayerInputController.Instance.ControllEnable();
-    }
-
     public void ChangRebornPosition(Vector3 position)
     {
         RebornPosition = position;
@@ -133,9 +124,21 @@ public class Character : MonoBehaviour
 
     public void Reborn()
     {
-        isdead = false;
+        //isdead = false;
         CurrentHealth = MaxHealth;
         transform.position = RebornPosition;
         PlayerInputController.Instance.ControllEnable();
+    }
+
+    public void ChangCurrentHealth(int n)
+    {
+        if(CurrentHealth+n > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+        else
+        {
+            CurrentHealth += n;
+        }
     }
 }

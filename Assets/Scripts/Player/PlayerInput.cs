@@ -62,6 +62,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Retry"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e62271f-ada3-42e5-9572-366e98769d0a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Skill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""767737a4-db80-4cdc-b1a5-45dad20e6d3d"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -170,6 +190,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_GamePlay_Dush = m_GamePlay.FindAction("Dush", throwIfNotFound: true);
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
         m_GamePlay_Skill = m_GamePlay.FindAction("Skill", throwIfNotFound: true);
+        m_GamePlay_Retry = m_GamePlay.FindAction("Retry", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -235,6 +256,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Dush;
     private readonly InputAction m_GamePlay_Jump;
     private readonly InputAction m_GamePlay_Skill;
+    private readonly InputAction m_GamePlay_Retry;
     public struct GamePlayActions
     {
         private @PlayerInput m_Wrapper;
@@ -243,6 +265,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Dush => m_Wrapper.m_GamePlay_Dush;
         public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
         public InputAction @Skill => m_Wrapper.m_GamePlay_Skill;
+        public InputAction @Retry => m_Wrapper.m_GamePlay_Retry;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -264,6 +287,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Skill.started += instance.OnSkill;
             @Skill.performed += instance.OnSkill;
             @Skill.canceled += instance.OnSkill;
+            @Retry.started += instance.OnRetry;
+            @Retry.performed += instance.OnRetry;
+            @Retry.canceled += instance.OnRetry;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -280,6 +306,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Skill.started -= instance.OnSkill;
             @Skill.performed -= instance.OnSkill;
             @Skill.canceled -= instance.OnSkill;
+            @Retry.started -= instance.OnRetry;
+            @Retry.performed -= instance.OnRetry;
+            @Retry.canceled -= instance.OnRetry;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -312,5 +341,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnDush(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnSkill(InputAction.CallbackContext context);
+        void OnRetry(InputAction.CallbackContext context);
     }
 }
