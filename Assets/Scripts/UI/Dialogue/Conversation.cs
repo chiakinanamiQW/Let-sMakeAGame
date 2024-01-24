@@ -9,24 +9,22 @@ public class Conversation : MonoBehaviour
     [Header("UI")]
     public TMP_Text context;
     [Header("内容")]
-    public TextAsset textAsset;
+    public TextAsset[] textAsset;
     public int index;
     public float textspeed;
     private bool isFinshedSpeak=false;
     [Header("头像")]
     public Image spriteLeft;
     public Image spriteRight;
-    public List<Sprite> sprites = new List<Sprite>();
-    Dictionary<string, Sprite> imageDic = new Dictionary<string, Sprite>();
     bool isSpeeking = false;
+    int i = 0;
 
     List<string> textlist = new List<string>();
     private void Awake()
     {
-        imageDic["少年"] = sprites[0];
-        imageDic["自称是神使的很可爱的小狗"] =imageDic["不知道哪里来的很可爱的小狗"] = sprites[1];
-
-        GetText(textAsset);
+        spriteLeft.gameObject.SetActive(false);
+        spriteRight.gameObject.SetActive(false);
+        GetText(textAsset[i]);
         index = 0;
     }
     void OnEnable()
@@ -43,7 +41,8 @@ public class Conversation : MonoBehaviour
             gameObject.SetActive(false);
             index = 0;
             PlayerInputController.Instance.ControllEnable();
-
+            spriteLeft.gameObject.SetActive(false);
+            spriteRight.gameObject.SetActive(false);
             return;
         }
         if (Input.GetKeyUp(KeyCode.J) && isFinshedSpeak == true)
@@ -62,23 +61,23 @@ public class Conversation : MonoBehaviour
     {
         textlist.Clear();
         index = 0;
-       var lineDate=file.text.Split('\n');
-        foreach(var line in lineDate)
+        var lineDate=file.text.Split('\n');
+        foreach (var line in lineDate)
         {
             textlist.Add(line);
         }
     }
     public void UpdateSpite(string _name)
     {
-        if (_name == "少年")
+        if (_name == "少年\r")
         {
-            spriteLeft.sprite = imageDic[_name];
             spriteLeft.gameObject.SetActive(true);
+            index++;
         }
-        else if(_name == "不知道哪里来的很可爱的小狗"||_name== "自称是神使的很可爱的小狗")
+        else if(_name == "不知道哪里来的很可爱的小狗\r"||_name== "自称是神使的很可爱的小狗\r")
         {
-            spriteRight.sprite = imageDic[_name];
             spriteRight.gameObject.SetActive(true);
+            index++;
         }
     }
     IEnumerator SetTextUI()
