@@ -11,8 +11,10 @@ public class CameraControlar : MonoBehaviour
     [SerializeField] Vector2 OffSet;
 
     private Vector3 offset;
-
-   
+    private void Awake()
+    {
+        
+    }
     private void LateUpdate()
     {
         Vector3 vector3 = new Vector3(lookat.transform.position.x + Expandx, lookat.transform.position.y + Expandy, lookat.transform.position.z);
