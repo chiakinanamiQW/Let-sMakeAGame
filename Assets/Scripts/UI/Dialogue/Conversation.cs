@@ -3,79 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Diagnostics;
 using UnityEngine.SceneManagement;
 
 public class Conversation : MonoBehaviour
 {
+    public Canvas c;
     [Header("UI")]
     public TMP_Text context;
     [Header("内容")]
-    public TextAsset[] textAsset;
+    public TextAsset textAsset;
     public int index;
     public float textspeed;
     private bool isFinshedSpeak=false;
     [Header("头像")]
     public Image spriteLeft;
     public Image spriteRight;
+    public bool Speek=false;
     bool isSpeeking = false;
     bool cancelTyping = false;
-    int i = 0;
-
     List<string> textlist = new List<string>();
     private void Awake()
     {
         spriteLeft.gameObject.SetActive(false);
         spriteRight.gameObject.SetActive(false);
-        GetText(textAsset[i]);
+        GetText(textAsset);
         index = 0;
+
     }
     void OnEnable()
     {
-        /*  context.text = textlist[index];
-          index++;*/
         StartCoroutine(SetTextUI());
     }
     private void Update()
     {
-
+        if (Speek)
+        {
+            StartCoroutine(SetTextUI());
+            Speek = false;
+        }
         if (Input.GetKeyUp(KeyCode.J) && index == textlist.Count)
         {
+            Debug.Log("last");
             gameObject.SetActive(false);
             index = 0;
-            i++;
-            if (i == 1)
-            {
-                SceneManager.LoadScene(2);
-            }
             PlayerInputController.Instance.ControllEnable();
             spriteLeft.gameObject.SetActive(false);
             spriteRight.gameObject.SetActive(false);
             return;
-        }
-        /*  if (Input.GetKeyUp(KeyCode.J) && isFinshedSpeak == true)
-          {
-              *//*context.text = textlist[index];
-              index++;*//*
-              StartCoroutine(SetTextUI());
-          }*/
+        }//结束操作
+
         if (Input.GetKeyUp(KeyCode.J))
         {
             if (isFinshedSpeak && !cancelTyping)
             {
-                StartCoroutine (SetTextUI());
+                Debug.Log(2);
+                StartCoroutine(SetTextUI());
             }
             else if (!isFinshedSpeak)
             {
-                cancelTyping = !cancelTyping;
+                cancelTyping = !cancelTyping;//为了能快速对话
             }
         }
-        if(isSpeeking)
+        if (isSpeeking)
         {
             PlayerInputController.Instance.ControllDisable();
         }
-       
     }
+
     void GetText(TextAsset file)
     {
         textlist.Clear();
@@ -88,6 +82,7 @@ public class Conversation : MonoBehaviour
     }
     public void UpdateSpite(string _name)
     {
+        c.gameObject.SetActive(true);
         if (_name == "少年\r")
         {
             spriteLeft.gameObject.SetActive(true);
@@ -99,16 +94,12 @@ public class Conversation : MonoBehaviour
             index++;
         }
     }
-    IEnumerator SetTextUI()
-    {   isSpeeking=true;   
+    public IEnumerator SetTextUI()
+    {   
+        isSpeeking=true;   
         context.text = "";
         isFinshedSpeak = false;
         UpdateSpite(textlist[index]);
-        /*   for(int i = 0; i < textlist[index].Length; i++)
-           {
-               context.text += textlist[index][i];
-               yield return new WaitForSeconds(textspeed);
-           }*/
         int letter = 0;
         while (!cancelTyping && letter < textlist[index].Length - 1)
         {
@@ -122,5 +113,6 @@ public class Conversation : MonoBehaviour
         
         index++;
     }
+
 
 }
