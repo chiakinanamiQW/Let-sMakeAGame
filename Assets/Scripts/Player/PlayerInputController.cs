@@ -10,6 +10,8 @@ using UnityEngine.TextCore.Text;
 
 public class PlayerInputController : MonoBehaviour
 {
+
+
     public static PlayerInputController Instance;
 
     public PlayerInput PlayerInput;
@@ -96,12 +98,12 @@ public class PlayerInputController : MonoBehaviour
     public float FlyDownForce;
 
     public bool isFlyAble;
-
-    // Start is called before the first frame update
     private PlayerInputController()
     {
 
     }
+
+    
 
     private void Awake()
     {
@@ -118,6 +120,7 @@ public class PlayerInputController : MonoBehaviour
         //PlayerInput.GamePlay.Jump.started += JumpFrameCount;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
         PlayerInput.GamePlay.Dush.started += DushTap;
+        PlayerInput.GamePlay.Retry.started += SceneMan.Instance.Restart;
 
         PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
 
@@ -127,6 +130,7 @@ public class PlayerInputController : MonoBehaviour
 
     private void Start()
     {
+        transform.position = RebornPosition.Instance.rebornPosition;
         Rigidbody2D.drag = 0f;
     }
 

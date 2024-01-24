@@ -10,7 +10,8 @@ public class AnimationControll : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        character = GameObject.Find("Player").GetComponent<Character>();
+        //character = GameObject.Find("Player").GetComponent<Character>();
+        character = PlayerInputController.Instance.gameObject.GetComponent<Character>();
     }
     void Start()
     {
