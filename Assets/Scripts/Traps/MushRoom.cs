@@ -11,6 +11,7 @@ public class MushRoom : MonoBehaviour
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * Jumpforce, ForceMode2D.Impulse);
             transform.position=Vector2.MoveTowards(transform.position,new Vector2(transform.position.x,transform.position.y+3),0.2f);
+            AudioManager.instance.PlaySFx("Mushroom");
         }
     }
     private void OnCollisionExit2D(UnityEngine.Collision2D collision)

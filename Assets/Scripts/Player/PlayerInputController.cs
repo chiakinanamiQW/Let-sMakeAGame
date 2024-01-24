@@ -325,6 +325,7 @@ public class PlayerInputController : MonoBehaviour
         if (isJumpAble)
         {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, 0);
+            AudioManager.instance.PlaySFx("Jump");
             jumpTimes--;
             if (isClimbAble)
             {

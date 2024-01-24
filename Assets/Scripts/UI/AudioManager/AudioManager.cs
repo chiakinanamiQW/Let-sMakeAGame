@@ -9,8 +9,7 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
-    public Canvas c;
-    public Slider Volume;
+    public Slider MusicVolume,SFXVolume;
     private void Awake()
     {
         if(instance== null)

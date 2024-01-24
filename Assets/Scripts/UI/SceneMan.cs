@@ -22,10 +22,18 @@ public class SceneMan : MonoBehaviour
         GameEventSystem.instance.OnPlayerReborn += Restart;
         DontDestroyOnLoad(this);
     }
+    public void ClickLoading(int num)
+    {
+        SceneManager.LoadScene(num);
+    }
     public void ClickNext()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+    public void ClickCont()
+    {
+        Time.timeScale = 1.0f;
     }
     public void ClickOut(Canvas canvas)
     {
