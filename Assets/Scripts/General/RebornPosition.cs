@@ -26,4 +26,10 @@ public class RebornPosition : MonoBehaviour
         rebornPosition = vector3;
     }
 
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(rebornPosition, 2.0f);
+    }
 }

@@ -2101,7 +2101,7 @@ GameObject:
   - component: {fileID: 1025144620}
   - component: {fileID: 1025144619}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Reborn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2119,7 +2119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18dbae2001caed6459751ab7f86862f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rebornPosition: {x: 0, y: 0, z: 0}
+  rebornPosition: {x: 10, y: 10, z: 0}
 --- !u!4 &1025144620
 Transform:
   m_ObjectHideFlags: 0
