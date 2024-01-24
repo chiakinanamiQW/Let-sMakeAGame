@@ -119,14 +119,6 @@ public class PlayerInputController : MonoBehaviour
 
         isMoveAble = true;
         isDushAble = true;
-
-        PlayerInput.GamePlay.Jump.started += Jump;
-        PlayerInput.GamePlay.Jump.canceled += LeaveButton;
-        PlayerInput.GamePlay.Dush.started += DushTap;
-        PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
-
-        GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
-        GameEventSystem.instance.OnPlayerDead += ControllDisable;
     }
 
     private void Start()
@@ -134,6 +126,16 @@ public class PlayerInputController : MonoBehaviour
 
         transform.position = RebornPosition.Instance.rebornPosition;
         PlayerInput.GamePlay.Retry.started += SceneMan.Instance.Restart;
+        PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
+
+        PlayerInput.GamePlay.Jump.started += Jump;
+        PlayerInput.GamePlay.Jump.canceled += LeaveButton;
+        PlayerInput.GamePlay.Dush.started += DushTap;
+
+
+        GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
+        GameEventSystem.instance.OnPlayerDead += ControllDisable;
+
         Rigidbody2D.drag = 0f;
     }
 

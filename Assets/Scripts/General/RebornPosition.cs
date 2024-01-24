@@ -18,7 +18,6 @@ public class RebornPosition : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
     
     public void ChangeRebornPosition(Vector3 vector3)
