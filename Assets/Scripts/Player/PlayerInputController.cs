@@ -10,8 +10,7 @@ using UnityEngine.TextCore.Text;
 
 public class PlayerInputController : MonoBehaviour
 {
-    AudioSource audioS;
-    public AudioClip running,jumping;
+
 
     public static PlayerInputController Instance;
 
@@ -23,7 +22,7 @@ public class PlayerInputController : MonoBehaviour
 
     private PhysicsCheck PhysicsCheck;
 
-    private Character character;
+    public Character character;
 
     [HideInInspector] public Vector2 MoveDirection;
 
@@ -99,38 +98,43 @@ public class PlayerInputController : MonoBehaviour
     public float FlyDownForce;
 
     public bool isFlyAble;
-
-    // Start is called before the first frame update
     private PlayerInputController()
     {
 
     }
 
+    
+
     private void Awake()
     {
+
         Instance = this;
-        isMoveAble = true;
-        isDushAble = true;
+
+        
         PlayerInput = new PlayerInput();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         PhysicsCheck = transform.Find("IsOnGroundChecker").GetComponent<PhysicsCheck>();
         character = GetComponent<Character>();
 
-        PlayerInput.GamePlay.Jump.started += Jump;
-        //PlayerInput.GamePlay.Jump.started += JumpFrameCount;
-        PlayerInput.GamePlay.Jump.canceled += LeaveButton;
-        PlayerInput.GamePlay.Dush.started += DushTap;
-
-        PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
-
-        GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
-        GameEventSystem.instance.OnPlayerDead += ControllDisable;
+        isMoveAble = true;
+        isDushAble = true;
     }
 
     private void Start()
     {
-        audioS=GetComponent<AudioSource>();
+
+        transform.position = RebornPosition.Instance.rebornPosition;
+        PlayerInput.GamePlay.Retry.started += SceneMan.Instance.Restart;
+        PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
+
+        PlayerInput.GamePlay.Jump.started += Jump;
+        PlayerInput.GamePlay.Jump.canceled += LeaveButton;
+        PlayerInput.GamePlay.Dush.started += DushTap;
+
+
+        GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
+        GameEventSystem.instance.OnPlayerDead += ControllDisable;
 
         Rigidbody2D.drag = 0f;
     }
@@ -292,11 +296,9 @@ public class PlayerInputController : MonoBehaviour
 
     private void GetMoveDirection()
     {
-
         inputDirection = PlayerInput.GamePlay.Move.ReadValue<Vector2>();
         if (inputDirection.x > 0)
             MoveDirection.x = 1;
-
         else if(inputDirection.x < 0)
             MoveDirection.x = -1;
         else MoveDirection.x = 0;
@@ -328,6 +330,7 @@ public class PlayerInputController : MonoBehaviour
         if (isJumpAble)
         {
             Rigidbody2D.velocity = new Vector2(Rigidbody2D.velocity.x, 0);
+            AudioManager.instance.PlaySFx("Jump");
             jumpTimes--;
             if (isClimbAble)
             {
@@ -352,9 +355,6 @@ public class PlayerInputController : MonoBehaviour
 
         if (isJumpAble)
         {
-            audioS.clip = jumping;
-            audioS.Play();
-
             jumpTimes--;
             if (isClimbAble)
             {

@@ -9,10 +9,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6a35facd5c4d5c444b4b7b95f9194c35
   - enabled: 1
+    path: Assets/Scenes/BackGround.unity
+    guid: f340d2a883791b041a155f00a90b3f29
+  - enabled: 1
     path: Assets/Scenes/Forest-1.unity
     guid: 79b5ff42021a05244abe6286110e86ce
   - enabled: 1
-    path: Assets/Scenes/Total.unity
-    guid: 5f0aaf1df0df97545a3deb341b56f43e
+    path: Assets/Scenes/Forest-2.unity
+    guid: 8472fc13e36a8854d994b6269a35a651
+  - enabled: 1
+    path: Assets/Scenes/Forest-3.unity
+    guid: 4baea872201870a46821652027d42c8b
+  - enabled: 1
+    path: Assets/Scenes/Forest-4.unity
+    guid: a1cf924f54984d146be31ffab9fe72b1
+  - enabled: 1
+    path: Assets/Scenes/Forest-5.unity
+    guid: 2ba3884515d22e94f85dabccc09756e6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: cafc04e90d87dc54b8daa48588d67a9c, type: 2}

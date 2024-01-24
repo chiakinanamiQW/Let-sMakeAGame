@@ -1,26 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class SceneMan : MonoBehaviour
 {
-    public Animator transition;
-    public Canvas c;
+    public static SceneMan Instance;
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        GameEventSystem.instance.OnPlayerReborn += Restart;
+    }
+    public void ClickLoading(int num)
+    {
+        SceneManager.LoadScene(num);
     }
     public void ClickNext()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex+1);
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
     public void ClickOut(Canvas canvas)
     {
-        SceneManager.LoadScene("Menu");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex-1);
         Destroy(canvas);
     }
     public void ToggleFullScreen()
@@ -37,15 +55,13 @@ public class SceneMan : MonoBehaviour
     }
     public void Restart()
     {
+        Debug.Log("Restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void Continue()
+
+    public void Restart(InputAction.CallbackContext context)
     {
-        Time.timeScale = 1.0f;
+        Debug.Log("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void LoadNextLevel(int TargetIndex)
-    {
-        SceneManager.LoadScene(TargetIndex);
-    }
-    
 }
