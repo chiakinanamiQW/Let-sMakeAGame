@@ -22,7 +22,7 @@ public class PlayerInputController : MonoBehaviour
 
     private PhysicsCheck PhysicsCheck;
 
-    private Character character;
+    public Character character;
 
     [HideInInspector] public Vector2 MoveDirection;
 
@@ -107,21 +107,22 @@ public class PlayerInputController : MonoBehaviour
 
     private void Awake()
     {
+
         Instance = this;
-        isMoveAble = true;
-        isDushAble = true;
+
+        
         PlayerInput = new PlayerInput();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         PhysicsCheck = transform.Find("IsOnGroundChecker").GetComponent<PhysicsCheck>();
         character = GetComponent<Character>();
 
+        isMoveAble = true;
+        isDushAble = true;
+
         PlayerInput.GamePlay.Jump.started += Jump;
-        //PlayerInput.GamePlay.Jump.started += JumpFrameCount;
         PlayerInput.GamePlay.Jump.canceled += LeaveButton;
         PlayerInput.GamePlay.Dush.started += DushTap;
-        PlayerInput.GamePlay.Retry.started += SceneMan.Instance.Restart;
-
         PlayerInput.GamePlay.Skill.started += GameEventSystem.instance.UseSkill_1or2;
 
         GameEventSystem.instance.OnPlayerTakeDamage += BeHurt;
@@ -130,7 +131,9 @@ public class PlayerInputController : MonoBehaviour
 
     private void Start()
     {
+
         transform.position = RebornPosition.Instance.rebornPosition;
+        PlayerInput.GamePlay.Retry.started += SceneMan.Instance.Restart;
         Rigidbody2D.drag = 0f;
     }
 
