@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1920990d6f9016e439e8f2178962db34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RefreshTime: 5
+  RefreshTime: 10
 --- !u!114 &2747614455155657321
 MonoBehaviour:
   m_ObjectHideFlags: 0
