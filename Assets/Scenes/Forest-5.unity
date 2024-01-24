@@ -16351,12 +16351,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6600001
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.59
+      value: -18.09
       objectReference: {fileID: 0}
     - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.28
+      value: -10.35
       objectReference: {fileID: 0}
     - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16390,10 +16402,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1274161008939499358, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
       propertyPath: m_Name
       value: StoryPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6704945789042762144, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: textAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 54a2108b36c347d47b6c969508fd57b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
