@@ -19,8 +19,12 @@ public class SceneMan : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        GameEventSystem.instance.OnPlayerReborn += Restart;
         DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        GameEventSystem.instance.OnPlayerReborn += Restart;
     }
     public void ClickNext()
     {

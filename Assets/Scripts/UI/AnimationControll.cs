@@ -9,13 +9,9 @@ public class AnimationControll : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("AnimControll Awake");
         animator = GetComponent<Animator>();
-        //character = GameObject.Find("Player").GetComponent<Character>();
-        character = PlayerInputController.Instance.gameObject.GetComponent<Character>();
-    }
-    void Start()
-    {
-        
+        character = GetComponent<Character>();
     }
 
     // Update is called once per frame
