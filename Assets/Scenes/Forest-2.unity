@@ -13198,15 +13198,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629968b1ce375014eb64f5c9c0d0425c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  c: {fileID: 0}
   context: {fileID: 454240}
-  textAsset:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  textAsset: {fileID: 0}
   index: 0
   textspeed: 0
   spriteLeft: {fileID: 0}
   spriteRight: {fileID: 0}
+  Speek: 0
 --- !u!114 &513133310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13972,6 +13971,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1085580665
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 83.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.250203
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 946686886333531166, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274161008939499358, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
+      propertyPath: m_Name
+      value: StoryPoint (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32e0ba49e6b22754282720b68abf0f90, type: 3}
 --- !u!1 &1100735179
 GameObject:
   m_ObjectHideFlags: 0
@@ -17068,3 +17124,4 @@ SceneRoots:
   - {fileID: 1233765710}
   - {fileID: 499894256}
   - {fileID: 98869845}
+  - {fileID: 1085580665}
