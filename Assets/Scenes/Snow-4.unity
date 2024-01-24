@@ -56920,6 +56920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rebornPosition: {x: -21.58, y: -10.7, z: 0}
+  Place: "\u96EA\u5C71"
 --- !u!4 &1411291528
 Transform:
   m_ObjectHideFlags: 0
