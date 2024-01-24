@@ -1709,7 +1709,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 1713803751}
-  textAsset: {fileID: 4900000, guid: 0e3b85ff7ad6e694599a10fab7d12570, type: 3}
+  textAsset:
+  - {fileID: 4900000, guid: 3f18aabcc5b628744b8f0d27a84e66e5, type: 3}
+  - {fileID: 4900000, guid: a42720cf72a26dc40b3d20205e2e7836, type: 3}
+  - {fileID: 4900000, guid: 75c0706aa7d6ea640958efdb396eb56b, type: 3}
+  - {fileID: 4900000, guid: 69762790d5317564f8a269165932967f, type: 3}
+  - {fileID: 4900000, guid: 0e3b85ff7ad6e694599a10fab7d12570, type: 3}
+  - {fileID: 4900000, guid: c32dfac6d247e1045b127b8d05fd7722, type: 3}
   index: 0
   textspeed: 0.1
   spriteLeft: {fileID: 1540712964}
@@ -4328,8 +4334,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 62fea40306395b54c988542c71d80c3f, type: 2}
-  m_sharedMaterial: {fileID: 7770860434200279734, guid: 62fea40306395b54c988542c71d80c3f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7403769b6cf0d94099145a72c4944e2, type: 2}
+  m_sharedMaterial: {fileID: 547449829008545109, guid: a7403769b6cf0d94099145a72c4944e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11282,7 +11288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 0}
-  textAsset: {fileID: 0}
+  textAsset: []
   index: 0
   textspeed: 0
   spriteLeft: {fileID: 0}
