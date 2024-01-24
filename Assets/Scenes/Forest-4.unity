@@ -33470,7 +33470,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19, y: -0.95}
+  m_Offset: {x: 0.19, y: -0.71}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -33949,12 +33949,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 1706782006}
-  textAsset: {fileID: 4900000, guid: a42720cf72a26dc40b3d20205e2e7836, type: 3}
+  textAsset:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   index: 0
   textspeed: 0
   spriteLeft: {fileID: 0}
   spriteRight: {fileID: 0}
-  sprites: []
 --- !u!114 &2116305289
 MonoBehaviour:
   m_ObjectHideFlags: 0
