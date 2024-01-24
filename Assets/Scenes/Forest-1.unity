@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10044388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10044390}
+  - component: {fileID: 10044389}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &10044389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10044388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cd9c69a1747864b9f7d5dbca774520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSounds: []
+  sfxSounds: []
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  MusicVolume: {fileID: 0}
+  SFXVolume: {fileID: 0}
+--- !u!4 &10044390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10044388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.438765, y: -11.416185, z: -0.09930178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &73759399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7690,7 +7740,7 @@ PrefabInstance:
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[35].m_Data
       value: 
-      objectReference: {fileID: -2120180490, guid: 9e8c8c73a21558243be7c6c111fbe2ad, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[36].m_Data
       value: 
@@ -7706,7 +7756,7 @@ PrefabInstance:
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[39].m_Data
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -2120180490, guid: 9e8c8c73a21558243be7c6c111fbe2ad, type: 3}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[40].m_Data
       value: 
@@ -9929,7 +9979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[35].m_RefCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[36].m_RefCount
@@ -9945,7 +9995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[39].m_RefCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[40].m_RefCount
@@ -11449,7 +11499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_Tiles.Array.data[50].second.m_TileSpriteIndex
-      value: 35
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 3438740964510801383, guid: 6db752628c9121f4e8a380f5e3e9839c, type: 3}
       propertyPath: m_Tiles.Array.data[51].second.m_TileSpriteIndex
@@ -16364,6 +16414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody2D: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  character: {fileID: 0}
   MoveDirection: {x: 0, y: 0}
   inputDirection: {x: 0, y: 0}
   Speed: 670
@@ -16873,3 +16924,4 @@ SceneRoots:
   - {fileID: 293610321}
   - {fileID: 462069250}
   - {fileID: 1750952214}
+  - {fileID: 10044390}
