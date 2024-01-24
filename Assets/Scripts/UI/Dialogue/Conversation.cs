@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 public class Conversation : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class Conversation : MonoBehaviour
     public Image spriteLeft;
     public Image spriteRight;
     bool isSpeeking = false;
+    bool cancelTyping = false;
     int i = 0;
 
     List<string> textlist = new List<string>();
@@ -40,16 +43,32 @@ public class Conversation : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
+            i++;
+            if (i == 1)
+            {
+                SceneManager.LoadScene(2);
+            }
             PlayerInputController.Instance.ControllEnable();
             spriteLeft.gameObject.SetActive(false);
             spriteRight.gameObject.SetActive(false);
             return;
         }
-        if (Input.GetKeyUp(KeyCode.J) && isFinshedSpeak == true)
+        /*  if (Input.GetKeyUp(KeyCode.J) && isFinshedSpeak == true)
+          {
+              *//*context.text = textlist[index];
+              index++;*//*
+              StartCoroutine(SetTextUI());
+          }*/
+        if (Input.GetKeyUp(KeyCode.J))
         {
-            /*context.text = textlist[index];
-            index++;*/
-            StartCoroutine(SetTextUI());
+            if (isFinshedSpeak && !cancelTyping)
+            {
+                StartCoroutine (SetTextUI());
+            }
+            else if (!isFinshedSpeak)
+            {
+                cancelTyping = !cancelTyping;
+            }
         }
         if(isSpeeking)
         {
@@ -82,15 +101,23 @@ public class Conversation : MonoBehaviour
     }
     IEnumerator SetTextUI()
     {   isSpeeking=true;   
-        Debug.Log(textlist[0]);
         context.text = "";
         isFinshedSpeak = false;
         UpdateSpite(textlist[index]);
-        for(int i = 0; i < textlist[index].Length; i++)
+        /*   for(int i = 0; i < textlist[index].Length; i++)
+           {
+               context.text += textlist[index][i];
+               yield return new WaitForSeconds(textspeed);
+           }*/
+        int letter = 0;
+        while (!cancelTyping && letter < textlist[index].Length - 1)
         {
-            context.text += textlist[index][i];
+            context.text += textlist[index][letter];
+            letter++;
             yield return new WaitForSeconds(textspeed);
         }
+        context.text = textlist[index];
+        cancelTyping = false;
         isFinshedSpeak = true;
         
         index++;
