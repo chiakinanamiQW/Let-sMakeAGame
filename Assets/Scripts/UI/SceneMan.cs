@@ -26,6 +26,10 @@ public class SceneMan : MonoBehaviour
     {
         GameEventSystem.instance.OnPlayerReborn += Restart;
     }
+    public void ClickLoading(int num)
+    {
+        SceneManager.LoadScene(num);
+    }
     public void ClickNext()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

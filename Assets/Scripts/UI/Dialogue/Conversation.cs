@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 public class Conversation : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class Conversation : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
+            i++;
+            if (i == 1)
+            {
+                SceneManager.LoadScene(2);
+            }
             PlayerInputController.Instance.ControllEnable();
             spriteLeft.gameObject.SetActive(false);
             spriteRight.gameObject.SetActive(false);
