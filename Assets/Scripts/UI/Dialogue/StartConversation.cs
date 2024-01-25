@@ -5,11 +5,12 @@ using UnityEngine;
 public class StartConversation : MonoBehaviour
 {
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "StoryPoint")
         {
-            GameObject.Find("Conversation").GetComponent<Conversation>().Speek = true;
+            Debug.Log(1);
+            collision.gameObject.GetComponent<Conversation>().Speek = true;
         }
     }
 }

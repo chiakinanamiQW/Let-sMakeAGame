@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 1003640359774265295}
   - component: {fileID: 1990294052189491993}
   - component: {fileID: 6589330238093989174}
-  - component: {fileID: 8766484964482355351}
   m_Layer: 5
   m_Name: Conversation 2
   m_TagString: Untagged
@@ -315,32 +314,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8766484964482355351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2227508405932907086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 629968b1ce375014eb64f5c9c0d0425c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  c: {fileID: 0}
-  context: {fileID: 5105551946159309478}
-  textAsset:
-  - {fileID: 4900000, guid: 3f18aabcc5b628744b8f0d27a84e66e5, type: 3}
-  - {fileID: 4900000, guid: a42720cf72a26dc40b3d20205e2e7836, type: 3}
-  - {fileID: 4900000, guid: 75c0706aa7d6ea640958efdb396eb56b, type: 3}
-  - {fileID: 4900000, guid: 69762790d5317564f8a269165932967f, type: 3}
-  - {fileID: 4900000, guid: 0e3b85ff7ad6e694599a10fab7d12570, type: 3}
-  - {fileID: 4900000, guid: c32dfac6d247e1045b127b8d05fd7722, type: 3}
-  index: 0
-  textspeed: 0.1
-  spriteLeft: {fileID: 5425177753158391419}
-  spriteRight: {fileID: 8344220221445022551}
-  i: 0
 --- !u!1 &5628226205389756082
 GameObject:
   m_ObjectHideFlags: 0

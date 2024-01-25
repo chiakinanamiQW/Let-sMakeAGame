@@ -95,7 +95,7 @@ MonoBehaviour:
   context: {fileID: 5577813527312493446}
   textAsset: {fileID: 4900000, guid: a42720cf72a26dc40b3d20205e2e7836, type: 3}
   index: 0
-  textspeed: 0
+  textspeed: 0.1
   spriteLeft: {fileID: 4681726852047224667}
   spriteRight: {fileID: 8682499987431066231}
   Speek: 0
@@ -207,8 +207,7 @@ PrefabInstance:
       propertyPath: textAsset
       value: 
       objectReference: {fileID: 4900000, guid: a42720cf72a26dc40b3d20205e2e7836, type: 3}
-    m_RemovedComponents:
-    - {fileID: 8766484964482355351, guid: f98da332e7df8764b9c6742fb198be7c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

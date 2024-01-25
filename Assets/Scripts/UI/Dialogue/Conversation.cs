@@ -30,15 +30,12 @@ public class Conversation : MonoBehaviour
         index = 0;
 
     }
-    void OnEnable()
-    {
-        StartCoroutine(SetTextUI());
-    }
+   
     private void Update()
     {
         if (Speek)
         {
-            StartCoroutine(SetTextUI());
+          StartCoroutine(SetTextUI());
             Speek = false;
         }
         if (Input.GetKeyUp(KeyCode.J) && index == textlist.Count)
