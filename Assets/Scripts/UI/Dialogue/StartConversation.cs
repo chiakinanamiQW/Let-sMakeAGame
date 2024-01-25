@@ -13,4 +13,5 @@ public class StartConversation : MonoBehaviour
             collision.gameObject.GetComponent<Conversation>().Speek = true;
         }
     }
+    
 }

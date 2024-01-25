@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Conversation : MonoBehaviour
+public class Conversation2 : MonoBehaviour
 {
     public Canvas c;
     [Header("UI")]
@@ -14,11 +14,11 @@ public class Conversation : MonoBehaviour
     public TextAsset textAsset;
     public int index;
     public float textspeed;
-    private bool isFinshedSpeak=false;
+    private bool isFinshedSpeak = false;
     [Header("头像")]
     public Image spriteLeft;
     public Image spriteRight;
-    public bool Speek=false;
+    public bool Speek = false;
     bool isSpeeking = false;
     bool cancelTyping = false;
     List<string> textlist = new List<string>();
@@ -30,17 +30,17 @@ public class Conversation : MonoBehaviour
         index = 0;
 
     }
-    
-   
+
+
     private void Update()
     {
- 
+
         if (Speek)
         {
-          StartCoroutine(SetTextUI());
+            StartCoroutine(SetTextUI());
             Speek = false;
         }
-        if (Input.GetKeyUp(KeyCode.J)  && index == textlist.Count)
+        if (Input.GetKeyUp(KeyCode.J) && index == textlist.Count)
         {
             Debug.Log("last");
             gameObject.SetActive(false);
@@ -50,7 +50,7 @@ public class Conversation : MonoBehaviour
             spriteRight.gameObject.SetActive(false);
             return;
         }//结束操作
-        
+
 
         if (Input.GetKeyUp(KeyCode.J))
         {
@@ -74,7 +74,7 @@ public class Conversation : MonoBehaviour
     {
         textlist.Clear();
         index = 0;
-        var lineDate=file.text.Split('\n');
+        var lineDate = file.text.Split('\n');
         foreach (var line in lineDate)
         {
             textlist.Add(line);
@@ -88,15 +88,15 @@ public class Conversation : MonoBehaviour
             spriteLeft.gameObject.SetActive(true);
             index++;
         }
-        else if(_name == "不知道哪里来的很可爱的小狗\r"||_name== "自称是神使的很可爱的小狗\r")
+        else if (_name == "不知道哪里来的很可爱的小狗\r" || _name == "自称是神使的很可爱的小狗\r")
         {
             spriteRight.gameObject.SetActive(true);
             index++;
         }
     }
     public IEnumerator SetTextUI()
-    {   
-        isSpeeking=true;   
+    {
+        isSpeeking = true;
         context.text = "";
         isFinshedSpeak = false;
         UpdateSpite(textlist[index]);
@@ -110,9 +110,12 @@ public class Conversation : MonoBehaviour
         context.text = textlist[index];
         cancelTyping = false;
         isFinshedSpeak = true;
-        
+
         index++;
     }
-
-
+    private void OnEnable()
+    {
+        Debug.Log(textAsset);
+        StartCoroutine(SetTextUI());
+    }
 }
