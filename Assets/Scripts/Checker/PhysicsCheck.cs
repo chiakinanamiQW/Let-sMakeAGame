@@ -8,7 +8,6 @@ public class PhysicsCheck : MonoBehaviour
     public static PhysicsCheck instance;
     public bool isOnGround;
     public bool isOnWall;
-    public Canvas canvas;
     private bool isJump=true;
     // Start is called before the first frame update
     void Start()
@@ -19,11 +18,7 @@ public class PhysicsCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            canvas.gameObject.SetActive(true);
-            Time.timeScale = 0;
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.Space)&&isJump)
         {
